@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>EOS Hospitality Guide</title>
+
+<!-- iOS PWA meta tags -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EOS Hospitality">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#14181c;
+    --ink-soft:#4a5158;
+    --cream:#f7f3ec;
+    --cream-card:#ffffff;
+    --line:#e7ded0;
+    --accent:#2fa0c6;
+    --accent-deep:#1c7896;
+  }
+
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html{ background:var(--cream); }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Mulish', -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:56px;
+  }
+
+  h1,h2,h3, .display{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+
+  /* ===== Header ===== */
+  header.app-header{
+    background:var(--ink);
+    color:#f7f3ec;
+    padding:calc(env(safe-area-inset-top) + 22px) 20px 20px;
+  }
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  header.app-header h1{
+    font-size:28px;
+    color:#faf8f3;
+    line-height:1.1;
+  }
+  header.app-header p.sub{
+    margin-top:8px;
+    font-size:13.5px;
+    color:#c9cdd2;
+    max-width:34em;
+    line-height:1.5;
+  }
+
+  main{ background:var(--cream); }
+
+  /* ===== Section nav (top-level) ===== */
+  nav.section-nav{
+    background:var(--ink);
+    position:sticky;
+    top:0;
+    z-index:30;
+    display:flex;
+    overflow-x:auto;
+    scrollbar-width:none;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    padding:0 12px;
+  }
+  nav.section-nav::-webkit-scrollbar{ display:none; }
+  nav.section-nav button{
+    flex:0 0 auto;
+    background:none;
+    border:none;
+    color:#9aa3ab;
+    font-family:'Mulish',sans-serif;
+    font-weight:800;
+    font-size:12.5px;
+    letter-spacing:0.03em;
+    padding:14px 12px;
+    border-bottom:3px solid transparent;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  nav.section-nav button.active{
+    color:#fff;
+    border-bottom-color:var(--accent);
+  }
+
+  /* ===== Toolbar (search + sub-chips) ===== */
+  .toolbar{
+    background:var(--cream);
+    position:sticky;
+    top:45px;
+    z-index:20;
+    padding:14px 20px 12px;
+    border-bottom:1px solid var(--line);
+  }
+  .search-wrap{ position:relative; margin-bottom:12px; }
+  .search-wrap input{
+    width:100%;
+    background:var(--cream-card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:11px 14px 11px 38px;
+    font-family:'Mulish',sans-serif;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .search-wrap input::placeholder{ color:#9aa0a6; }
+  .search-wrap svg{
+    position:absolute; left:12px; top:50%; transform:translateY(-50%);
+    width:16px; height:16px; stroke:#9aa0a6;
+  }
+
+  .month-select{
+    display:block;
+    width:100%;
+    background:var(--cream-card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:10px 14px;
+    margin-bottom:12px;
+    font-family:'Mulish',sans-serif;
+    font-weight:700;
+    font-size:13.5px;
+    color:var(--ink);
+    -webkit-appearance:none;
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5158' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 12px center;
+    background-size:16px;
+  }
+
+  .chips{ display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; scrollbar-width:none; }
+  .chips::-webkit-scrollbar{ display:none; }
+  .chip{
+    flex:0 0 auto;
+    background:var(--cream-card);
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    font-family:'Mulish',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    padding:8px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .chip.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
+  .chip .dot{ display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+
+  p.section-intro{
+    padding:16px 20px 0;
+    margin:0;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+    background:var(--cream);
+  }
+
+  /* ===== Groups / subheadings ===== */
+  section.group{ background:var(--cream); padding:20px 20px 4px; }
+  section.group h2{
+    font-size:21px;
+    color:var(--ink);
+    padding-bottom:4px;
+    border-bottom:2px solid var(--ink);
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  section.group h2 .accent-word{ color:var(--accent-deep); }
+
+  .card-grid{ display:flex; flex-direction:column; gap:12px; margin-bottom:6px; }
+
+  /* ===== Dated card (Spectator Sports / Entertainment) ===== */
+  .card{
+    background:var(--cream-card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .card .datebox{
+    flex:0 0 58px;
+    background:var(--ink);
+    color:#fff;
+    border-radius:11px;
+    text-align:center;
+    padding:8px 4px;
+    font-family:'Mulish',sans-serif;
+  }
+  .card .datebox .d{ font-size:19px; font-weight:800; line-height:1; }
+  .card .datebox .m{ font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase; color:#c9cdd2; margin-top:3px; }
+  .card .datebox.range .d{ font-size:14px; }
+  .card .body{ flex:1; min-width:0; }
+  .card .cat-row{ display:flex; align-items:center; gap:6px; margin-bottom:4px; }
+  .card .cat-icon{ width:15px; height:15px; flex:0 0 auto; }
+  .card .cat-label{ font-size:10.5px; text-transform:uppercase; letter-spacing:0.08em; font-weight:800; color:var(--accent-deep); }
+  .card h3{ font-size:16.5px; line-height:1.25; color:var(--ink); margin-bottom:3px; }
+  .card .venue{ font-size:12.5px; color:var(--ink-soft); font-weight:600; margin-bottom:4px; }
+  .card .note{ font-size:13px; color:var(--ink-soft); line-height:1.45; }
+  .card .datestring{ font-size:11px; color:#9aa0a6; font-weight:700; margin-top:6px; letter-spacing:0.02em; }
+  .card .expand-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:20px; height:20px;
+    margin-left:8px;
+    border-radius:6px;
+    border:1px solid var(--line);
+    background:var(--cream);
+    color:var(--ink-soft);
+    font-size:13px;
+    font-weight:800;
+    line-height:1;
+    cursor:pointer;
+    vertical-align:middle;
+  }
+  .card .expand-toggle.open{ background:var(--ink); color:#fff; border-color:var(--ink); }
+  .card .subfixtures{
+    display:none;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px dashed var(--line);
+  }
+  .card .subfixtures.open{ display:block; }
+  .card .subfixture-row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:12.5px;
+    padding:4px 0;
+  }
+  .card .subfixture-row .sf-date{ color:var(--ink-soft); font-weight:700; flex:0 0 auto; }
+  .card .subfixture-row .sf-label{ color:var(--ink); text-align:right; }
+  .card .eventlink, .idea-card .eventlink{
+    display:inline-block;
+    margin-top:8px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent-deep);
+    text-decoration:none;
+    border-bottom:1px solid var(--accent-deep);
+  }
+  .card .eventlink:hover, .idea-card .eventlink:hover{ opacity:0.75; }
+
+  /* ===== Idea card (Sports / Eating Out / Project Socials; not dated) ===== */
+  .idea-card{
+    background:var(--cream-card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .idea-card .icon-wrap{
+    flex:0 0 42px;
+    width:42px; height:42px;
+    border-radius:11px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .idea-card .icon-wrap svg{ width:20px; height:20px; }
+  .idea-card .body{ flex:1; min-width:0; }
+  .idea-card h3{ font-size:16px; line-height:1.25; color:var(--ink); margin-bottom:3px; }
+  .idea-card .tag{ font-size:12px; color:var(--accent-deep); font-weight:700; margin-bottom:4px; }
+  .idea-card .note{ font-size:13px; color:var(--ink-soft); line-height:1.5; }
+
+  .empty-state{ padding:60px 20px; text-align:center; color:var(--ink-soft); }
+  .empty-state .display{ font-size:20px; margin-bottom:6px; color:var(--ink); }
+
+  /* ===== Home ===== */
+  .home-hero{
+    padding:26px 20px 6px;
+    background:var(--cream);
+  }
+  .home-hero .display{
+    font-size:24px;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+  .home-hero p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+    margin:0;
+    max-width:34em;
+  }
+  .home-grid{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:18px 20px 6px;
+    background:var(--cream);
+  }
+  .home-card{
+    background:var(--cream-card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:16px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    cursor:pointer;
+    text-align:left;
+    width:100%;
+    font-family:'Mulish',sans-serif;
+  }
+  .home-card:active{ opacity:0.85; }
+  .home-card .icon-wrap{
+    flex:0 0 46px;
+    width:46px; height:46px;
+    border-radius:12px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .home-card .icon-wrap svg{ width:22px; height:22px; }
+  .home-card .body{ flex:1; min-width:0; }
+  .home-card h3{
+    font-size:16.5px;
+    color:var(--ink);
+    margin-bottom:3px;
+  }
+  .home-card .blurb{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.45;
+  }
+  .home-card .chevron{
+    flex:0 0 auto;
+    color:#c3cad0;
+    font-size:20px;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--ink);
+    color:#e7e9eb;
+    padding:34px 20px calc(env(safe-area-inset-bottom) + 34px);
+    margin-top:30px;
+  }
+  footer .display{ color:#faf8f3; font-size:20px; margin-bottom:10px; }
+  footer p{ font-size:13.5px; color:#c9cdd2; line-height:1.6; margin:0 0 14px; }
+  footer .contact-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:14px;
+    padding:14px 16px;
+  }
+  footer .contact-name{ font-weight:800; font-size:14.5px; color:#fff; }
+  footer .contact-role{ font-size:12px; color:var(--accent); font-weight:700; letter-spacing:0.02em; margin-bottom:8px; }
+  footer a{ color:#fff; text-decoration:none; font-weight:700; font-size:13.5px; display:block; margin-top:4px; }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="eyebrow">EOS &middot; Corporate Hospitality</div>
+  <h1>Hospitality Guide</h1>
+  <p class="sub">A guide for contracts managers: inspiration for memorable client engagement in 2027, to help build stronger personal relationships.</p>
+</header>
+
+<nav class="section-nav" id="sectionNav"></nav>
+
+<main>
+  <div class="toolbar" id="toolbar">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="text" placeholder="Search&hellip;" autocomplete="off">
+    </div>
+    <select id="monthSelect" class="month-select"></select>
+    <select id="locationSelect" class="month-select"></select>
+    <div class="chips" id="chipRow"></div>
+  </div>
+  <p class="section-intro" id="sectionIntro"></p>
+  <div id="results"></div>
+</main>
+
+<footer>
+  <div class="display">Planning something?</div>
+  <p>Everything here is a starting point: availability, pricing and current operating details change fast, especially for headline fixtures and small restaurants. Speak to Maria for more ideas or bespoke event alternatives.</p>
+  <div class="contact-card">
+    <div class="contact-name">Maria Heron-Singh</div>
+    <div class="contact-role">Event Manager, EOS</div>
+    <a href="mailto:Maria.HeronSingh@overbury.com">Maria.HeronSingh@overbury.com</a>
+  </div>
+</footer>
+
+<script>
+const CUTOFF = new Date().toISOString().slice(0,10); // always "today", so only future dates are shown
+
+/* ============ ICONS ============ */
+const ICONS = {
+  cricket:    { color:'#2fa0c6', extra:'<line x1="7" y1="20" x2="13" y2="9" stroke-width="3.4"/><line x1="13" y1="9" x2="15" y2="5" stroke-width="1.6"/><circle cx="18.5" cy="17" r="2.2"/>' },
+  rugby:      { color:'#b5651d', path:'M4 12c0-4 3.5-8 8-8s8 4 8 8-3.5 8-8 8-8-4-8-8zm3-3l10 6M17 9L7 15' },
+  football:   { color:'#3f7d3a', path:'M12 7.6l3.4 2.5-1.3 4H9.9l-1.3-4z M12 7.6V4.6 M15.4 10.1l2.7-1.9 M14.1 14.1l1.5 3.5 M9.9 14.1l-1.5 3.5 M8.6 10.1L5.9 8.2', extra:'<circle cx="12" cy="12" r="8.6"/>' },
+  tennis:     { color:'#c9a227', path:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM4.5 8.5c2 1.5 3 3.5 3 5.5m9-5.5c-2 1.5-3 3.5-3 5.5' },
+  golf:       { color:'#2e6b4f', path:'M6 21h6M9 21V9m0-6l8 3.5L9 10' },
+  motorsport: { color:'#b12b2b', path:'M4 16l1.5-5A3 3 0 0 1 8.4 9h7.2a3 3 0 0 1 2.9 2l1.5 5M5 16h14v3H5zM8 19v1M16 19v1M7 12h10' },
+  racing:     { color:'#7a4fb5', path:'M4 18c2-6 4-11 8-11s6 5 8 11M4 18h16M9 18v0M15 18v0' },
+  music:      { color:'#c76b2f', path:'M9 18V5l11-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm11-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' },
+  comedy:     { color:'#d1993b', path:'M9 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 12a8 8 0 0 1 16 0c0 4-2 7-8 9-6-2-8-5-8-9z' },
+  theatre:    { color:'#8a3fa8', path:'M4 5c2 2 5 3 8 3s6-1 8-3M4 5v6c0 6 3 10 8 10s8-4 8-10V5M4 5c2-2 5-3 8-3s6 1 8 3' },
+  shooting:   { color:'#5b6b52', path:'M12 2v4m0 12v4M2 12h4m12 0h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' },
+  cycling:    { color:'#2b7fb1', path:'M5 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm14 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM5 15l4-7h4l3 5m-7-5H8m4 0l3 5h4' },
+  pgolf:      { color:'#2e6b4f', path:'M6 21h6M9 21V9m0-6l8 3.5L9 10' },
+  dragonboat: { color:'#1c7896', path:'M3 15c2 2 5 3 9 3s7-1 9-3M6 15V9l3-3h6l3 3v6M9 9h6' },
+  challenge:  { color:'#8a5a2b', path:'M3 20l6-11 4 6 2-3 6 8H3z' },
+  trophy:     { color:'#7a4fb5', extra:'<polyline points="8,4 8,10 9,13 12,14 15,13 16,10 16,4 8,4" stroke-width="1.6" fill="none"/><polyline points="8,5.5 5,5.5 5,9 8,9" stroke-width="1.6" fill="none"/><polyline points="16,5.5 19,5.5 19,9 16,9" stroke-width="1.6" fill="none"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="9" y1="19" x2="15" y2="19"/><polyline points="9,19 9,17.5 15,17.5 15,19" stroke-width="1.6" fill="none"/>' },
+  sailing:    { color:'#2b7fb1', path:'M12 3v13 M12 5l5.5 8.5 M17.5 13.5H8 M8 13.5L12 5 M3 19l1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4' },
+  rafting:    { color:'#1c7896', path:'M5 9l2-2h10l2 2-2 2H7z M2 15l1.5-1.7 1.5 1.7 1.5-1.7 1.5 1.7 1.5-1.7 1.5 1.7 1.5-1.7 1.5 1.7 1.5-1.7 1.5 1.7 1.5-1.7 1.5 1.7 1-1.7 M2 19.5l1.7-1.8 1.7 1.8 1.7-1.8 1.7 1.8 1.7-1.8 1.7 1.8 1.7-1.8 1.7 1.8 1.7-1.8 1.7 1.8 1.7-1.8 1-1.8' },
+  eating:     { color:'#b5651d', path:'M6 2v8m0 0v10m0-10H4m2 0h2M6 2v6M17 2c-2 0-3 2-3 5s1 5 3 5v8' },
+  flightclub: { color:'#b12b2b', path:'M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21 7.5 13.5 2 9h7z' },
+  bowling:    { color:'#2b7fb1', path:'M12 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 14a5 5 0 1 0 0 10 5 5 0 0 0 0-10z' },
+  clays:      { color:'#8a5a2b', path:'M4 4l16 16M20 4L4 20M12 4v16M4 12h16' },
+  art:        { color:'#8a3fa8', path:'M12 3a9 9 0 1 0 3 17.5c1-.3 1-1.7 0-2-1-.3-1.5-1-1-2 .4-.8 1.5-.8 2.3-1.2A4 4 0 0 0 19 12a9 9 0 0 0-7-9z' }
+};
+
+function iconSvg(key, size){
+  const c = ICONS[key];
+  size = size || 15;
+  const pathEl = c.path ? `<path d="${c.path}"/>` : '';
+  const extraEl = c.extra || '';
+  return `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="${c.color}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${pathEl}${extraEl}</svg>`;
+}
+
+/* ============ SECTIONS CONFIG ============ */
+const SECTIONS = [
+  { key:'home', label:'Home' },
+  { key:'spectator', label:'Spectator Sports' },
+  { key:'sports', label:'Sports' },
+  { key:'entertainment', label:'Entertainment' },
+  { key:'eating', label:'Eating Out' },
+  { key:'socials', label:'Project Socials' }
+];
+
+const HOME_CARDS = [
+  { key:'spectator', title:'Spectator Sports', blurb:'Cricket, rugby, football, tennis, golf, racing and motorsport fixtures worth building a client day around.', icon:'cricket' },
+  { key:'sports', title:'Sports', blurb:'Shooting, cycling, golf, dragon boat racing and challenge days for a more active, hands-on engagement.', icon:'pgolf' },
+  { key:'entertainment', title:'Entertainment', blurb:'Music, comedy and theatre dates across London\'s best arenas and venues.', icon:'music' },
+  { key:'eating', title:'Eating Out', blurb:'Breakfast, lunch, dinner, chef\'s tables and al fresco spots across the city, organised by area.', icon:'eating' },
+  { key:'socials', title:'Project Socials', blurb:'Bars, games, workshops and food experiences for a project team night out.', icon:'flightclub' }
+];
+
+const SPECTATOR_CATS = [
+  { key:'cricket', label:'Cricket' },
+  { key:'rugby', label:'Rugby' },
+  { key:'football', label:'Football' },
+  { key:'tennis', label:'Tennis' },
+  { key:'golf', label:'Golf' },
+  { key:'racing', label:'Racing' },
+  { key:'motorsport', label:'Motorsport' }
+];
+
+const ENTERTAINMENT_CATS = [
+  { key:'music', label:'Music' },
+  { key:'comedy', label:'Comedy' },
+  { key:'theatre', label:'Theatre' }
+];
+
+const SECTION_INTRO = {
+  home: '',
+  spectator: 'Upcoming confirmed fixtures. Hospitality packages for headline fixtures (Ashes, Six Nations, Wimbledon, Royal Ascot) sell out fastest, so flag interest to Maria early.',
+  sports: 'Participatory days for smaller groups: active alternatives to watching from a box.',
+  entertainment: 'Upcoming confirmed dates, mostly at the O2 Arena, Wembley Arena, Royal Albert Hall and the London Palladium.',
+  eating: 'Breakfast, Lunch & Dinner, Chef\'s Table & Private Dining, and Al Fresco, each organised by area.',
+  socials: ''
+};
+
+/* ============ DATED DATA: SPECTATOR SPORTS ============ */
+const SPECTATOR = [
+{start:'2026-11-06', ds:'6 – 8 Nov', d:'06', mo:'NOV', cat:'rugby', title:'England v Australia', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship opener at Twickenham.'},
+{start:'2026-11-13', ds:'13 – 15 Nov', d:'13', mo:'NOV', cat:'rugby', title:'England v Japan', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship, round two.'},
+{start:'2026-11-21', ds:'21 Nov', d:'21', mo:'NOV', cat:'rugby', title:'England v New Zealand', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship: England host the All Blacks.'},
+{start:'2026-11-27', ds:'27 – 29 Nov', d:'27', mo:'NOV', cat:'rugby', title:'Autumn Nations Championship: Finals Weekend', venue:'Allianz Stadium, Twickenham', note:'Placement finals across three days, closing out the tournament at Twickenham.', subfixtures:[
+  {date:'2026-11-27', label:'6th v 6th & 3rd v 3rd'},
+  {date:'2026-11-28', label:'5th v 5th & 2nd v 2nd'},
+  {date:'2026-11-29', label:'4th v 4th & 1st v 1st'}
+]},
+{start:'2026-12-18', ds:'18 – 19 Dec', d:'18', mo:'DEC', cat:'racing', title:'Howden Racing Weekend', venue:'Ascot Racecourse, Berkshire', note:'Christmas jump racing fixture.'},
+{start:'2026-12-26', ds:'26 – 27 Dec', d:'26', mo:'DEC', cat:'racing', title:'Ladbrokes Christmas Festival', venue:'Kempton Park Racecourse, Surrey', note:'Boxing Day racing tradition, headlined by the King George VI Chase.'},
+{start:'2027-01-01', ds:'1 Jan', d:'01', mo:'JAN', cat:'racing', title:"New Year's Day Racing", venue:'Cheltenham Racecourse, Gloucestershire', note:'A traditional first fixture of the year.'},
+{start:'2027-01-15', ds:'TBC', d:'TBC', mo:'', cat:'racing', title:'Festival Trials Day', venue:'Cheltenham Racecourse, Gloucestershire', note:'Key formbook fixture ahead of the Cheltenham Festival.'},
+{start:'2027-02-14', ds:'14 Feb', d:'14', mo:'FEB', cat:'rugby', title:'England v France', venue:'Allianz Stadium, Twickenham', note:'Marquee Six Nations fixture at Twickenham.'},
+{start:'2027-02-20', ds:'20 Feb', d:'20', mo:'FEB', cat:'rugby', title:'England v Italy', venue:'Allianz Stadium, Twickenham', note:'Six Nations round four at Twickenham.'},
+{start:'2027-03-12', ds:'12 – 14 Mar', d:'12', mo:'MAR', cat:'racing', title:'Cheltenham Festival', venue:'Cheltenham Racecourse, Gloucestershire', note:'Jump racing\'s biggest week, with the Gold Cup as the highlight.'},
+{start:'2027-03-13', ds:'13 Mar', d:'13', mo:'MAR', cat:'rugby', title:'England v Scotland: Calcutta Cup', venue:'Allianz Stadium, Twickenham', note:'Six Nations finale at Twickenham.'},
+{start:'2027-03-21', ds:'21 Mar', d:'21', mo:'MAR', cat:'football', title:'Carabao Cup Final', venue:'Wembley Stadium, London', note:'First domestic cup final of the season.'},
+{start:'2027-04-08', ds:'8 – 10 Apr', d:'08', mo:'APR', cat:'racing', title:'The Grand National', venue:'Aintree Racecourse, Merseyside', note:'The world\'s most famous steeplechase.'},
+{start:'2027-04-24', ds:'24 & 25 Apr', d:'24', mo:'APR', cat:'football', title:'FA Cup Semi Finals', venue:'Wembley Stadium, London', note:'Both semi-finals played at Wembley across the weekend.'},
+{start:'2027-05-22', ds:'22 May', d:'22', mo:'MAY', cat:'football', title:'FA Cup Final', venue:'Wembley Stadium, London', note:'The season\'s showpiece domestic final.'},
+{start:'2027-05-28', ds:'28 May – 1 Jun', d:'28', mo:'MAY', cat:'cricket', title:'England v Bangladesh: Rothesay Test', venue:"Lord's Cricket Ground, London", note:'Season-opening Test at Lord\'s.'},
+{start:'2027-06-04', ds:'4 – 6 Jun', d:'04', mo:'JUN', cat:'racing', title:'Chestertons Polo in the Park', venue:'Hurlingham Park, London', note:'A relaxed, garden-party take on corporate hospitality.'},
+{start:'2027-06-07', ds:'7 – 13 Jun', d:'07', mo:'JUN', cat:'tennis', title:'HSBC Championships: WTA 500', venue:"Queen's Club, West Kensington", note:'Grass-court build-up to Wimbledon, women\'s draw.'},
+{start:'2027-06-14', ds:'14 – 20 Jun', d:'14', mo:'JUN', cat:'tennis', title:'HSBC Championships: ATP 500', venue:"Queen's Club, West Kensington", note:'Grass-court build-up to Wimbledon, men\'s draw.'},
+{start:'2027-06-15', ds:'15 – 19 Jun', d:'15', mo:'JUN', cat:'racing', title:'Royal Ascot', venue:'Ascot Racecourse, Berkshire', note:'The pinnacle of the British racing and social calendar.'},
+{start:'2027-06-18', ds:'18 – 22 Jun', d:'18', mo:'JUN', cat:'cricket', title:'The Ashes: First Test', venue:'Trent Bridge, Nottingham', note:'England v Australia: the Ashes returns.'},
+{start:'2027-06-19', ds:'19 Jun', d:'19', mo:'JUN', cat:'rugby', title:'Gallagher Premiership Final', venue:'Allianz Stadium, Twickenham', note:'English club rugby\'s season finale.'},
+{start:'2027-06-28', ds:'28 Jun – 11 Jul', d:'28', mo:'JUN', cat:'tennis', title:'Wimbledon Championships', venue:"All England Lawn Tennis & Croquet Club, Wimbledon", note:'Book Centre Court hospitality months ahead: it\'s always the first to sell out.'},
+{start:'2027-06-30', ds:'30 Jun – 4 Jul', d:'30', mo:'JUN', cat:'cricket', title:"The Ashes: Second Test", venue:"Lord's Cricket Ground, London", note:'Ashes Test at the home of cricket.'},
+{start:'2027-07-02', ds:'2 – 4 Jul', d:'02', mo:'JUL', cat:'motorsport', title:'British Grand Prix', venue:'Silverstone, Northamptonshire', note:'F1\'s home race, once again the standout summer weekend.'},
+{start:'2027-07-08', ds:'8 – 12 Jul', d:'08', mo:'JUL', cat:'cricket', title:'The Ashes: Third Test', venue:'Edgbaston, Birmingham', note:'Ashes series continues.'},
+{start:'2027-07-21', ds:'21 – 25 Jul', d:'21', mo:'JUL', cat:'cricket', title:'The Ashes: Fourth Test', venue:'Utilita Bowl, Southampton', note:'Ashes series continues.'},
+{start:'2027-07-24', ds:'24 – 25 Jul', d:'24', mo:'JUL', cat:'racing', title:'King George Weekend', venue:'Ascot Racecourse, Berkshire', note:'Midsummer Group 1 racing weekend.'},
+{start:'2027-07-29', ds:'29 Jul – 2 Aug', d:'29', mo:'JUL', cat:'cricket', title:'The Ashes: Fifth Test', venue:'The Kia Oval, London', note:'Series decider at The Oval.'},
+];
+
+/* ============ DATED DATA: ENTERTAINMENT ============ */
+const ENTERTAINMENT = [
+{start:'2026-11-02', ds:'2 Nov', d:'02', mo:'NOV', cat:'music', title:'J. Cole: The Fall-Off Tour', venue:'The O2 Arena, London', note:'Arena hip-hop, one night only.', url:'https://www.theo2.co.uk/events/detail/jcole-2026'},
+{start:'2026-11-13', ds:'13 – 17 Nov', d:'13', mo:'NOV', cat:'music', title:'Noah Kahan: The Great Divide', venue:'The O2 Arena, London', note:'Multi-night run, easy to slot around client schedules.', url:'https://www.theo2.co.uk/events/detail/noah-kahan-2026'},
+{start:'2026-11-20', ds:'20 Nov', d:'20', mo:'NOV', cat:'music', title:'Myles Smith', venue:'The O2 Arena, London', note:'Rising UK singer-songwriter.', url:'https://www.theo2.co.uk/events/detail/myles-smith'},
+{start:'2026-11-24', ds:'24 – 25 Nov', d:'24', mo:'NOV', cat:'music', title:'Jungle', venue:'The O2 Arena, London', note:'Live band and visuals, a good client night out.', url:'https://www.theo2.co.uk/events/detail/jungle-2026'},
+{start:'2026-11-29', ds:'29 Nov', d:'29', mo:'NOV', cat:'music', title:'The Lord of the Rings in Concert', venue:'The O2 Arena, London', note:'Full film screening with a live orchestra.', url:'https://www.lordoftheringsinconcert.com/'},
+{start:'2026-12-11', ds:'11 – 12 Dec', d:'11', mo:'DEC', cat:'music', title:'Pete Tong: Ibiza Classics', venue:'The O2 Arena, London', note:'Orchestral dance classics, high-energy festive option.', url:'https://www.theo2.co.uk/events/detail/pete-tong-presents-ibiza-classics-2026'},
+{start:'2026-12-19', ds:'19 – 24 Dec', d:'19', mo:'DEC', cat:'music', title:'Carols at the Royal Albert Hall', venue:'Royal Albert Hall, London', note:'A more traditional, seated Christmas outing.', url:'https://www.royalalberthall.com/tickets/events/2026/carols-at-the-royal-albert-hall'},
+{start:'2026-12-24', ds:'24 Dec – 3 Jan', d:'24', mo:'DEC', cat:'theatre', title:'Disney On Ice: Discover the Magic', venue:'The O2 Arena, London', note:'Family-friendly festive show, good for a wider guest list.', url:'https://www.theo2.co.uk/events/detail/disney-on-ice-presents-discover-the-magic'},
+{start:'2026-12-30', ds:'30 Dec', d:'30', mo:'DEC', cat:'music', title:'Casino Royale in Concert', venue:'Royal Albert Hall, London', note:'Film with live orchestral score.', url:'https://www.royalalberthall.com/tickets/events/2026/casino-royale-in-concert'},
+{start:'2026-12-31', ds:'31 Dec', d:'31', mo:'DEC', cat:'music', title:'La La Land in Concert', venue:'Royal Albert Hall, London', note:'New Year\'s Eve orchestral screening.', url:'https://www.royalalberthall.com/tickets/events/2026/la-la-land-in-concert'},
+{start:'2027-01-13', ds:'13 Jan – 28 Feb', d:'13', mo:'JAN', cat:'theatre', title:'Cirque du Soleil: KURIOS', venue:'Royal Albert Hall, London', note:'Steampunk-themed acrobatic spectacle, reliably impressive for client groups.', url:'https://www.royalalberthall.com/about-the-hall/building-and-history/our-history/cirque-du-soleil-at-the-royal-albert-hall/'},
+{start:'2027-01-16', ds:'16 Jan', d:'16', mo:'JAN', cat:'music', title:'aespa', venue:'The O2 Arena, London', note:'K-pop arena show.', url:'https://www.theo2.co.uk/events/detail/aespa-2027'},
+{start:'2027-01-28', ds:'28 Jan', d:'28', mo:'JAN', cat:'music', title:'Two Door Cinema Club: 15th Anniversary Tour', venue:'The O2 Arena, London', note:'Indie-rock anniversary show.', url:'https://www.theo2.co.uk/events/detail/two-door-cinema-club-2027'},
+{start:'2027-01-30', ds:'30 Jan', d:'30', mo:'JAN', cat:'comedy', title:'Jack Whitehall: Bad Influence', venue:'The O2 Arena, London', note:'Big-arena stand-up, broadly likeable for mixed groups.', url:'https://www.theo2.co.uk/events/detail/jack-whitehall-bad-influence'},
+{start:'2027-02-05', ds:'5 Feb', d:'05', mo:'FEB', cat:'music', title:'Nothing But Thieves: The Stray Dogs Tour', venue:'The O2 Arena, London', note:'UK rock band, strong arena show.', url:'https://www.theo2.co.uk/events/detail/nothing-but-thieves-2027'},
+{start:'2027-02-27', ds:'27 Feb', d:'27', mo:'FEB', cat:'music', title:'Brit Awards', venue:'Co-Op Live, Manchester', note:'If tickets or hospitality can be sourced, a genuine standout night.', url:'https://www.cooplive.com/events/the-brit-awards-2027-hmvz'},
+{start:'2027-03-12', ds:'12 – 14 Mar', d:'12', mo:'MAR', cat:'music', title:'Country to Country', venue:'The O2 Arena, London', note:'UK\'s biggest country music festival weekend.', url:'https://www.theo2.co.uk/events/detail/c2c-country-to-country-2027'},
+{start:'2027-03-16', ds:'16 – 21 Mar', d:'16', mo:'MAR', cat:'music', title:'RUSH', venue:'The O2 Arena, London', note:'Multi-night residency.', url:'https://www.theo2.co.uk/events/detail/rush'},
+{start:'2027-04-16', ds:'16 – 17 Apr', d:'16', mo:'APR', cat:'comedy', title:'Romesh Ranganathan: Will Change Your Life', venue:'The O2 Arena, London', note:'Popular UK comedian, safe crowd-pleaser.', url:'https://www.theo2.co.uk/events/detail/romesh-ranganathan-will-change-your-life'},
+{start:'2027-04-30', ds:'30 Apr – 4 May', d:'30', mo:'APR', cat:'music', title:'Gracie Abrams: The Look at My Life Tour', venue:'The O2 Arena, London', note:'In-demand young artist, expect quick sell-through.', url:'https://www.theo2.co.uk/events/detail/gracie-abrams-2027'},
+{start:'2027-04-30', ds:'5 Apr – 10 May', d:'05', mo:'APR', cat:'music', title:'Olivia Rodrigo: The Unraveled Tour', venue:'The O2 Arena, London', note:'Extended residency, one of the year\'s hottest arena tickets.', url:'https://www.theo2.co.uk/events/detail/olivia-rodrigo-2027'},
+{start:'2026-11-07', ds:'7 – 8 Nov', d:'07', mo:'NOV', cat:'theatre', title:'Gladiators Live Tour 2026', venue:'OVO Arena Wembley, London', note:'Arena stunt spectacular based on the TV show, family-friendly and high energy.', url:'https://www.ovoarena.co.uk/events/detail/gladiators-live-tour-2026'},
+{start:'2026-12-04', ds:'4 Dec', d:'04', mo:'DEC', cat:'music', title:'Razorlight: \'America\' 20th Anniversary Tour', venue:'OVO Arena Wembley, London', note:'Homecoming show marking 20 years of the band\'s breakthrough album.', url:'https://www.ovoarena.co.uk/events/detail/razorlight'},
+{start:'2026-12-05', ds:'5 Dec', d:'05', mo:'DEC', cat:'music', title:'Placebo: 30th Anniversary Tour', venue:'OVO Arena Wembley, London', note:'Alternative rock icons revisiting their first two albums in full.', url:'https://www.ovoarena.co.uk/events/detail/placebo'},
+{start:'2027-02-13', ds:'13 Feb', d:'13', mo:'FEB', cat:'music', title:'Scouting For Girls', venue:'OVO Arena Wembley, London', note:'20th-anniversary homecoming show, with The Hoosiers supporting.', url:'https://www.ovoarena.co.uk/events/detail/scouting-for-girls'},
+{start:'2027-10-27', ds:'27 Oct – 6 Nov', d:'27', mo:'OCT', cat:'comedy', title:'Alan Carr: Have I Said Too Much?', venue:'London Palladium, London', note:'Multi-night run at the Palladium, broadly likeable for mixed client groups.', url:'https://alancarr.net/live/'},
+{start:'2027-05-12', ds:'12 May', d:'12', mo:'MAY', cat:'comedy', title:'John Bishop: Let\'s Go Round Again', venue:'Royal Albert Hall, London', note:'Warm, crowd-pleasing stand-up in a grander seated setting than a typical arena show.', url:'https://www.johnbishoponline.com/'},
+];
+
+/* ============ STATIC DATA: SPORTS (participatory) ============ */
+const SPORTS_GROUPS = [
+  { key:'shooting', label:'Shooting', icon:'shooting', items:[
+    { title:'Clay Pigeon Shooting Day', venue:'Squerryes Farm Shoot Lodge, Westerham, Kent', note:'Guided clay shooting with instructors for all abilities, followed by lunch in the on-site lodge. A relaxed but active alternative to a hospitality box, and works well for smaller groups of 8–20.' }
+  ]},
+  { key:'cycling', label:'Cycle Days', icon:'cycling', items:[
+    { title:'Surrey Hills Ride & Wine Tasting', venue:'Surrey Hills, finishing at Denbies Wine Estate, Dorking', note:'A scenic road or gravel route through the Surrey Hills AONB, ending with a guided tasting at England\'s largest vineyard. Bikes can be hired locally; route length adjustable for mixed abilities.' }
+  ]},
+  { key:'pgolf', label:'Golf', icon:'pgolf', items:[
+    { title:'Corporate Golf Day', venue:'Suggested: Wentworth Club, The Belfry, or St George\'s Hill, Surrey', note:'A structured Am-Am or Texas Scramble format works well for mixed-ability groups. Book well ahead for weekend slots at marquee clubs, or consider a weekday for easier availability.' }
+  ]},
+  { key:'dragonboat', label:'Dragon Boat', icon:'dragonboat', items:[
+    { title:'Dragon Boat Racing', venue:'Suggested: Royal Docks, London, or Henley-on-Thames', note:'Team-based paddling races, usually run as a round-robin between company teams. High energy, minimal skill barrier, and a strong photo opportunity.' }
+  ]},
+  { key:'challenge', label:'Challenge Days', icon:'challenge', items:[
+    { title:'Yorkshire Three Peaks Challenge', venue:'Pen-y-ghent, Whernside & Ingleborough, Yorkshire Dales', note:'A single-day, 24-mile circular walk taking in all three peaks, usually completed within 12 hours. More accessible than the National Three Peaks since it\'s one region with no overnight driving between mountains. Good for team-building and charity tie-ins.' }
+  ]},
+  { key:'sailing', label:'Sailing', icon:'sailing', items:[
+    { title:'Sailing Day on the Solent', venue:'The Solent, between Hampshire and the Isle of Wight', note:'A day of yacht racing or guided cruising on one of the UK\'s best-known sailing waters, with a skipper and crew provided. No experience needed, and races can be run head-to-head between company teams for a competitive edge.', url:'https://solent-events.co.uk/corporate-sailing-days/' }
+  ]},
+  { key:'rafting', label:'White Water Rafting', icon:'rafting', items:[
+    { title:'White Water Rafting', venue:'Lee Valley White Water Centre, Waltham Cross, Hertfordshire', note:'The London 2012 Olympic rapids, about 30 minutes from central London. Nine-person rafts, roughly two hours including safety briefing, with on-site meeting rooms and catering if you want to combine it with a working session.', url:'https://www.gowhitewater.co.uk/' }
+  ]}
+];
+
+/* ============ STATIC DATA: EATING OUT ============ */
+const EATING_ITEMS = [
+{title:'City Social', venue:'Tower 42, City of London', area:'city', types:['lunchdinner','chefstable'], note:'Jason Atherton\'s Michelin-starred restaurant on the 24th floor, with an intimate chef\'s table for up to 10 and sweeping views over the City skyline.', url:'https://www.citysocial-london.com/'},
+{title:'Ibai', venue:'City of London, near St Paul\'s', area:'city', types:['lunchdinner'], note:'Basque-style grill and steakhouse in a soaring former factory space, built around a well-stocked wine cellar and open kitchen.', url:'https://ibai.london/'},
+{title:'Restaurant Gordon Ramsay High', venue:'22 Bishopsgate', area:'city', types:['lunchdinner','chefstable'], note:'Michelin-starred, 12-seat chef\'s table on the 60th floor, billed as the tallest restaurant in Europe. Exclusive hire available for the full space.', url:'https://www.gordonramsayrestaurants.com/high/bishopsgate/about'},
+{title:'Kitchen Table', venue:'Fitzrovia', area:'westend', types:['chefstable'], note:'A nineteen-seat horseshoe counter, two Michelin stars, tasting menu built around the day\'s best produce. Books up months in advance.', url:'https://kitchentablelondon.co.uk/'},
+{title:'Hélène Darroze at The Connaught', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Chef\'s table overlooking the kitchen, built for a bit of theatre and well suited to a milestone client dinner.', url:'https://www.the-connaught.co.uk/restaurants-bars/helene-darroze-at-the-connaught/'},
+{title:'The Devonshire', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Old-school pub and grill from Oisín Rogers and Ashley Palmer-Watts, with an upstairs dining room and private rooms. One of the hardest bookings in London.', url:'https://www.devonshiresoho.co.uk/'},
+{title:'The Lore of the Land', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Guy Ritchie\'s three-floor pub and dining room, known for its Sunday roasts and a private dining room for smaller groups.', url:'https://loreoftheland.com/'},
+{title:'Ikoyi', venue:'The Strand', area:'midtown', types:['lunchdinner','chefstable'], note:'Two-Michelin-starred West African-inspired tasting menu from Jeremy Chan, with a private dining room and full restaurant buyout available.', url:'https://ikoyilondon.com/'},
+{title:'Kioku by Endo', venue:'The OWO, Whitehall', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Michelin-starred Japanese dining on the 6th floor, with a chef\'s table for 8 and a turreted private dining room for up to 12, plus panoramic views over Whitehall.', url:'https://kiokubyendo.com/'},
+{title:'German Gymnasium', venue:'King\'s Cross', area:'east', types:['breakfast','lunchdinner','chefstable'], note:'Grade II-listed former Olympic gymnasium turned grand café and restaurant, with a private room for business lunches and receptions.', url:'https://germangymnasium.com/'},
+{title:'Decimo at The Standard', venue:'King\'s Cross', area:'east', types:['lunchdinner','chefstable'], note:'Peter Sanchez-Iglesias\' Mexican-Spanish restaurant on the 10th floor of The Standard, with a semi-private dining room and skyline views.', url:'https://www.decimo.london/'},
+{title:'Counter 71', venue:'Shoreditch', area:'east', types:['chefstable'], note:'A sixteen-seat counter in a converted pub, with a set tasting menu prepared and plated in front of guests. Cocktail bar downstairs for a pre-dinner drink.', url:'https://www.counter71.co.uk/'},
+{title:'Llama Inn', venue:'Shoreditch', area:'east', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Peruvian rooftop restaurant on top of The Hoxton, with private dining for up to 65 and a sunlit terrace looking out over East London.', url:'https://www.llamainnlondon.com/'},
+{title:'Marlowe', venue:'Shoreditch', area:'east', types:['breakfast','lunchdinner','chefstable'], note:'Bar and restaurant at Montcalm East with flexible private function rooms, well suited to a client lunch or small conference dinner.', url:'https://montcalmcollection.com/montcalm-east/restaurant/marlowe/'},
+{title:'Trinity', venue:'Clapham Old Town', area:'southbank', types:['lunchdinner','chefstable'], note:'Michelin-starred, with a dining room that looks straight into the open kitchen. A more relaxed, neighbourhood take on fine dining.', url:'https://trinityrestaurant.co.uk/'},
+{title:'Wagtail', venue:'London Bridge', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'Ninth-floor rooftop restaurant with two private terraces and The Nest, a ten-seat private dining room suspended above the City skyline.', url:'https://etmcollection.co.uk/venue/wagtail-rooftop-bar-restaurant/'},
+{title:'Seabird', venue:'Southwark', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'Fourteenth-floor rooftop seafood restaurant atop The Hoxton, Southwark, with London\'s longest oyster list and space for larger group and private hire.', url:'https://seabirdlondon.com/'},
+{title:'Restaurant Story', venue:'Bermondsey, near London Bridge', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'Tom Sellers\' two-Michelin-starred tasting menu, with a top-floor private dining room and terrace added in a recent refurbishment.', url:'https://restaurantstory.co.uk/'},
+{title:'Restaurant Gordon Ramsay: Inspiration Table', venue:'Chelsea', area:'south_ken', types:['chefstable'], note:'Three-star tasting menu created specifically for the table, for up to four guests: the top end of what\'s available in London.', url:'https://www.gordonramsayrestaurants.com/restaurant-gordon-ramsay/'},
+{title:'The Ledbury', venue:'Notting Hill', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Brett Graham\'s three-Michelin-starred restaurant. Book well in advance for a genuine occasion.', url:'https://www.theledbury.com/'},
+{title:'Scott\'s', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Storied Mayfair seafood institution with two private rooms, including the Renoir Room, for business lunches and client entertaining.', url:'https://scotts-mayfair.com/'},
+{title:'MA/NA', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'New luxury Japanese dining and cocktail destination on Upper Grosvenor Street, moving from refined tasting menu into a late-night bar.', url:'https://www.mana-mayfair.com/'},
+{title:'Lucky Cat', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Gordon Ramsay\'s Asian-inspired grill and raw bar on Grosvenor Square, with a chef\'s table experience available for lunch and dinner.', url:'https://www.gordonramsayrestaurants.com/lucky-cat/'},
+{title:'Bonheur by Matt Abé', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Two Michelin stars within months of opening, in the former Le Gavroche space on Upper Brook Street. A genuine occasion booking.', url:'https://www.bonheurbymattabe.com/'},
+{title:'Dinner by Heston Blumenthal', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner','chefstable'], note:'Two-Michelin-starred historic-British tasting menu at the Mandarin Oriental, with a Tudor-inspired private dining room for up to 12. Heston has announced this restaurant will close in early 2027, so worth booking sooner rather than later.', url:'https://www.mandarinoriental.com/en/london/hyde-park/dine/dinner-by-heston-blumenthal'},
+{title:'L\'Epicerie', venue:'Claridge\'s, Mayfair', area:'mayfair_westminster', types:['chefstable'], note:'A fourteen-seat chef\'s table set inside Claridge\'s working kitchens, used for private dining, wine dinners and interactive masterclasses.', url:'https://www.claridges.co.uk/restaurants-bars/lepicerie/'},
+{title:'Los Mochis', venue:'Broadgate Circle', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'Mexican and Japanese fusion, open all day with private dining spaces, a bar and a rooftop terrace above Broadgate Circle.', url:'https://www.losmochis.co.uk/lc/london-city'},
+{title:'KöD', venue:'Soho (also Devonshire Square)', area:'city', types:['lunchdinner','chefstable'], note:'Danish steakhouse open for lunch and dinner, with private dining spaces. A second branch trades in Devonshire Square, in the City.', url:'https://restaurantkod.co.uk/'},
+{title:'Marceline', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner','chefstable','alfresco'], note:'Paris- and New York-inspired brasserie, open all day with a bar, private dining spaces and a waterfront terrace.', url:'https://marceline.london/'},
+{title:'Kolamba', venue:'Shoreditch (also Soho)', area:'east', types:['lunchdinner','chefstable'], note:'Sri Lankan restaurant open for lunch and dinner, with a central bar and private dining spaces. A sister branch trades in Soho.', url:'https://www.kolamba.co.uk/kolamba-east'},
+{title:'Ambassadors Clubhouse', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'Michelin-starred Punjabi restaurant and bar from the team behind Gymkhana, with three private dining rooms and a heated outdoor Verandah for semi-exclusive gatherings.', url:'https://ambassadorsclubhouse.com/london/'},
+{title:'Fogo de Chão (formerly Fazenda)', venue:'Liverpool Street', area:'city', types:['lunchdinner','chefstable'], note:'Brazilian churrasco steakhouse near Liverpool Street, rebranded from Fazenda to Fogo de Chão. Three private dining spaces and a standalone bar, Bar Fogo.', url:'https://fogodechao.uk/location/london-bishopsgate/'},
+{title:'AngloThai', venue:'Marylebone', area:'notting_hill', types:['lunchdinner'], note:'Modern restaurant fusing Thai and British flavours with seasonal British ingredients, paired with a biodynamic European wine list.', url:'https://anglothai.co.uk/'},
+{title:'Lima', venue:'Shoreditch, Sun Street Hotel', area:'east', types:['lunchdinner'], note:'Lima\'s second London site, offering Peruvian cuisine with a twist inside the Sun Street Hotel.', url:'https://sunstreethotel.com/lima-shoreditch-restaurant'},
+{title:'Claro', venue:'St James\'s', area:'westend', types:['lunchdinner','chefstable'], note:'Chef Ran Shmueli\'s Eastern Mediterranean restaurant, with private dining spaces for both intimate and larger groups.', url:'https://www.claro-london.com/'},
+{title:'Hoppers', venue:'Shoreditch, The Tea Building', area:'east', types:['lunchdinner','chefstable','alfresco'], note:'A new branch of the well-loved Sri Lankan restaurant, inside the iconic Tea Building with plenty of new dishes to explore.', url:'https://www.hopperslondon.com/shoreditch/'},
+{title:'Donia', venue:'Kingly Court, Carnaby', area:'westend', types:['lunchdinner','chefstable'], note:'Intimate Filipino restaurant atop Kingly Court, awarded a Michelin Bib Gourmand in 2025.', url:'https://www.doniarestaurant.com/'},
+{title:'Legado', venue:'Shoreditch', area:'east', types:['lunchdinner'], note:'Contemporary Spanish restaurant, the second opening from Michelin-starred chef Nieves Barragán Mohacho.', url:'https://www.legadorestaurants.com/'},
+{title:'Gallio', venue:'Charlotte Street', area:'westend', types:['lunchdinner'], note:'Sister restaurant to Norma, serving a Mediterranean menu on Charlotte Street.', url:'https://www.gallio.uk/restaurants/charlotte-street/'},
+{title:'Poon\'s', venue:'Somerset House', area:'midtown', types:['lunchdinner','chefstable'], note:'Home-cooked style Chinese food set within Somerset House, with the feel of dining with family.', url:'https://www.poonslondon.com/'},
+{title:'Bamboo Mat', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner'], note:'Contemporary Japanese-Peruvian Nikkei dining, following the success of the original Stratford restaurant.', url:'https://bamboo-mat.co.uk/'},
+{title:'Beefbar', venue:'Broadwick Soho', area:'westend', types:['lunchdinner'], note:'Born in Monte Carlo, a glamorous take on the traditional steakhouse, taking over the former Dear Jackie site.', url:'https://beefbar.com/dear-jackie-london/'},
+{title:'Cassette', venue:'Covent Garden', area:'westend', types:['lunchdinner','alfresco'], note:'Modern French bistro across two floors, with an open kitchen and a terrace upstairs.', url:'https://www.cassettelondon.co.uk/'},
+{title:'Pearl', venue:'Brown Hart Gardens, Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner'], note:'Mayfair\'s latest Mediterranean restaurant, set within the terrace of Brown Hart Gardens with a relaxed, all-day European vibe.', url:'https://www.pearlmayfair.com/'},
+{title:'1947', venue:'Charlotte St', area:'westend', types:['lunchdinner','chefstable'], note:'Indian in Charlotte St. Has a private dining room.', url:'http://1947london.com/'},
+{title:'1 Lombard Street', venue:'Bank', area:'city', types:['breakfast','lunchdinner','chefstable'], note:'British in Bank. Offers private dining room and breakfast service.', url:'https://www.1lombardstreet.com/'},
+{title:'10-11 Carlton House', venue:'Charing Cross', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British in Charing Cross. Offers private dining room, breakfast service and outdoor seating.', url:'https://10-11cht.com/'},
+{title:'14 Stories', venue:'Aldgate', area:'city', types:['lunchdinner','chefstable'], note:'British/French in Aldgate. Has a private dining room.', url:'https://14stories.co.uk/'},
+{title:'26 Grains', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner'], note:'Healthy Cafe in Covent Garden. Offers breakfast service.', url:'https://www.26grains.com/'},
+{title:'34 Mayfair', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'British in Mayfair. Has a private dining room.', url:'https://34-restaurant.co.uk/'},
+{title:'41 Portland Place', venue:'Marylebone', area:'notting_hill', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British in Marylebone. Offers private dining room, breakfast service and outdoor seating.', url:'https://www.41portlandplace.co.uk/'},
+{title:'abc kitchens', venue:'Belgravia', area:'south_ken', types:['breakfast','lunchdinner'], note:'Global/Contemporary in Belgravia. Offers breakfast service.', url:'https://www.maybourne.com/en/hotels/the-emory/restaurants-bars/abc-kitchens'},
+{title:'Abuelo', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner'], note:'Australian/South American in Covent Garden. Offers breakfast service.', url:'https://www.abuelocafe.co.uk/'},
+{title:'Amalfi', venue:'Oxford Circus', area:'westend', types:['lunchdinner','chefstable'], note:'Italian in Oxford Circus. Has a private dining room.', url:'https://www.amalfi.co.uk/oxford-circus'},
+{title:'Amano', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Rooftop Bar in Covent Garden. Offers private dining room and outdoor seating.', url:'https://www.amanogroup.com/en/london'},
+{title:'Amazonico', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Latin American in Mayfair. Has a private dining room.', url:'https://www.amazonicorestaurant.com/london/'},
+{title:'Apricity', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'British in Mayfair. Has a private dining room.', url:'https://www.apricityrestaurant.com/'},
+{title:'Aqua Nueva', venue:'Regent Street', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Spanish in Regent Street. Offers private dining room and outdoor seating.', url:'https://aquanueva.co.uk/'},
+{title:'Arros', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Spanish in Fitzrovia. Has a private dining room.', url:'https://www.arrosqd.com/'},
+{title:'Arthur Hoopers', venue:'Borough Market', area:'southbank', types:['lunchdinner','chefstable'], note:'Seafood in Borough Market. Has a private dining room.', url:'https://www.arthurhoopers.co.uk/'},
+{title:'Aulis', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'British Tasting Menu in Marylebone. Has a private dining room.', url:'https://www.aulis.co.uk/'},
+{title:'Aviary', venue:'Finsbury Circus', area:'city', types:['lunchdinner','alfresco'], note:'British in Finsbury Circus. Offers outdoor seating.', url:'https://etmcollection.co.uk/venue/aviary-rooftop-restaurant-terrace-bar/'},
+{title:'Avobar', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Healthy Brunch in Covent Garden. Offers private dining room and breakfast service.', url:'https://www.avobar.co.uk/'},
+{title:'Bacchanalia', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Mediterranean in Mayfair. Has a private dining room.', url:'https://bacchanalia.co.uk/'},
+{title:'Bagatelle', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'French in Mayfair.', url:'https://bagatelle.com/venues/london/'},
+{title:'Balthazar', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'French in Covent Garden. Has a private dining room.', url:'https://balthazarlondon.com/'},
+{title:'Beast', venue:'Oxford Circus', area:'westend', types:['lunchdinner'], note:'Steak & Seafood in Oxford Circus.', url:'https://www.beastrestaurant.com/location/oxford-circus'},
+{title:'Bentley\'s', venue:'Piccadilly', area:'westend', types:['lunchdinner','chefstable'], note:'Seafood in Piccadilly. Has a private dining room.', url:'https://www.bentleys.org/'},
+{title:'Berenjak', venue:'Borough / Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Persian in Borough / Soho. Has a private dining room.', url:'https://berenjak.com/locations/soho/'},
+{title:'Berners Tavern', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'British in Fitzrovia. Offers private dining room and breakfast service.', url:'https://www.bernerstavern.com/'},
+{title:'Bob Bob Ricard', venue:'Soho / City', area:'westend', types:['lunchdinner','chefstable'], note:'British/French in Soho / City. Has a private dining room.', url:'https://www.bobbobricard.com/soho/'},
+{title:'Bocconcino', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Italian in Mayfair.', url:'https://bocconcinorestaurant.co.uk/mayfair'},
+{title:'Bouchon Racine', venue:'Farringdon', area:'midtown', types:['lunchdinner'], note:'French in Farringdon.', url:'https://www.bouchonracine.com/'},
+{title:'Brutto', venue:'Clerkenwell', area:'midtown', types:['lunchdinner'], note:'Italian in Clerkenwell.', url:'https://msha.ke/brutto/'},
+{title:'Cache Cache', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'French in Covent Garden. Has a private dining room.', url:'https://cachecacheclub.com/'},
+{title:'Campanelle', venue:'Fenchurch St', area:'city', types:['breakfast','lunchdinner'], note:'Italian in Fenchurch St. Offers breakfast service.', url:'https://www.campanelle.co.uk/'},
+{title:'Carousel', venue:'Charlotte St.', area:'westend', types:['lunchdinner','chefstable'], note:'Contemporary in Charlotte St.. Has a private dining room.', url:'https://carousel-london.com/'},
+{title:'Cavita', venue:'Bond St', area:'westend', types:['lunchdinner'], note:'Mexican in Bond St.', url:'https://www.cavitarestaurant.com/'},
+{title:'Cigalon', venue:'Chancery Lane', area:'midtown', types:['lunchdinner','chefstable'], note:'French in Chancery Lane. Has a private dining room.', url:'https://www.cigalon.co.uk/'},
+{title:'Clap', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner'], note:'Japanese in Knightsbridge.', url:'https://claprestaurant.com/london/'},
+{title:'Claridge’s', venue:'Brook St, Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'Modern British in Brook St, Mayfair. Offers private dining room and breakfast service.', url:'https://www.claridges.co.uk/restaurants-bars/'},
+{title:'Clos Maggiore', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'French in Covent Garden. Has a private dining room.', url:'https://www.closmaggiore.com/'},
+{title:'Como Garden', venue:'Kensington', area:'south_ken', types:['lunchdinner','chefstable'], note:'Italian in Kensington. Has a private dining room.', url:'https://comogarden.co.uk/'},
+{title:'Compton', venue:'Clerkenwell', area:'midtown', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'European in Clerkenwell. Offers private dining room, breakfast service and outdoor seating.'},
+{title:'CORD', venue:'Fleet St', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'French in Fleet St. Offers private dining room and breakfast service.', url:'https://www.cordrestaurant.co.uk/'},
+{title:'CORE by Clare Smyth', venue:'Notting Hill Gate', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Modern British in Notting Hill Gate. Has a private dining room.', url:'https://corebyclaresmyth.com/'},
+{title:'Delfino', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Italian in Mayfair.', url:'https://www.delfinomayfair.com/'},
+{title:'Dim Sum Library', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'Chinese in Covent Garden. Has a private dining room.', url:'https://dimsumlibrary.co.uk/'},
+{title:'Dovetale', venue:'Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner'], note:'European in Mayfair. Offers breakfast service.', url:'https://www.dovetalelondon.com/'},
+{title:'El Norte', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Spanish in Mayfair.', url:'https://el-norte.co.uk/'},
+{title:'El Ta\'koy', venue:'Covent Garden', area:'westend', types:['lunchdinner','alfresco'], note:'Hawaiin in Covent Garden. Offers outdoor seating.', url:'https://el-takoy.com/london/'},
+{title:'Elliot\'s', venue:'Borough Market', area:'southbank', types:['lunchdinner'], note:'British in Borough Market.', url:'https://www.elliots.london/'},
+{title:'Fallow', venue:'Piccadilly', area:'westend', types:['breakfast','lunchdinner'], note:'Modern British in Piccadilly. Offers breakfast service.', url:'https://fallowrestaurant.com/'},
+{title:'Fidelio', venue:'Clerkenwell', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'Mediterranean in Clerkenwell. Offers private dining room and breakfast service.', url:'https://fidelio.cafe/'},
+{title:'Fischers', venue:'Marylebone', area:'notting_hill', types:['breakfast','lunchdinner'], note:'Viennese in Marylebone. Offers breakfast service.', url:'https://www.fischers.co.uk/'},
+{title:'Flute', venue:'Soho', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Bar in Soho. Offers private dining room and outdoor seating.', url:'https://www.broadwicksoho.com/flute'},
+{title:'Fonda', venue:'Regent Street', area:'westend', types:['lunchdinner','chefstable'], note:'Mexican in Regent Street. Has a private dining room.', url:'https://fondalondon.com/'},
+{title:'Franco\'s', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Italian in Green Park. Offers private dining room, breakfast service and outdoor seating.', url:'https://francoslondon.com/'},
+{title:'Frog by Adam Handling', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'British in Covent Garden. Has a private dining room.', url:'https://www.frogbyadamhandling.com/'},
+{title:'FyOME', venue:'Marylebone', area:'notting_hill', types:['breakfast','lunchdinner'], note:'Greek in Marylebone. Offers breakfast service.'},
+{title:'Gold', venue:'Notting Hill', area:'notting_hill', types:['lunchdinner','chefstable','alfresco'], note:'Modern European in Notting Hill. Offers private dining room and outdoor seating.', url:'https://goldnottinghill.com/'},
+{title:'Gura Gura', venue:'Covent Garden', area:'westend', types:['lunchdinner'], note:'Asian in Covent Garden.', url:'https://guragura.co.uk/'},
+{title:'HIDE', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'Modern European in Green Park. Offers private dining room and breakfast service.', url:'https://hide.co.uk/'},
+{title:'Holborn Dining Room', venue:'Holborn', area:'midtown', types:['breakfast','lunchdinner'], note:'British in Holborn. Offers breakfast service.', url:'https://holborndiningroom.com/'},
+{title:'HUMO', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Wood-fired in Mayfair.', url:'https://humolondon.com/'},
+{title:'Il Gattopardo', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'Italian in Mayfair. Offers private dining room and outdoor seating.', url:'https://gattopardo.restaurant/'},
+{title:'Il Pampero', venue:'Knightsbridge', area:'south_ken', types:['breakfast','lunchdinner'], note:'Italian in Knightsbridge. Offers breakfast service.', url:'https://ilpampero.com/'},
+{title:'Isabel', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Latin American/Mediterranean in Mayfair. Has a private dining room.', url:'https://www.isabelw1.london/'},
+{title:'Isola by San Carlo', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','alfresco'], note:'Italian in Marylebone. Offers outdoor seating.', url:'https://sancarloisola.co.uk/'},
+{title:'Ixchel', venue:'King\'s Road', area:'south_ken', types:['lunchdinner','chefstable'], note:'Mexican in King\'s Road. Has a private dining room.', url:'https://www.ixchellondon.com/'},
+{title:'J Sheekey', venue:'Leicester Square', area:'westend', types:['lunchdinner'], note:'Seafood in Leicester Square.', url:'https://j-sheekey.co.uk/'},
+{title:'Jacuzzi', venue:'High St. Kensington', area:'south_ken', types:['lunchdinner'], note:'Italian in High St. Kensington.', url:'https://www.bigmammagroup.com/italian-restaurants/jacuzzi'},
+{title:'Jamie Oliver Catherine St', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'British in Covent Garden. Offers private dining room and outdoor seating.', url:'https://www.jamieolivercatherinest.com/'},
+{title:'Joia', venue:'Battersea', area:'southbank', types:['lunchdinner','alfresco'], note:'Portuguese in Battersea. Offers outdoor seating.', url:'https://www.joiabattersea.co.uk/'},
+{title:'Kanishka', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'Indian in Mayfair. Offers private dining room and outdoor seating.', url:'https://kanishkarestaurant.co.uk/'},
+{title:'Kapara', venue:'Tottenham Court Rd', area:'westend', types:['lunchdinner','chefstable'], note:'Tel Avivian in Tottenham Court Rd. Has a private dining room.', url:'https://kapara.co.uk/'},
+{title:'Kave', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Speakeasy in Fitzrovia. Has a private dining room.'},
+{title:'Khao', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Thai in Soho. Has a private dining room.', url:'https://www.khaobird.com/'},
+{title:'KOL', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Mexican in Marylebone. Has a private dining room.', url:'https://kolrestaurant.com/'},
+{title:'KOLAE', venue:'Borough Market', area:'southbank', types:['lunchdinner'], note:'Thai in Borough Market.', url:'https://kolae.com/'},
+{title:'L’Oscar', venue:'Holborn', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'European in Holborn. Offers private dining room and breakfast service.', url:'https://www.loscarlondon.com/'},
+{title:'La Petite Maison', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','alfresco'], note:'French in Mayfair. Offers outdoor seating.', url:'https://lpmrestaurants.com/'},
+{title:'Lavo', venue:'Bond St', area:'westend', types:['lunchdinner','chefstable'], note:'Italian in Bond St. Has a private dining room.', url:'https://www.thebotree.com/lavo/'},
+{title:'Lemonia', venue:'Camden', area:'east', types:['lunchdinner','chefstable'], note:'Greek in Camden. Has a private dining room.'},
+{title:'Light Bar & Dining', venue:'Shoreditch', area:'east', types:['lunchdinner','chefstable'], note:'British in Shoreditch. Has a private dining room.', url:'https://www.lightbarlondon.com/'},
+{title:'Lilienblum', venue:'Barbican', area:'city', types:['lunchdinner'], note:'Israeli/Mediterranean in Barbican.', url:'https://www.lilienblum.co.uk/'},
+{title:'Luso (formerly Lisboeta)', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Contemporary Portuguese in Fitzrovia, rebranded from Lisboeta to Luso under a new chef. Private dining room seating 12, plus a terrace.', url:'https://luso.restaurant/'},
+{title:'Louie', venue:'Covent Garden', area:'westend', types:['lunchdinner'], note:'French in Covent Garden.', url:'https://thehouseoflouie.com/restaurants-bar/louie-restaurant/'},
+{title:'Luca', venue:'Clerkenwell', area:'midtown', types:['lunchdinner','chefstable'], note:'Italian in Clerkenwell. Has a private dining room.', url:'https://luca.restaurant/'},
+{title:'Maison Francois', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'French in Green Park. Offers private dining room and breakfast service.', url:'https://www.maisonfrancois.london/'},
+{title:'Manteca', venue:'Shoreditch', area:'east', types:['lunchdinner'], note:'Italian in Shoreditch.'},
+{title:'Meraki', venue:'Fitzrovia', area:'westend', types:['lunchdinner'], note:'Greek in Fitzrovia.', url:'https://meraki-restaurant.com/london/'},
+{title:'Mielo', venue:'Baker Street', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Mediterranean in Baker Street. Has a private dining room.', url:'https://mielorestaurant.com/'},
+{title:'Milk Beach', venue:'Soho', area:'notting_hill', types:['breakfast','lunchdinner'], note:'Modern Australian dining in Soho (Ilona Rose House). Now the flagship after the original Queen\'s Park site closed in March 2026 to relaunch as a wine bar.', url:'https://milkbeach.com/'},
+{title:'Mint Leaf', venue:'Bank', area:'city', types:['lunchdinner','chefstable'], note:'Indian in Bank. Has a private dining room.', url:'https://www.mintleaflondon.com/'},
+{title:'Mortimer House', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British/Mediterranean in Fitzrovia. Offers private dining room, breakfast service and outdoor seating.', url:'https://www.mortimerhousekitchen.com/'},
+{title:'Mount St. Restaurant', venue:'Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'British in Mayfair. Offers private dining room and breakfast service.', url:'https://mountstrestaurant.com/'},
+{title:'NaNa Café', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Mediterranean in Covent Garden. Offers private dining room, breakfast service and outdoor seating.', url:'https://nana-cafe.com/'},
+{title:'Nessa', venue:'Soho', area:'westend', types:['breakfast','lunchdinner'], note:'British in Soho. Offers breakfast service.', url:'https://www.nessasoho.com/'},
+{title:'Nine', venue:'Greenwich', area:'southbank', types:['lunchdinner'], note:'Japanese in Greenwich.', url:'https://nine.ee/'},
+{title:'NipoTina', venue:'Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner','alfresco'], note:'Italian in Mayfair. Offers breakfast service and outdoor seating.', url:'https://www.nipotinaristorante.com/'},
+{title:'NoMad', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Hotel in Covent Garden. Offers private dining room and breakfast service.', url:'https://www.thenomadhotel.com/london/restaurant/'},
+{title:'Norma', venue:'Charlotte St', area:'westend', types:['lunchdinner','chefstable'], note:'Italian in Charlotte St. Has a private dining room.', url:'https://normalondon.com/'},
+{title:'Ochre', venue:'Trafalgar Sq', area:'westend', types:['lunchdinner','chefstable'], note:'Modern British in Trafalgar Sq. Has a private dining room.', url:'https://www.ochre.london/'},
+{title:'Pachamama', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Peruvian in Marylebone. Has a private dining room.', url:'https://www.pachamamalondon.com/'},
+{title:'Pantechnicon', venue:'Knightsbridge', area:'south_ken', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Nordic/Japanese in Knightsbridge. Offers private dining room, breakfast service and outdoor seating.', url:'https://www.pantechnicon.com/'},
+{title:'Piazza Italiana', venue:'Threadneedle St', area:'city', types:['lunchdinner','chefstable'], note:'Italian in Threadneedle St. Has a private dining room.', url:'https://piazzaitaliana.co.uk/'},
+{title:'Pinna', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Italian in Mayfair.', url:'https://www.pinnamayfair.com/'},
+{title:'Pirana', venue:'Green Park', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Japanese/Peruvian in Green Park. Has a private dining room.'},
+{title:'Quaglino\'s', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'European in Mayfair. Has a private dining room.', url:'https://quaglinos-restaurant.co.uk/'},
+{title:'Radio Rooftop', venue:'The Strand', area:'midtown', types:['lunchdinner','alfresco'], note:'Asian/Japanese in The Strand. Offers outdoor seating.', url:'https://radiorooftop.com/'},
+{title:'Rai', venue:'Fitzrovia', area:'westend', types:['lunchdinner'], note:'Japanese in Fitzrovia.', url:'https://rairestaurant.com/'},
+{title:'Restaurant Ours', venue:'South Kensington', area:'south_ken', types:['lunchdinner','chefstable'], note:'Mediterranean in South Kensington. Has a private dining room.', url:'https://restaurant-ours.com/'},
+{title:'Sabor', venue:'Regent Street', area:'westend', types:['lunchdinner','chefstable'], note:'Spanish in Regent Street. Has a private dining room.', url:'https://www.saborrestaurants.co.uk/'},
+{title:'Savage Garden', venue:'Tower Hill', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'Bar in Tower Hill. Offers private dining room and outdoor seating.', url:'https://www.savagegarden.co.uk/'},
+{title:'Gordon Ramsay at Sea Containers', venue:'South Bank', area:'southbank', types:['breakfast','lunchdinner','alfresco'], note:'American/British in South Bank. Riverside dining room and terrace within Sea Containers London, now run by Gordon Ramsay. Offers private dining room.', url:'https://www.seacontainerslondon.com/eat-drink/gordon-ramsay-restaurant/'},
+{title:'Sexy Fish', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Asian in Mayfair. Has a private dining room.', url:'https://sexyfish.com/'},
+{title:'Shiro', venue:'Broadgate Circle', area:'city', types:['lunchdinner'], note:'Japanese in Broadgate Circle.', url:'https://shirosushi.co.uk/'},
+{title:'Signor Sassi', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner'], note:'Italian in Knightsbridge.', url:'https://sancarlo.co.uk/restaurants/london/signor-sassi-london/'},
+{title:'Smith & Wollensky', venue:'Charing Cross', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Steakhouse in Charing Cross. Offers private dining room and breakfast service.', url:'https://www.smithandwollensky.co.uk/'},
+{title:'Spring Restaurant', venue:'Somerset House', area:'midtown', types:['lunchdinner','chefstable'], note:'British/Italian in Somerset House. Has a private dining room.', url:'https://springrestaurant.co.uk/'},
+{title:'Sucre', venue:'Soho', area:'westend', types:['lunchdinner'], note:'South American in Soho.', url:'https://sucrerestaurant.com/'},
+{title:'Sumosan Twiga', venue:'Sloane Street', area:'south_ken', types:['lunchdinner','chefstable'], note:'Japanese/Italian in Sloane Street. Has a private dining room.', url:'https://sumosan-twiga.com/sumosantwigalondon/'},
+{title:'SushiSamba', venue:'Covent Garden/City', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Japanese/Peruvian/Brazilian in Covent Garden/City. Offers private dining room and outdoor seating.', url:'https://www.sushisamba.com/locations/london-covent-garden'},
+{title:'Swan', venue:'South Bank', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'British in South Bank. Offers private dining room and outdoor seating.', url:'https://swanlondon.co.uk/'},
+{title:'Taka', venue:'Marylebone', area:'notting_hill', types:['lunchdinner'], note:'Japanese in Marylebone.', url:'https://www.takalondon.com/'},
+{title:'Tamarind of Mayfair', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','alfresco'], note:'Indian in Mayfair. Offers outdoor seating.', url:'https://www.tamarindrestaurant.com/'},
+{title:'Tattu', venue:'Tottenham Court Rd', area:'westend', types:['lunchdinner','chefstable'], note:'Chinese in Tottenham Court Rd. Has a private dining room.', url:'https://tattu.co.uk/'},
+{title:'Tavolino', venue:'London Bridge', area:'southbank', types:['lunchdinner','alfresco'], note:'Italian in London Bridge. Offers outdoor seating.', url:'https://www.tavolino.co.uk/'},
+{title:'The Botanist', venue:'Broadgate Circle', area:'city', types:['lunchdinner','alfresco'], note:'Gastropub in Broadgate Circle. Offers outdoor seating.', url:'https://etmcollection.co.uk/venue/botanist-broadgate-circle/'},
+{title:'The Delaunay', venue:'Aldwych', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'European in Aldwych. Offers private dining room and breakfast service.', url:'https://www.thedelaunay.com/'},
+{title:'The Libertine', venue:'Bank', area:'city', types:['lunchdinner','chefstable'], note:'British in Bank. Has a private dining room.', url:'https://www.libertinelondon.co.uk/'},
+{title:'The Maine', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'British in Mayfair. Offers private dining room and outdoor seating.', url:'https://themainemayfair.com/'},
+{title:'The Mandrake', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Hotel in Fitzrovia. Offers private dining room, breakfast service and outdoor seating.', url:'https://themandrake.com/'},
+{title:'The MCR Restaurant', venue:'Chancery Lane', area:'midtown', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British in Chancery Lane. Offers private dining room, breakfast service and outdoor seating.', url:'https://themcr.lincolnsinn.org.uk/'},
+{title:'The Mercer', venue:'Threadneedle St', area:'city', types:['lunchdinner','chefstable'], note:'Modern British in Threadneedle St. Has a private dining room.', url:'https://www.themercer.co.uk/'},
+{title:'The Nest', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable','alfresco'], note:'Mixed in Marylebone. Offers private dining room and outdoor seating.', url:'https://www.treehousehotels.com/london/eat-drink/nest'},
+{title:'The Orangery TCR (gsk building)', venue:'Tottenham Court Rd', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Cafe/European in Tottenham Court Rd. Offers private dining room and breakfast service.', url:'https://www.orangerytcr.com/'},
+{title:'The Palm House', venue:'Victoria', area:'south_ken', types:['lunchdinner'], note:'North/South American in Victoria.', url:'https://www.palmhouselondon.co.uk/'},
+{title:'The Refinery', venue:'Citypoint', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'British in Citypoint. Offers private dining room and outdoor seating.', url:'https://www.drakeandmorgan.co.uk/the-refinery-citypoint/'},
+{title:'The Ritz', venue:'St James’s', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Modern British/French in St James’s. Offers private dining room and breakfast service.', url:'https://www.theritzlondon.com/dine-with-us/the-ritz-restaurant/'},
+{title:'The Table Café', venue:'Southwark', area:'southbank', types:['breakfast','lunchdinner'], note:'Cafe in Southwark. Offers breakfast service.', url:'https://thetablecafe.com/southwark/'},
+{title:'The Waterhouse Project', venue:'Bethnal Green', area:'east', types:['lunchdinner','chefstable'], note:'Contemporary in Bethnal Green. Has a private dining room.', url:'https://www.thewaterhouseproject.com/'},
+{title:'The Wolseley', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'British in Green Park. Offers private dining room and breakfast service.', url:'https://www.thewolseleypiccadilly.com/'},
+{title:'Thirteen', venue:'Tottenham Court Rd', area:'westend', types:['lunchdinner','alfresco'], note:'Bar in Tottenham Court Rd. Offers outdoor seating.', url:'https://thirteenldn.com/'},
+{title:'Trishna', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Indian in Marylebone. Has a private dining room.', url:'https://www.trishnalondon.com/'},
+{title:'Trivet', venue:'London Bridge', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'European in London Bridge. Offers private dining room and outdoor seating.', url:'https://trivetrestaurant.co.uk/'},
+{title:'Whitcombs (The Londoner)', venue:'Leicester Square', area:'westend', types:['breakfast','lunchdinner'], note:'French Mediterranean in Leicester Square. Offers breakfast service.', url:'https://www.thelondoner.com/restaurants-bars/whitcombs'},
+{title:'Wild by Tart', venue:'Belgravia', area:'south_ken', types:['lunchdinner','chefstable','alfresco'], note:'Mediterranean in Belgravia. Offers private dining room and outdoor seating.', url:'https://www.wildbytart.com/'},
+{title:'Wild Honey', venue:'St. James', area:'westend', types:['lunchdinner','chefstable'], note:'Modern European in St. James. Has a private dining room.', url:'https://wildhoneystjames.com/'},
+{title:'Wildflower', venue:'Pimlico', area:'south_ken', types:['lunchdinner','chefstable'], note:'Mediterranean in Pimlico. Has a private dining room.', url:'https://www.wildflowersrestaurant.co.uk/'},
+{title:'Yasmin', venue:'Soho', area:'westend', types:['lunchdinner','alfresco'], note:'Mediterranean in Soho. Offers outdoor seating.', url:'https://www.yasminsoho.com/'},
+{title:'Zahter', venue:'Carnaby', area:'westend', types:['lunchdinner','chefstable'], note:'Istanbulite in Carnaby. Has a private dining room.', url:'https://zahter.co.uk/'},
+{title:'Zuaya', venue:'High St. Kensington', area:'south_ken', types:['lunchdinner','alfresco'], note:'Latin American in High St. Kensington. Offers outdoor seating.', url:'https://zuaya.co.uk/'},
+];
+
+/* ============ STATIC DATA: PROJECT SOCIALS ============ */
+const SOCIALS_GROUPS = [
+  { key:'bars', label:'Bars & Late Nights', icon:'flightclub', items:[
+    { title:'Alberts Schloss', venue:'Shaftesbury Avenue', note:'German bar and bierkeller with multiple bookable areas across two floors and live entertainment seven nights a week.', url:'https://albertsschloss.com/london/' },
+    { title:'Oriole', venue:'Covent Garden', note:'Speakeasy in its new permanent home: the Bamboo Bar on the ground floor for cocktails and small plates, or head downstairs to the restaurant. Live music on offer.', url:'https://www.oriolebar.com/' },
+    { title:'HiJingo', venue:'Various London locations', note:'Bingo like never before, with live entertainment, vibrant lights and high-energy music, plus street food and the Lucky Cat Bar. Private bookings available.' },
+    { title:'The Lucky Goat', venue:'The City', note:'Brand new high-energy social gaming destination offering karaoke, darts, shuffleboard and more, with semi-private and private areas available to book.' }
+  ]},
+  { key:'games', label:'Games & Competitive', icon:'trophy', items:[
+    { title:'Flight Club', venue:'Multiple London locations (Shoreditch, Islington, Bloomsbury, Angel)', note:'Interactive electronic darts with food and cocktails. Low skill barrier, high fun factor, and a reliable easy booking for a project team social.', url:'https://flightclubdarts.com/uk/locations/' },
+    { title:'Oche', venue:'The Strand', note:'A classic game of darts at this renewed Strand venue, with cocktails and street food.', url:'https://oche.com/uk/london' },
+    { title:'Bowling Night', venue:'Suggested: All Star Lanes or Lane7, various London sites', note:'Retro-styled lanes with food and bars attached, and works for groups of any size with minimal planning. Lane7 also offers crazy golf, shuffleboard, darts and beer pong across its Victoria and Camden sites.' },
+    { title:'Clays', venue:'City of London (Moorgate) and Canary Wharf', note:'Indoor simulated clay shooting bays with a cocktail bar: a lower-commitment, city-centre alternative to a real shoot day.' },
+    { title:'The Cube', venue:'Canary Wharf', note:'The hit TV show inspired game, with 21 cubes, two bars and a selection of food on offer. Race against the clock in teams.', url:'https://bookthecube.com/venue/london/' },
+    { title:'F1 Arcade', venue:'St Paul\'s', note:'State-of-the-art racing simulators, racing in teams or head to head, with an electric Octane Bar attached.', url:'https://f1arcade.com/uk/london' },
+    { title:'F1 Drive', venue:'Tottenham Hotspur Stadium', note:'The official F1 karting experience, featuring DRS technology, engine sounds and an 18cm LED steering wheel display.', url:'https://www.tottenhamhotspurstadium.com/f1-drive-london' },
+    { title:'Boulebar', venue:'Spitalfields', note:'Indoor Pétanque with authentic French food and a Parisian cocktail bar. Christmas bookings available in season.' },
+    { title:'Enigma Quests', venue:'Various London locations', note:'A variety of escape rooms and arcades, testing all abilities. A great way to build team bonds and boost friendly competition.' },
+    { title:'Pool House', venue:'100 Liverpool Street', note:'Games venue with private rooms hosting 10 to 80 people, alongside a spacious and stylish bar.' }
+  ]},
+  { key:'craft', label:'Workshops & Classes', icon:'art', items:[
+    { title:'Glasswork & Jewellery Making', venue:'SONG Art & Craft, Shoreditch', note:'Hands-on glasswork (lampworking, kiln-formed or stained glass) and metalwork jewellery workshops. Exclusive studio hire available, or book an individual workshop for up to 16 people.', url:'https://www.songartcraft.com/' },
+    { title:'Life Drawing or Paint & Sip', venue:'Suggested: a local studio or private art tutor, booked to your office or a nearby venue', note:'A calmer social format, good for a relaxed evening or a team that\'s done the usual bowling/darts circuit already.' },
+    { title:'Neon Brush Experience', venue:'Various London locations', note:'A 90-minute painting workshop guided by an artist, learning different techniques while enjoying a drink and music. Private bookings available.' },
+    { title:'Adam Bridgland Screen Printing', venue:'Travels to a venue of your choice', note:'Private workshops creating bespoke screen-printing art pieces, run by an independent artist who will bring the kit to your office.' },
+    { title:'Sarah Bryan Design', venue:'Travels to a venue of your choice', note:'Private ceramics workshops built entirely around your brief, and can even incorporate materials from your own site into the pieces made.' },
+    { title:'Comptoir Bakery', venue:'Near London Bridge', note:'Baking classes ranging from eclairs to sourdough to macarons, with something for every skill level.' }
+  ]},
+  { key:'food_experiences', label:'Food & Drink Experiences', icon:'eating', items:[
+    { title:'School of Wok', venue:'Covent Garden', note:'Cooking classes ranging from sushi making to a full Thai menu. Also offers a \'Cook for the Homeless\' experience, giving back to the local community as part of the session.', url:'https://schoolofwok.co.uk/' },
+    { title:'Migrateful Cooking Class', venue:'Clerkenwell', note:'A 2.5-hour cooking class and meal run by refugee and migrant chefs, celebrating their journeys by supporting them to teach their own cuisines.', url:'https://www.migrateful.org/group-classes/' },
+    { title:'Skuna Igloo Boat', venue:'Near Canary Wharf', note:'London\'s first Floating Igloo Boat & Fondue Experience. Each boat holds 9 people for a 90-minute tour.' },
+    { title:'Bermondsey Beer Mile Brewery Tour', venue:'Bermondsey', note:'A guide takes you to four breweries along the famous Beer Mile, with a pizza stop included. Budget-friendly at around £49 per person.' }
+  ]},
+];
+
+/* ============ STATE ============ */
+let currentSection = 'home';
+let activeCat = 'all';
+let activeMonth = 'all';
+let activeLocation = 'all';
+
+/* ============ BUILD NAV ============ */
+const sectionNav = document.getElementById('sectionNav');
+SECTIONS.forEach(s => {
+  const btn = document.createElement('button');
+  btn.textContent = s.label;
+  btn.dataset.section = s.key;
+  if (s.key === currentSection) btn.classList.add('active');
+  btn.addEventListener('click', () => {
+    currentSection = s.key;
+    activeCat = 'all';
+    activeMonth = 'all';
+    activeLocation = 'all';
+    document.querySelectorAll('#sectionNav button').forEach(b => b.classList.toggle('active', b.dataset.section === s.key));
+    document.getElementById('searchInput').value = '';
+    buildChips();
+    buildMonthFilter();
+    buildLocationFilter();
+    render();
+  });
+  sectionNav.appendChild(btn);
+});
+
+/* ============ BUILD CHIPS (depends on section) ============ */
+const chipRow = document.getElementById('chipRow');
+function makeChip(key, label, color){
+  const chip = document.createElement('button');
+  chip.className = 'chip' + (key==='all' ? ' active' : '');
+  chip.dataset.cat = key;
+  chip.innerHTML = (color ? `<span class="dot" style="background:${color}"></span>` : '') + label;
+  chip.addEventListener('click', () => {
+    activeCat = key;
+    document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c.dataset.cat === key));
+    render();
+  });
+  return chip;
+}
+const EATING_TYPES = [
+  { key:'breakfast', label:'Breakfast' },
+  { key:'lunchdinner', label:'Lunch & Dinner' },
+  { key:'chefstable', label:"Chef's Table & Private Dining" },
+  { key:'alfresco', label:'Al Fresco' }
+];
+const EATING_AREA_ORDER = ['westend','city','midtown','canary_wharf','east','mayfair_westminster','notting_hill','south_ken','southbank'];
+const EATING_AREA_LABELS = {
+  westend: 'West End',
+  city: 'The City',
+  midtown: 'Midtown',
+  canary_wharf: 'Canary Wharf',
+  east: 'East',
+  mayfair_westminster: 'Mayfair & Westminster',
+  notting_hill: 'Notting Hill, Bayswater & Marylebone',
+  south_ken: 'South Kensington, Belgravia & Victoria',
+  southbank: 'Southbank & Southwark'
+};
+
+function buildChips(){
+  chipRow.innerHTML = '';
+  let list = [];
+  if (currentSection === 'spectator') list = SPECTATOR_CATS;
+  else if (currentSection === 'entertainment') list = ENTERTAINMENT_CATS;
+  else if (currentSection === 'sports') list = SPORTS_GROUPS.map(g => ({key:g.key, label:g.label}));
+  else if (currentSection === 'eating') list = EATING_TYPES;
+  else if (currentSection === 'socials') list = SOCIALS_GROUPS.map(g => ({key:g.key, label:g.label}));
+
+  if (!list.length){
+    chipRow.style.display = 'none';
+    return;
+  }
+  chipRow.style.display = 'flex';
+  chipRow.appendChild(makeChip('all', 'All', null));
+  list.forEach(c => chipRow.appendChild(makeChip(c.key, c.label, ICONS[c.icon || c.key] ? ICONS[c.icon || c.key].color : null)));
+}
+
+/* ============ BUILD MONTH FILTER (spectator / entertainment only) ============ */
+const monthSelect = document.getElementById('monthSelect');
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const WEEKDAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function weekdayAbbrev(isoDate){
+  if (!isoDate) return '';
+  const d = new Date(isoDate + 'T00:00:00');
+  if (isNaN(d.getTime())) return '';
+  return WEEKDAY_NAMES[d.getDay()];
+}
+function formatShortDate(isoDate){
+  if (!isoDate) return '';
+  const d = new Date(isoDate + 'T00:00:00');
+  if (isNaN(d.getTime())) return '';
+  return `${WEEKDAY_NAMES[d.getDay()]} ${d.getDate()} ${MONTH_NAMES[d.getMonth()].slice(0,3)}`;
+}
+function monthLabel(ym){
+  const parts = ym.split('-');
+  const y = parts[0], m = parseInt(parts[1], 10);
+  return `${MONTH_NAMES[m-1]} ${y}`;
+}
+function buildMonthFilter(){
+  let source = null;
+  if (currentSection === 'spectator') source = SPECTATOR;
+  else if (currentSection === 'entertainment') source = ENTERTAINMENT;
+
+  if (!source){
+    monthSelect.style.display = 'none';
+    monthSelect.innerHTML = '';
+    return;
+  }
+
+  const months = Array.from(new Set(
+    source.filter(e => e.start >= CUTOFF).map(e => e.start.slice(0,7))
+  )).sort();
+
+  if (!months.length){
+    monthSelect.style.display = 'none';
+    monthSelect.innerHTML = '';
+    return;
+  }
+
+  monthSelect.style.display = 'block';
+  monthSelect.innerHTML = '<option value="all">All months</option>' +
+    months.map(m => `<option value="${m}">${monthLabel(m)}</option>`).join('');
+  monthSelect.value = activeMonth;
+}
+monthSelect.addEventListener('change', () => {
+  activeMonth = monthSelect.value;
+  render();
+});
+
+/* ============ BUILD LOCATION FILTER (eating only) ============ */
+const locationSelect = document.getElementById('locationSelect');
+function buildLocationFilter(){
+  if (currentSection !== 'eating'){
+    locationSelect.style.display = 'none';
+    locationSelect.innerHTML = '';
+    return;
+  }
+  locationSelect.style.display = 'block';
+  locationSelect.innerHTML = '<option value="all">All areas</option>' +
+    EATING_AREA_ORDER.map(k => `<option value="${k}">${EATING_AREA_LABELS[k]}</option>`).join('');
+  locationSelect.value = activeLocation;
+}
+locationSelect.addEventListener('change', () => {
+  activeLocation = locationSelect.value;
+  render();
+});
+
+/* ============ RENDER ============ */
+const resultsEl = document.getElementById('results');
+const searchInput = document.getElementById('searchInput');
+const introEl = document.getElementById('sectionIntro');
+
+function catIconSvg(catKey){
+  return iconSvg(catKey, 15);
+}
+
+function renderDatedGroup(title, items){
+  const section = document.createElement('section');
+  section.className = 'group';
+  const h2 = document.createElement('h2');
+  h2.textContent = title;
+  section.appendChild(h2);
+  const grid = document.createElement('div');
+  grid.className = 'card-grid';
+  items.forEach((e, idx) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const isRange = e.d !== 'TBC';
+    const weekday = e.d !== 'TBC' ? weekdayAbbrev(e.start) : '';
+    const dsWithDay = weekday ? `${weekday} ${e.ds}` : e.ds;
+    const hasSub = Array.isArray(e.subfixtures) && e.subfixtures.length > 0;
+    const uid = `sf-${title.replace(/[^a-z0-9]/gi,'')}-${idx}`;
+    card.innerHTML = `
+      <div class="datebox${isRange ? ' range' : ''}">
+        <div class="d">${e.d}</div>
+        <div class="m">${e.mo}</div>
+      </div>
+      <div class="body">
+        <div class="cat-row">${catIconSvg(e.cat)}<span class="cat-label">${labelForCat(e.cat)}</span></div>
+        <h3>${e.title}</h3>
+        <div class="venue">${e.venue}</div>
+        <div class="note">${e.note}</div>
+        <div class="datestring">${dsWithDay}${hasSub ? `<span class="expand-toggle" data-target="${uid}">+</span>` : ''}</div>
+        ${hasSub ? `<div class="subfixtures" id="${uid}">${e.subfixtures.map(sf => `
+          <div class="subfixture-row"><span class="sf-date">${formatShortDate(sf.date)}</span><span class="sf-label">${sf.label}</span></div>
+        `).join('')}</div>` : ''}
+        ${e.url ? `<a class="eventlink" href="${e.url}" target="_blank" rel="noopener">Event info ↗</a>` : ''}
+      </div>`;
+    if (hasSub){
+      const toggle = card.querySelector('.expand-toggle');
+      const panel = card.querySelector('.subfixtures');
+      toggle.addEventListener('click', () => {
+        const isOpen = panel.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.textContent = isOpen ? '\u2212' : '+';
+      });
+    }
+    grid.appendChild(card);
+  });
+  section.appendChild(grid);
+  resultsEl.appendChild(section);
+}
+
+function labelForCat(catKey){
+  const all = SPECTATOR_CATS.concat(ENTERTAINMENT_CATS);
+  const found = all.find(c => c.key === catKey);
+  return found ? found.label : catKey;
+}
+
+function renderIdeaGroup(title, iconKey, items){
+  const section = document.createElement('section');
+  section.className = 'group';
+  const h2 = document.createElement('h2');
+  h2.textContent = title;
+  section.appendChild(h2);
+  const grid = document.createElement('div');
+  grid.className = 'card-grid';
+  items.forEach(it => {
+    const card = document.createElement('div');
+    card.className = 'idea-card';
+    card.innerHTML = `
+      <div class="icon-wrap">${iconSvg(it._icon || iconKey, 20)}</div>
+      <div class="body">
+        <h3>${it.title}</h3>
+        <div class="tag">${it.venue}</div>
+        <div class="note">${it.note}</div>
+        ${it.url ? `<a class="eventlink" href="${it.url}" target="_blank" rel="noopener">Visit website ↗</a>` : ''}
+      </div>`;
+    grid.appendChild(card);
+  });
+  section.appendChild(grid);
+  resultsEl.appendChild(section);
+}
+
+function matchesSearch(q, text){
+  if (!q) return true;
+  return text.toLowerCase().includes(q);
+}
+
+function render(){
+  const q = searchInput.value.trim().toLowerCase();
+  resultsEl.innerHTML = '';
+  introEl.textContent = SECTION_INTRO[currentSection] || '';
+  let anyShown = false;
+
+  const toolbarEl = document.getElementById('toolbar');
+  if (currentSection === 'home'){
+    toolbarEl.style.display = 'none';
+    introEl.style.display = 'none';
+  } else {
+    toolbarEl.style.display = '';
+    introEl.style.display = '';
+  }
+
+  if (currentSection === 'home'){
+    const hero = document.createElement('div');
+    hero.className = 'home-hero';
+    hero.innerHTML = `
+      <div class="display">Where to next?</div>
+      <p>Five ways to give a client a reason to remember the day. Pick a category to get started.</p>`;
+    resultsEl.appendChild(hero);
+
+    const grid = document.createElement('div');
+    grid.className = 'home-grid';
+    HOME_CARDS.forEach(hc => {
+      const card = document.createElement('button');
+      card.className = 'home-card';
+      card.innerHTML = `
+        <div class="icon-wrap">${iconSvg(hc.icon, 22)}</div>
+        <div class="body">
+          <h3>${hc.title}</h3>
+          <div class="blurb">${hc.blurb}</div>
+        </div>
+        <div class="chevron">&rsaquo;</div>`;
+      card.addEventListener('click', () => {
+        currentSection = hc.key;
+        activeCat = 'all';
+        activeMonth = 'all';
+        activeLocation = 'all';
+        document.querySelectorAll('#sectionNav button').forEach(b => b.classList.toggle('active', b.dataset.section === hc.key));
+        buildChips();
+        buildMonthFilter();
+        buildLocationFilter();
+        render();
+        window.scrollTo({top:0, behavior:'instant'});
+      });
+      grid.appendChild(card);
+    });
+    resultsEl.appendChild(grid);
+    return;
+  }
+
+  if (currentSection === 'spectator'){
+    SPECTATOR_CATS.forEach(cat => {
+      if (activeCat !== 'all' && activeCat !== cat.key) return;
+      const items = SPECTATOR.filter(e => e.cat === cat.key && e.start >= CUTOFF &&
+        (activeMonth === 'all' || e.start.slice(0,7) === activeMonth) &&
+        (matchesSearch(q, e.title) || matchesSearch(q, e.venue)))
+        .sort((a,b) => a.start.localeCompare(b.start));
+      if (!items.length) return;
+      anyShown = true;
+      renderDatedGroup(cat.label, items);
+    });
+  }
+
+  else if (currentSection === 'entertainment'){
+    ENTERTAINMENT_CATS.forEach(cat => {
+      if (activeCat !== 'all' && activeCat !== cat.key) return;
+      const items = ENTERTAINMENT.filter(e => e.cat === cat.key && e.start >= CUTOFF &&
+        (activeMonth === 'all' || e.start.slice(0,7) === activeMonth) &&
+        (matchesSearch(q, e.title) || matchesSearch(q, e.venue)))
+        .sort((a,b) => a.start.localeCompare(b.start));
+      if (!items.length) return;
+      anyShown = true;
+      renderDatedGroup(cat.label, items);
+    });
+  }
+
+  else if (currentSection === 'sports'){
+    SPORTS_GROUPS.forEach(g => {
+      if (activeCat !== 'all' && activeCat !== g.key) return;
+      const items = g.items.filter(it => matchesSearch(q, it.title) || matchesSearch(q, it.venue));
+      if (!items.length) return;
+      anyShown = true;
+      renderIdeaGroup(g.label, g.icon, items);
+    });
+  }
+
+  else if (currentSection === 'eating'){
+    EATING_AREA_ORDER.forEach(areaKey => {
+      if (activeLocation !== 'all' && activeLocation !== areaKey) return;
+      const items = EATING_ITEMS.filter(r => r.area === areaKey &&
+        (activeCat === 'all' || r.types.includes(activeCat)) &&
+        (matchesSearch(q, r.title) || matchesSearch(q, r.venue)))
+        .map(it => Object.assign({_icon:'eating'}, it));
+      if (!items.length) return;
+      anyShown = true;
+      renderIdeaGroup(EATING_AREA_LABELS[areaKey], 'eating', items);
+    });
+  }
+
+  else if (currentSection === 'socials'){
+    SOCIALS_GROUPS.forEach(g => {
+      if (activeCat !== 'all' && activeCat !== g.key) return;
+      const items = g.items.filter(it => matchesSearch(q, it.title) || matchesSearch(q, it.venue));
+      if (!items.length) return;
+      anyShown = true;
+      renderIdeaGroup(g.label, g.icon, items);
+    });
+  }
+
+  if (!anyShown){
+    resultsEl.innerHTML = `<div class="empty-state">
+      <div class="display">Nothing here yet</div>
+      <div>Try a different search term or category.</div>
+    </div>`;
+  }
+}
+
+searchInput.addEventListener('input', render);
+buildChips();
+buildMonthFilter();
+buildLocationFilter();
+render();
+</script>
+</body>
+</html>
