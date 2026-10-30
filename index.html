@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-<title>EOSpitality Index</title>
+<title>The Eospitality Index</title>
 
 <!-- iOS PWA meta tags -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -66,6 +66,59 @@
     color:#faf8f3;
     line-height:1.1;
   }
+  /* Festive banner (shown 1 Dec to 6 Jan) */
+  .xmas-lights, .xmas-snow{ display:none; }
+  body.festive header.app-header{ position:relative; overflow:hidden; background:linear-gradient(180deg,#14181c 0%,#1b2a2a 100%); border-bottom:3px solid transparent; border-image:repeating-linear-gradient(135deg,#c8312b 0 12px,#f7f3ec 12px 24px) 1; }
+  body.festive .xmas-lights{ display:flex; justify-content:space-between; position:absolute; top:0; left:0; right:0; height:16px; padding:0 6px; pointer-events:none; z-index:2; background:linear-gradient(#2a2f33,#2a2f33) 0 3px/100% 1.5px no-repeat; }
+  body.festive .xmas-lights i{ display:block; width:7px; height:10px; margin-top:3px; border-radius:50% 50% 55% 55%; background:#c8312b; box-shadow:0 0 8px 2px rgba(200,49,43,.7); animation:twinkle 2.4s ease-in-out infinite; }
+  body.festive .xmas-lights i:nth-child(4n+2){ background:#e8b93c; box-shadow:0 0 8px 2px rgba(232,185,60,.7); animation-delay:.6s; }
+  body.festive .xmas-lights i:nth-child(4n+3){ background:#3f9d5a; box-shadow:0 0 8px 2px rgba(63,157,90,.7); animation-delay:1.2s; }
+  body.festive .xmas-lights i:nth-child(4n){ background:#2fa0c6; box-shadow:0 0 8px 2px rgba(47,160,198,.7); animation-delay:1.8s; }
+  body.festive .xmas-snow{ display:block; position:absolute; inset:0; pointer-events:none; z-index:1; opacity:.85;
+    background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(1.5px 1.5px at 70px 80px,#fff,transparent),radial-gradient(2.5px 2.5px at 130px 20px,#fff,transparent),radial-gradient(1.5px 1.5px at 180px 110px,#fff,transparent),radial-gradient(2px 2px at 240px 60px,#fff,transparent),radial-gradient(1.5px 1.5px at 300px 130px,#fff,transparent);
+    background-size:320px 150px; animation:snowfall 14s linear infinite; }
+  body.festive header.app-header > *:not(.xmas-lights):not(.xmas-snow){ position:relative; z-index:3; }
+  body.festive .eyebrow{ color:#e8b93c; }
+  @keyframes twinkle{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
+  @keyframes snowfall{ from{ background-position:0 0; } to{ background-position:-40px 150px; } }
+  @media (prefers-reduced-motion: reduce){ body.festive .xmas-lights i, body.festive .xmas-snow{ animation:none; } }
+  /* Autumn banner (shown 1 Sep to 30 Nov, add ?autumn=1 to preview) */
+  .autumn-leaves{ display:none; }
+  body.autumn header.app-header{ position:relative; overflow:hidden; background:linear-gradient(180deg,#14181c 0%,#2a1c12 100%); border-bottom:3px solid transparent; border-image:linear-gradient(90deg,#b5461f,#d9822b,#e8b93c,#d9822b,#b5461f) 1; }
+  body.autumn .autumn-leaves{ display:block; position:absolute; inset:0; pointer-events:none; z-index:1; opacity:.85;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='160' viewBox='0 0 320 160'%3E%3Cg transform='translate(20 20) rotate(30) scale(0.667)'%3E%3Cpath d='M12 2C8 6 4 9 5 14c1 3 4 5 7 8 3-3 6-5 7-8 1-5-3-8-7-12z' fill='%23d9822b'/%3E%3Cpath d='M12 6v15' stroke='%2314181c' stroke-opacity='.35' stroke-width='1' fill='none'/%3E%3C/g%3E%3Cg transform='translate(95 100) rotate(-40) scale(0.500)'%3E%3Cpath d='M12 2C8 6 4 9 5 14c1 3 4 5 7 8 3-3 6-5 7-8 1-5-3-8-7-12z' fill='%23b5461f'/%3E%3Cpath d='M12 6v15' stroke='%2314181c' stroke-opacity='.35' stroke-width='1' fill='none'/%3E%3C/g%3E%3Cg transform='translate(160 40) rotate(70) scale(0.583)'%3E%3Cpath d='M12 2C8 6 4 9 5 14c1 3 4 5 7 8 3-3 6-5 7-8 1-5-3-8-7-12z' fill='%23e8b93c'/%3E%3Cpath d='M12 6v15' stroke='%2314181c' stroke-opacity='.35' stroke-width='1' fill='none'/%3E%3C/g%3E%3Cg transform='translate(230 120) rotate(-20) scale(0.458)'%3E%3Cpath d='M12 2C8 6 4 9 5 14c1 3 4 5 7 8 3-3 6-5 7-8 1-5-3-8-7-12z' fill='%238a5a2b'/%3E%3Cpath d='M12 6v15' stroke='%2314181c' stroke-opacity='.35' stroke-width='1' fill='none'/%3E%3C/g%3E%3Cg transform='translate(280 30) rotate(150) scale(0.542)'%3E%3Cpath d='M12 2C8 6 4 9 5 14c1 3 4 5 7 8 3-3 6-5 7-8 1-5-3-8-7-12z' fill='%23d9822b'/%3E%3Cpath d='M12 6v15' stroke='%2314181c' stroke-opacity='.35' stroke-width='1' fill='none'/%3E%3C/g%3E%3Cg transform='translate(60 140) rotate(110) scale(0.417)'%3E%3Cpath d='M12 2C8 6 4 9 5 14c1 3 4 5 7 8 3-3 6-5 7-8 1-5-3-8-7-12z' fill='%23b5461f'/%3E%3Cpath d='M12 6v15' stroke='%2314181c' stroke-opacity='.35' stroke-width='1' fill='none'/%3E%3C/g%3E%3Cg transform='translate(200 10) rotate(-80) scale(0.375)'%3E%3Cpath d='M12 2C8 6 4 9 5 14c1 3 4 5 7 8 3-3 6-5 7-8 1-5-3-8-7-12z' fill='%23e8b93c'/%3E%3Cpath d='M12 6v15' stroke='%2314181c' stroke-opacity='.35' stroke-width='1' fill='none'/%3E%3C/g%3E%3C/svg%3E"); background-size:320px 160px; background-repeat:repeat; animation:leaffall 16s linear infinite; }
+  body.autumn header.app-header > *:not(.autumn-leaves):not(.xmas-lights):not(.xmas-snow){ position:relative; z-index:3; }
+  body.autumn .eyebrow{ color:#e0953a; }
+  @keyframes leaffall{ from{ background-position:30px 0,110px 40px,190px 10px,250px 70px,320px 30px,70px 90px; } to{ background-position:0 160px,95px 200px,170px 170px,240px 230px,300px 190px,55px 250px; } }
+  @media (prefers-reduced-motion: reduce){ body.autumn .autumn-leaves{ animation:none; } }
+  /* Halloween banner (October, ?halloween=1) */
+  .halloween-sky, .fw-wrap{ display:none; }
+  body.halloween header.app-header{ position:relative; overflow:hidden; background:linear-gradient(180deg,#14101c 0%,#2a1233 100%); border-bottom:3px solid transparent; border-image:repeating-linear-gradient(135deg,#f08a24 0 12px,#1a1020 12px 24px) 1; }
+  body.halloween .halloween-sky{ display:block; position:absolute; inset:0; pointer-events:none; z-index:1; }
+  body.halloween .halloween-sky::before{ content:''; position:absolute; top:10px; right:18px; width:46px; height:46px; border-radius:50%; background:radial-gradient(circle at 40% 40%,#ffd9a0,#f08a24 70%); box-shadow:0 0 28px 8px rgba(240,138,36,.45); }
+  body.halloween .halloween-sky::after{ content:''; position:absolute; inset:0; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='170' viewBox='0 0 340 170'%3E%3Cg transform='translate(30 25) scale(1.0)'%3E%3Cpath d='M12 10c-1-3-4-5-8-4 1 1 1 3 0 4 2 0 3 1 4 3 1-1 2-1 4 1 2-2 3-2 4-1 1-2 2-3 4-3-1-1-1-3 0-4-4-1-7 1-8 4z' fill='%236b5190'/%3E%3C/g%3E%3Cg transform='translate(170 90) scale(0.75)'%3E%3Cpath d='M12 10c-1-3-4-5-8-4 1 1 1 3 0 4 2 0 3 1 4 3 1-1 2-1 4 1 2-2 3-2 4-1 1-2 2-3 4-3-1-1-1-3 0-4-4-1-7 1-8 4z' fill='%236b5190'/%3E%3C/g%3E%3Cg transform='translate(260 20) scale(0.6)'%3E%3Cpath d='M12 10c-1-3-4-5-8-4 1 1 1 3 0 4 2 0 3 1 4 3 1-1 2-1 4 1 2-2 3-2 4-1 1-2 2-3 4-3-1-1-1-3 0-4-4-1-7 1-8 4z' fill='%236b5190'/%3E%3C/g%3E%3Cg transform='translate(100 130) scale(0.55)'%3E%3Cpath d='M12 10c-1-3-4-5-8-4 1 1 1 3 0 4 2 0 3 1 4 3 1-1 2-1 4 1 2-2 3-2 4-1 1-2 2-3 4-3-1-1-1-3 0-4-4-1-7 1-8 4z' fill='%236b5190'/%3E%3C/g%3E%3C/svg%3E"); background-size:340px 170px; opacity:.9; animation:batdrift 22s linear infinite; }
+  body.halloween header.app-header > *:not(.deco){ position:relative; z-index:3; }
+  body.halloween .eyebrow{ color:#f08a24; }
+  body.halloween .hat-wrap .santa-hat{ display:none; }
+  body.halloween .hat-wrap .witch-hat{ display:block; }
+  .witch-hat{ display:none; position:absolute; width:32px; height:30px; left:-6px; top:-22px; transform:rotate(-12deg); pointer-events:none; }
+  @keyframes batdrift{ from{ background-position:0 0; } to{ background-position:-340px 25px; } }
+  /* Fireworks banner (1 to 13 Nov, ?fireworks=1) */
+  body.fireworks header.app-header{ position:relative; overflow:hidden; background:linear-gradient(180deg,#070b1c 0%,#141c3a 100%); border-bottom:3px solid transparent; border-image:linear-gradient(90deg,#ff4d4d,#ffd24d,#4dd2ff,#b84dff,#ff4d4d) 1; }
+  body.fireworks .fw-wrap{ display:block; position:absolute; inset:0; pointer-events:none; z-index:1; }
+  body.fireworks .fw-wrap i{ position:absolute; width:3px; height:3px; border-radius:50%; background:transparent; opacity:0; transform:scale(.1); animation:burst 4.5s ease-out infinite; }
+  body.fireworks .fw-wrap i:nth-child(1){ left:78%; top:34%; box-shadow:30.0px 0.0px 0 0 #ff4d4d,27.0px 13.0px 0 0 #ffd24d,18.7px 23.5px 0 0 #fff,6.7px 29.2px 0 0 #ff4d4d,-6.7px 29.2px 0 0 #ffd24d,-18.7px 23.5px 0 0 #fff,-27.0px 13.0px 0 0 #ff4d4d,-30.0px 0.0px 0 0 #ffd24d,-27.0px -13.0px 0 0 #fff,-18.7px -23.5px 0 0 #ff4d4d,-6.7px -29.2px 0 0 #ffd24d,6.7px -29.2px 0 0 #fff,18.7px -23.5px 0 0 #ff4d4d,27.0px -13.0px 0 0 #ffd24d,16.0px 0.0px 0 0 #ff4d4d,11.3px 11.3px 0 0 #ffd24d,0.0px 16.0px 0 0 #fff,-11.3px 11.3px 0 0 #ff4d4d,-16.0px 0.0px 0 0 #ffd24d,-11.3px -11.3px 0 0 #fff,-0.0px -16.0px 0 0 #ff4d4d,11.3px -11.3px 0 0 #ffd24d; }
+  body.fireworks .fw-wrap i:nth-child(2){ left:55%; top:24%; box-shadow:24.0px 0.0px 0 0 #4dd2ff,20.8px 12.0px 0 0 #b84dff,12.0px 20.8px 0 0 #fff,0.0px 24.0px 0 0 #4dd2ff,-12.0px 20.8px 0 0 #b84dff,-20.8px 12.0px 0 0 #fff,-24.0px 0.0px 0 0 #4dd2ff,-20.8px -12.0px 0 0 #b84dff,-12.0px -20.8px 0 0 #fff,-0.0px -24.0px 0 0 #4dd2ff,12.0px -20.8px 0 0 #b84dff,20.8px -12.0px 0 0 #fff,12.0px 0.0px 0 0 #4dd2ff,8.5px 8.5px 0 0 #b84dff,0.0px 12.0px 0 0 #fff,-8.5px 8.5px 0 0 #4dd2ff,-12.0px 0.0px 0 0 #b84dff,-8.5px -8.5px 0 0 #fff,-0.0px -12.0px 0 0 #4dd2ff,8.5px -8.5px 0 0 #b84dff; animation-delay:1.5s; }
+  body.fireworks .fw-wrap i:nth-child(3){ left:90%; top:60%; box-shadow:22.0px 0.0px 0 0 #ffd24d,19.1px 11.0px 0 0 #4dff88,11.0px 19.1px 0 0 #ff4da6,0.0px 22.0px 0 0 #ffd24d,-11.0px 19.1px 0 0 #4dff88,-19.1px 11.0px 0 0 #ff4da6,-22.0px 0.0px 0 0 #ffd24d,-19.1px -11.0px 0 0 #4dff88,-11.0px -19.1px 0 0 #ff4da6,-0.0px -22.0px 0 0 #ffd24d,11.0px -19.1px 0 0 #4dff88,19.1px -11.0px 0 0 #ff4da6,11.0px 0.0px 0 0 #ffd24d,7.8px 7.8px 0 0 #4dff88,0.0px 11.0px 0 0 #ff4da6,-7.8px 7.8px 0 0 #ffd24d,-11.0px 0.0px 0 0 #4dff88,-7.8px -7.8px 0 0 #ff4da6,-0.0px -11.0px 0 0 #ffd24d,7.8px -7.8px 0 0 #4dff88; animation-delay:3s; }
+  body.fireworks header.app-header > *:not(.deco){ position:relative; z-index:3; }
+  body.fireworks .eyebrow{ color:#ffd24d; }
+  body.fireworks .hat-wrap .santa-hat{ display:none; }
+  @keyframes burst{ 0%{ opacity:0; transform:scale(.1); } 8%{ opacity:1; } 40%{ opacity:1; transform:scale(1.1); } 60%,100%{ opacity:0; transform:scale(1.3); } }
+  @media (prefers-reduced-motion: reduce){ body.halloween .halloween-sky::after, body.fireworks .fw-wrap i{ animation:none; } body.fireworks .fw-wrap i{ opacity:.8; transform:scale(1); } }
+  .hat-wrap{ position:relative; display:inline-block; }
+  .santa-hat{ display:none; position:absolute; width:30px; height:25px; left:-6px; top:-17px; transform:rotate(-12deg); pointer-events:none; }
+  body.festive .santa-hat{ display:block; }
+  body.festive .eyebrow{ margin-bottom:20px; }
   header.app-header p.sub{
     margin-top:8px;
     font-size:13.5px;
@@ -384,9 +437,14 @@
 <body>
 
 <header class="app-header">
+  <div class="xmas-snow" aria-hidden="true"></div>
+  <div class="halloween-sky deco" aria-hidden="true"></div>
+  <div class="fw-wrap deco" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="autumn-leaves" aria-hidden="true"></div>
+  <div class="xmas-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="eyebrow">EOS &middot; Corporate Hospitality</div>
-  <h1>EOSpitality Index</h1>
-  <p class="sub">A guide for contracts managers: inspiration for memorable client engagement in 2027, to help build stronger personal relationships.</p>
+  <h1>The <span class="hat-wrap"><svg class="santa-hat" viewBox="0 0 40 34" aria-hidden="true"><path d="M5 26 C8 10 20 3 31 6 C33 12 36 20 37 26 Z" fill="#c8312b"/><path d="M31 6 C34 7 36 10 37 13" fill="none" stroke="#a52520" stroke-width="2"/><rect x="2" y="24" width="38" height="8" rx="4" fill="#fbf8f2"/><circle cx="33" cy="5" r="4.2" fill="#fbf8f2"/></svg><svg class="witch-hat" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 2 C21 10 24 16 28 24 L12 24 C16 16 19 10 20 2 Z" fill="#5b3a85"/><path d="M13 20 L27 20 L28 24 L12 24 Z" fill="#f08a24"/><ellipse cx="20" cy="26" rx="19" ry="5" fill="#5b3a85"/></svg>E</span>ospitality Index</h1>
+  <p class="sub">Your Guide to Exceptional Client Engagement</p>
 </header>
 
 <nav class="section-nav" id="sectionNav"></nav>
@@ -408,14 +466,27 @@
 <footer>
   <div class="display">Planning something?</div>
   <p>Everything here is a starting point: availability, pricing and current operating details change fast, especially for headline fixtures and small restaurants. Speak to Maria for more ideas or bespoke event alternatives.</p>
-  <div class="contact-card">
-    <div class="contact-name">Maria Heron-Singh</div>
-    <div class="contact-role">Event Manager, EOS</div>
-    <a href="mailto:Maria.HeronSingh@overbury.com">Maria.HeronSingh@overbury.com</a>
-  </div>
 </footer>
 
 <script>
+/* Seasonal banners: autumn Sep, Halloween Oct, fireworks 1-13 Nov, festive 14 Nov to 6 Jan. Add ?autumn=1, ?halloween=1, ?fireworks=1 or ?xmas=1 to preview */
+(function(){
+  try {
+    const now = new Date(), m = now.getMonth(), d = now.getDate();
+    const q = location.search;
+    const has = k => new RegExp('[?&]' + k + '=1').test(q);
+    let mode = null;
+    if (has('xmas')) mode = 'festive';
+    else if (has('fireworks')) mode = 'fireworks';
+    else if (has('halloween')) mode = 'halloween';
+    else if (has('autumn')) mode = 'autumn';
+    else if ((m === 10 && d >= 14) || m === 11 || (m === 0 && d <= 6)) mode = 'festive';
+    else if (m === 10 && d <= 13) mode = 'fireworks';
+    else if (m === 9) mode = 'halloween';
+    else if (m === 8) mode = 'autumn';
+    if (mode) document.body.classList.add(mode);
+  } catch(e) {}
+})();
 const CUTOFF = new Date().toISOString().slice(0,10); // always "today", so only future dates are shown
 
 /* ============ ICONS ============ */
@@ -424,6 +495,7 @@ const ICONS = {
   rugby:      { color:'#b5651d', path:'M4 12c0-4 3.5-8 8-8s8 4 8 8-3.5 8-8 8-8-4-8-8zm3-3l10 6M17 9L7 15' },
   football:   { color:'#3f7d3a', path:'M12 7.6l3.4 2.5-1.3 4H9.9l-1.3-4z M12 7.6V4.6 M15.4 10.1l2.7-1.9 M14.1 14.1l1.5 3.5 M9.9 14.1l-1.5 3.5 M8.6 10.1L5.9 8.2', extra:'<circle cx="12" cy="12" r="8.6"/>' },
   tennis:     { color:'#c9a227', path:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM4.5 8.5c2 1.5 3 3.5 3 5.5m9-5.5c-2 1.5-3 3.5-3 5.5' },
+  padel:      { color:'#c9a227', path:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM4.5 8.5c2 1.5 3 3.5 3 5.5m9-5.5c-2 1.5-3 3.5-3 5.5' },
   golf:       { color:'#2e6b4f', path:'M6 21h6M9 21V9m0-6l8 3.5L9 10' },
   motorsport: { color:'#b12b2b', path:'M4 16l1.5-5A3 3 0 0 1 8.4 9h7.2a3 3 0 0 1 2.9 2l1.5 5M5 16h14v3H5zM8 19v1M16 19v1M7 12h10' },
   racing:     { color:'#7a4fb5', path:'M4 18c2-6 4-11 8-11s6 5 8 11M4 18h16M9 18v0M15 18v0' },
@@ -434,6 +506,7 @@ const ICONS = {
   cycling:    { color:'#2b7fb1', path:'M5 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm14 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM5 15l4-7h4l3 5m-7-5H8m4 0l3 5h4' },
   pgolf:      { color:'#2e6b4f', path:'M6 21h6M9 21V9m0-6l8 3.5L9 10' },
   dragonboat: { color:'#1c7896', path:'M3 15c2 2 5 3 9 3s7-1 9-3M6 15V9l3-3h6l3 3v6M9 9h6' },
+  rowing:     { color:'#1c7896', path:'M3 15c2 2 5 3 9 3s7-1 9-3M6 15V9l3-3h6l3 3v6M9 9h6' },
   challenge:  { color:'#8a5a2b', path:'M3 20l6-11 4 6 2-3 6 8H3z' },
   trophy:     { color:'#7a4fb5', extra:'<polyline points="8,4 8,10 9,13 12,14 15,13 16,10 16,4 8,4" stroke-width="1.6" fill="none"/><polyline points="8,5.5 5,5.5 5,9 8,9" stroke-width="1.6" fill="none"/><polyline points="16,5.5 19,5.5 19,9 16,9" stroke-width="1.6" fill="none"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="9" y1="19" x2="15" y2="19"/><polyline points="9,19 9,17.5 15,17.5 15,19" stroke-width="1.6" fill="none"/>' },
   sailing:    { color:'#2b7fb1', path:'M12 3v13 M12 5l5.5 8.5 M17.5 13.5H8 M8 13.5L12 5 M3 19l1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4 1.5-1.4 1.5 1.4' },
@@ -464,11 +537,11 @@ const SECTIONS = [
 ];
 
 const HOME_CARDS = [
-  { key:'spectator', title:'Spectator Sports', blurb:'Cricket, rugby, football, tennis, golf, racing and motorsport fixtures worth building a client day around.', icon:'cricket' },
-  { key:'sports', title:'Sports', blurb:'Shooting, cycling, golf, dragon boat racing and challenge days for a more active, hands-on engagement.', icon:'pgolf' },
-  { key:'entertainment', title:'Entertainment', blurb:'Music, comedy and theatre dates across London\'s best arenas and venues.', icon:'music' },
-  { key:'eating', title:'Eating Out', blurb:'Breakfast, lunch, dinner, chef\'s tables and al fresco spots across the city, organised by area.', icon:'eating' },
-  { key:'socials', title:'Project Socials', blurb:'Bars, games, workshops and food experiences for a project team night out.', icon:'flightclub' }
+  { key:'spectator', title:'Spectator Sports', blurb:'Cricket, rugby, football, tennis, golf, racing and motorsport, all worth building a client day around.', icon:'cricket' },
+  { key:'sports', title:'Sports', blurb:'Padel, shooting, cycling, golf, dragon boats and challenge days for a more hands-on day out.', icon:'pgolf' },
+  { key:'entertainment', title:'Entertainment', blurb:'Gigs, comedy and theatre at London\'s best venues.', icon:'music' },
+  { key:'eating', title:'Eating Out', blurb:'Breakfast, lunch, dinner, chef\'s tables and outdoor tables, sorted by area.', icon:'eating' },
+  { key:'socials', title:'Project Socials', blurb:'Bars, games, workshops and food for a proper project team night out.', icon:'flightclub' }
 ];
 
 const SPECTATOR_CATS = [
@@ -479,7 +552,8 @@ const SPECTATOR_CATS = [
   { key:'golf', label:'Golf' },
   { key:'racing', label:'Racing' },
   { key:'trophy', label:'Darts & Snooker' },
-  { key:'motorsport', label:'Motorsport' }
+  { key:'motorsport', label:'Motorsport' },
+  { key:'rowing', label:'Rowing' }
 ];
 
 const ENTERTAINMENT_CATS = [
@@ -490,107 +564,252 @@ const ENTERTAINMENT_CATS = [
 
 const SECTION_INTRO = {
   home: '',
-  spectator: 'Upcoming confirmed fixtures. Hospitality packages for headline fixtures (Ashes, Six Nations, Wimbledon, Royal Ascot) sell out fastest, so flag interest to Maria early.',
-  sports: 'Participatory days for smaller groups: active alternatives to watching from a box.',
-  entertainment: 'Upcoming confirmed dates, mostly at the O2 Arena, Wembley Arena, Royal Albert Hall and the London Palladium.',
-  eating: 'Breakfast, Lunch & Dinner, Chef\'s Table & Private Dining, and Al Fresco, each organised by area.',
+  spectator: 'Confirmed fixtures. Hospitality for the big ones (Ashes, Six Nations, Wimbledon, Royal Ascot) goes first, so let Maria know early.',
+  sports: 'Active days for smaller groups, for when you\'d rather join in than watch from a box.',
+  entertainment: 'Confirmed dates, mostly at the O2, OVO Arena Wembley, Royal Albert Hall and the London Palladium.',
+  eating: 'Breakfast, lunch and dinner, chef\'s tables and private dining, and outdoor tables, by area.',
   socials: ''
 };
 
 /* ============ DATED DATA: SPECTATOR SPORTS ============ */
 const SPECTATOR = [
-{start:'2026-11-06', ds:'6 – 8 Nov', d:'06', mo:'NOV', cat:'rugby', title:'England v Australia', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship opener at Twickenham.'},
-{start:'2026-11-13', ds:'13 – 15 Nov', d:'13', mo:'NOV', cat:'rugby', title:'England v Japan', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship, round two.'},
+{start:'2026-11-08', ds:'8 Nov', d:'08', mo:'NOV', cat:'rugby', title:'England v Australia', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship opener at Twickenham.'},
+{start:'2026-11-14', ds:'14 Nov', d:'14', mo:'NOV', cat:'rugby', title:'England v Japan', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship, round two.'},
 {start:'2026-11-21', ds:'21 Nov', d:'21', mo:'NOV', cat:'rugby', title:'England v New Zealand', venue:'Allianz Stadium, Twickenham', note:'Autumn Nations Championship: England host the All Blacks.'},
-{start:'2026-11-27', ds:'27 – 29 Nov', d:'27', mo:'NOV', cat:'rugby', title:'Autumn Nations Championship: Finals Weekend', venue:'Allianz Stadium, Twickenham', note:'Placement finals across three days, closing out the tournament at Twickenham.', subfixtures:[
+{start:'2026-11-27', ds:'27 – 29 Nov', d:'27', mo:'NOV', cat:'rugby', title:'Nations Championship: Finals Weekend', venue:'Allianz Stadium, Twickenham', note:'Placement finals over three days.', subfixtures:[
   {date:'2026-11-27', label:'6th v 6th & 3rd v 3rd'},
   {date:'2026-11-28', label:'5th v 5th & 2nd v 2nd'},
   {date:'2026-11-29', label:'4th v 4th & 1st v 1st'}
 ]},
-{start:'2026-12-11', ds:'11 Dec – 3 Jan', d:'11', mo:'DEC', cat:'trophy', title:'PDC World Darts Championship', venue:'Alexandra Palace, London', note:'Darts\' biggest event, in the Great Hall for the first time, with a Sunday final on 3 January.', url:'https://www.eventmasters.co.uk/news/pdc-world-darts-championship-2026-27-dates-confirmed-for-ally-pally-bonanza.html'},
-{start:'2027-01-10', ds:'10 – 17 Jan', d:'10', mo:'JAN', cat:'trophy', title:'The Masters (Snooker)', venue:'Alexandra Palace, London', note:'Invitation-only snooker event at Ally Pally.'},
+{start:'2026-12-11', ds:'11 Dec – 3 Jan', d:'11', mo:'DEC', cat:'trophy', title:'PDC World Darts Championship', venue:'Alexandra Palace, London', note:'Darts\' biggest event, in the Great Hall for the first time. Sunday final on 3 January.', url:'https://www.eventmasters.co.uk/news/pdc-world-darts-championship-2026-27-dates-confirmed-for-ally-pally-bonanza.html'},
+{start:'2027-01-10', ds:'10 – 17 Jan', d:'10', mo:'JAN', cat:'trophy', title:'The Masters (Snooker)', venue:'Alexandra Palace, London', note:'Invitation-only snooker event at Ally Pally.', url:'https://www.alexandrapalace.com/whats-on/johnstones-paint-masters-snooker-2027/'},
 {start:'2026-12-18', ds:'18 – 19 Dec', d:'18', mo:'DEC', cat:'racing', title:'Howden Racing Weekend', venue:'Ascot Racecourse, Berkshire', note:'Christmas jump racing fixture.'},
-{start:'2026-12-26', ds:'26 – 27 Dec', d:'26', mo:'DEC', cat:'racing', title:'Ladbrokes Christmas Festival', venue:'Kempton Park Racecourse, Surrey', note:'Boxing Day racing tradition, headlined by the King George VI Chase.'},
-{start:'2027-01-01', ds:'1 Jan', d:'01', mo:'JAN', cat:'racing', title:"New Year's Day Racing", venue:'Cheltenham Racecourse, Gloucestershire', note:'A traditional first fixture of the year.'},
-{start:'2027-01-15', ds:'TBC', d:'TBC', mo:'', cat:'racing', title:'Festival Trials Day', venue:'Cheltenham Racecourse, Gloucestershire', note:'Key formbook fixture ahead of the Cheltenham Festival.'},
+{start:'2026-12-26', ds:'26 – 27 Dec', d:'26', mo:'DEC', cat:'racing', title:'Ladbrokes Christmas Festival', venue:'Kempton Park Racecourse, Surrey', note:'A Boxing Day racing tradition, with the King George VI Chase.', url:'https://www.thejockeyclub.co.uk/kempton/events-tickets/christmas-festival/day-2/'},
+{start:'2027-01-01', ds:'1 Jan', d:'01', mo:'JAN', cat:'racing', title:"New Year's Day Racing", venue:'Cheltenham Racecourse, Gloucestershire', note:'First meeting of the year.', url:'https://www.thejockeyclub.co.uk/cheltenham/events-tickets/new-years-day'},
+{start:'2027-01-30', ds:'30 Jan', d:'30', mo:'JAN', cat:'racing', title:'Festival Trials Day', venue:'Cheltenham Racecourse, Gloucestershire', note:'Warm-up meeting for the Cheltenham Festival.', url:'https://www.thejockeyclub.co.uk/cheltenham/events-tickets/festival-trials-day/'},
 {start:'2027-02-14', ds:'14 Feb', d:'14', mo:'FEB', cat:'rugby', title:'England v France', venue:'Allianz Stadium, Twickenham', note:'Marquee Six Nations fixture at Twickenham.'},
 {start:'2027-02-20', ds:'20 Feb', d:'20', mo:'FEB', cat:'rugby', title:'England v Italy', venue:'Allianz Stadium, Twickenham', note:'Six Nations round four at Twickenham.'},
-{start:'2027-03-16', ds:'16 – 19 Mar', d:'16', mo:'MAR', cat:'racing', title:'Cheltenham Festival', venue:'Cheltenham Racecourse, Gloucestershire', note:'Jump racing\'s biggest week, with the Gold Cup as the highlight.'},
+{start:'2027-03-16', ds:'16 – 19 Mar', d:'16', mo:'MAR', cat:'racing', title:'Cheltenham Festival', venue:'Cheltenham Racecourse, Gloucestershire', note:'Four days of jump racing, with the Gold Cup as the big finish.'},
 {start:'2027-03-13', ds:'13 Mar', d:'13', mo:'MAR', cat:'rugby', title:'England v Scotland: Calcutta Cup', venue:'Allianz Stadium, Twickenham', note:'Six Nations finale at Twickenham.'},
 {start:'2027-03-21', ds:'21 Mar', d:'21', mo:'MAR', cat:'football', title:'Carabao Cup Final', venue:'Wembley Stadium, London', note:'First domestic cup final of the season.'},
 {start:'2027-04-08', ds:'8 – 10 Apr', d:'08', mo:'APR', cat:'racing', title:'The Grand National', venue:'Aintree Racecourse, Merseyside', note:'The world\'s most famous steeplechase.'},
-{start:'2027-04-24', ds:'24 & 25 Apr', d:'24', mo:'APR', cat:'football', title:'FA Cup Semi Finals', venue:'Wembley Stadium, London', note:'Both semi-finals played at Wembley across the weekend.'},
-{start:'2027-05-22', ds:'22 May', d:'22', mo:'MAY', cat:'football', title:'FA Cup Final', venue:'Wembley Stadium, London', note:'The season\'s showpiece domestic final.'},
+{start:'2027-04-24', ds:'24 & 25 Apr', d:'24', mo:'APR', cat:'football', title:'FA Cup Semi Finals', venue:'Wembley Stadium, London', note:'Both semi-finals played at Wembley across the weekend.', url:'https://engagehospitality.co.uk/events/football-fa-cup/'},
+{start:'2027-05-22', ds:'22 May', d:'22', mo:'MAY', cat:'football', title:'FA Cup Final', venue:'Wembley Stadium, London', note:'The big final of the domestic season.'},
 {start:'2027-05-28', ds:'28 May – 1 Jun', d:'28', mo:'MAY', cat:'cricket', title:'England v Bangladesh: Rothesay Test', venue:"Lord's Cricket Ground, London", note:'Season-opening Test at Lord\'s.'},
-{start:'2027-06-04', ds:'4 – 6 Jun', d:'04', mo:'JUN', cat:'racing', title:'Chestertons Polo in the Park', venue:'Hurlingham Park, London', note:'A relaxed, garden-party take on corporate hospitality.'},
-{start:'2027-06-07', ds:'7 – 13 Jun', d:'07', mo:'JUN', cat:'tennis', title:'HSBC Championships: WTA 500', venue:"Queen's Club, West Kensington", note:'Grass-court build-up to Wimbledon, women\'s draw.'},
-{start:'2027-06-14', ds:'14 – 20 Jun', d:'14', mo:'JUN', cat:'tennis', title:'HSBC Championships: ATP 500', venue:"Queen's Club, West Kensington", note:'Grass-court build-up to Wimbledon, men\'s draw.'},
-{start:'2027-06-15', ds:'15 – 19 Jun', d:'15', mo:'JUN', cat:'racing', title:'Royal Ascot', venue:'Ascot Racecourse, Berkshire', note:'The pinnacle of the British racing and social calendar.'},
-{start:'2027-06-18', ds:'18 – 22 Jun', d:'18', mo:'JUN', cat:'cricket', title:'The Ashes: First Test', venue:'Trent Bridge, Nottingham', note:'England v Australia: the Ashes returns.'},
-{start:'2027-06-19', ds:'19 Jun', d:'19', mo:'JUN', cat:'rugby', title:'Gallagher Premiership Final', venue:'Allianz Stadium, Twickenham', note:'English club rugby\'s season finale.'},
-{start:'2027-06-28', ds:'28 Jun – 11 Jul', d:'28', mo:'JUN', cat:'tennis', title:'Wimbledon Championships', venue:"All England Lawn Tennis & Croquet Club, Wimbledon", note:'Book Centre Court hospitality months ahead: it\'s always the first to sell out.'},
+{start:'2027-06-04', ds:'4 – 6 Jun', d:'04', mo:'JUN', cat:'racing', title:'Chestertons Polo in the Park', venue:'Hurlingham Park, London', note:'Polo with a relaxed garden-party feel.', url:'https://polointheparklondon.com/2027-dates/2027-saturday-group-polo-tickets.html'},
+{start:'2027-06-05', ds:'5 – 13 Jun', d:'05', mo:'JUN', cat:'tennis', title:'HSBC Championships: WTA 500', venue:'Queen\'s Club, West Kensington', note:'Grass-court warm-up for Wimbledon, women\'s draw.', url:'https://www.lta.org.uk/fan-zone/hsbc-championships/news/2027-tickets-sale-dates-announced-for-advantage-priority-window-and-general-sale'},
+{start:'2027-06-12', ds:'12 – 20 Jun', d:'12', mo:'JUN', cat:'tennis', title:'HSBC Championships: ATP 500', venue:'Queen\'s Club, West Kensington', note:'Grass-court warm-up for Wimbledon, men\'s draw.', url:'https://www.lta.org.uk/fan-zone/hsbc-championships/news/2027-tickets-sale-dates-announced-for-advantage-priority-window-and-general-sale'},
+{start:'2027-06-15', ds:'15 – 19 Jun', d:'15', mo:'JUN', cat:'racing', title:'Royal Ascot', venue:'Ascot Racecourse, Berkshire', note:'The big one in the racing and social calendar.', url:'https://www.ents24.com/ascot-events/ascot-racecourse/royal-ascot-2027/7500423'},
+{start:'2027-06-18', ds:'18 – 22 Jun', d:'18', mo:'JUN', cat:'cricket', title:'The Ashes: First Test', venue:'Trent Bridge, Nottingham', note:'England v Australia: the Ashes is back.'},
+{start:'2027-06-19', ds:'19 Jun', d:'19', mo:'JUN', cat:'rugby', title:'Gallagher Premiership Final', venue:'Allianz Stadium, Twickenham', note:'Final of the English club rugby season.'},
+{start:'2027-05-27', ds:'27 May', d:'27', mo:'MAY', cat:'trophy', title:'Premier League Darts Night', venue:'The O2 Arena, London', note:'Televised darts night at the O2.'},
+{start:'2027-06-27', ds:'27 Jun', d:'27', mo:'JUN', cat:'tennis', title:'Billie Jean King & John McEnroe', venue:'The O2 Arena, London', note:'Exhibition match.'},
+{start:'2027-05-15', ds:'15 May', d:'15', mo:'MAY', cat:'rugby', title:'Red Roses v France: Women\'s Six Nations', venue:'Allianz Stadium, Twickenham', note:'England women at Twickenham.'},
+{start:'2027-06-04', ds:'4 – 5 Jun', d:'04', mo:'JUN', cat:'racing', title:'Epsom Derby Festival', venue:'Epsom Downs Racecourse, Surrey', note:'Oaks Day on the Friday and Derby Day on the Saturday. Times are provisional.', url:'https://engagehospitality.co.uk/event/horse-racing-betfred-epsom-derby-festival-day-1/'},
+{start:'2027-06-29', ds:'29 Jun – 4 Jul', d:'29', mo:'JUN', cat:'rowing', title:'Henley Royal Regatta', venue:'Henley-on-Thames, Oxfordshire', note:'A week of rowing on the Thames, with Finals Day on the Sunday.'},
+{start:'2027-07-15', ds:'15 – 18 Jul', d:'15', mo:'JUL', cat:'golf', title:'The Open Championship', venue:'The Old Course, St Andrews, Fife', note:'Golf\'s oldest major, at the home of golf.', url:'https://www.theopen.com/tickets-and-hospitality/2027'},
+{start:'2027-09-23', ds:'23 – 26 Sep', d:'23', mo:'SEP', cat:'golf', title:'BMW PGA Championship', venue:'Wentworth Club, Surrey', note:'The DP World Tour\'s flagship event.'},
+{start:'2027-06-28', ds:'28 Jun – 11 Jul', d:'28', mo:'JUN', cat:'tennis', title:'Wimbledon Championships', venue:"All England Lawn Tennis & Croquet Club, Wimbledon", note:'Centre Court hospitality sells out first, so book early.'},
 {start:'2027-06-30', ds:'30 Jun – 4 Jul', d:'30', mo:'JUN', cat:'cricket', title:"The Ashes: Second Test", venue:"Lord's Cricket Ground, London", note:'Ashes Test at the home of cricket.'},
-{start:'2027-07-02', ds:'2 – 4 Jul', d:'02', mo:'JUL', cat:'motorsport', title:'British Grand Prix', venue:'Silverstone, Northamptonshire', note:'F1\'s home race, once again the standout summer weekend.'},
+{start:'2027-07-02', ds:'2 – 4 Jul', d:'02', mo:'JUL', cat:'motorsport', title:'British Grand Prix', venue:'Silverstone, Northamptonshire', note:'F1\'s home race, and always a highlight of the summer.', url:'https://www.silverstone.co.uk/news/f1-2027-calendar-full-list-venues-key-dates'},
 {start:'2027-07-08', ds:'8 – 12 Jul', d:'08', mo:'JUL', cat:'cricket', title:'The Ashes: Third Test', venue:'Edgbaston, Birmingham', note:'Ashes series continues.'},
 {start:'2027-07-21', ds:'21 – 25 Jul', d:'21', mo:'JUL', cat:'cricket', title:'The Ashes: Fourth Test', venue:'Utilita Bowl, Southampton', note:'Ashes series continues.'},
-{start:'2027-07-24', ds:'24 – 25 Jul', d:'24', mo:'JUL', cat:'racing', title:'King George Weekend', venue:'Ascot Racecourse, Berkshire', note:'Midsummer Group 1 racing weekend.'},
+{start:'2027-07-23', ds:'23 – 24 Jul', d:'23', mo:'JUL', cat:'racing', title:'King George Weekend', venue:'Ascot Racecourse, Berkshire', note:'Midsummer Group 1 racing weekend.'},
 {start:'2027-07-29', ds:'29 Jul – 2 Aug', d:'29', mo:'JUL', cat:'cricket', title:'The Ashes: Fifth Test', venue:'The Kia Oval, London', note:'Series decider at The Oval.'},
 ];
 
 /* ============ DATED DATA: ENTERTAINMENT ============ */
 const ENTERTAINMENT = [
 {start:'2026-11-02', ds:'2 Nov', d:'02', mo:'NOV', cat:'music', title:'J. Cole: The Fall-Off Tour', venue:'The O2 Arena, London', note:'Arena hip-hop, one night only.', url:'https://www.theo2.co.uk/events/detail/jcole-2026'},
-{start:'2026-11-13', ds:'13 – 17 Nov', d:'13', mo:'NOV', cat:'music', title:'Noah Kahan: The Great Divide', venue:'The O2 Arena, London', note:'Multi-night run, easy to slot around client schedules.', url:'https://www.theo2.co.uk/events/detail/noah-kahan-2026'},
+{start:'2026-11-13', ds:'13 – 17 Nov', d:'13', mo:'NOV', cat:'music', title:'Noah Kahan: The Great Divide', venue:'The O2 Arena, London', note:'Several nights, so easy to fit around everyone\'s diaries.', url:'https://www.theo2.co.uk/events/detail/noah-kahan-2026'},
 {start:'2026-11-20', ds:'20 Nov', d:'20', mo:'NOV', cat:'music', title:'Myles Smith', venue:'The O2 Arena, London', note:'Rising UK singer-songwriter.', url:'https://www.theo2.co.uk/events/detail/myles-smith'},
-{start:'2026-11-24', ds:'24 – 25 Nov', d:'24', mo:'NOV', cat:'music', title:'Jungle', venue:'The O2 Arena, London', note:'Live band and visuals, a good client night out.', url:'https://www.theo2.co.uk/events/detail/jungle-2026'},
-{start:'2026-11-29', ds:'29 Nov', d:'29', mo:'NOV', cat:'music', title:'The Lord of the Rings in Concert', venue:'The O2 Arena, London', note:'Full film screening with a live orchestra.', url:'https://www.lordoftheringsinconcert.com/'},
-{start:'2026-12-11', ds:'11 – 12 Dec', d:'11', mo:'DEC', cat:'music', title:'Pete Tong: Ibiza Classics', venue:'The O2 Arena, London', note:'Orchestral dance classics, high-energy festive option.', url:'https://www.theo2.co.uk/events/detail/pete-tong-presents-ibiza-classics-2026'},
-{start:'2026-12-19', ds:'19 – 24 Dec', d:'19', mo:'DEC', cat:'music', title:'Carols at the Royal Albert Hall', venue:'Royal Albert Hall, London', note:'A more traditional, seated Christmas outing.', url:'https://www.royalalberthall.com/tickets/events/2026/carols-at-the-royal-albert-hall'},
-{start:'2026-12-24', ds:'24 Dec – 3 Jan', d:'24', mo:'DEC', cat:'theatre', title:'Disney On Ice: Discover the Magic', venue:'The O2 Arena, London', note:'Family-friendly festive show, good for a wider guest list.', url:'https://www.theo2.co.uk/events/detail/disney-on-ice-presents-discover-the-magic'},
+{start:'2026-11-24', ds:'24 – 25 Nov', d:'24', mo:'NOV', cat:'music', title:'Jungle', venue:'The O2 Arena, London', note:'Great live band with a brilliant light show.', url:'https://www.theo2.co.uk/events/detail/jungle-2026'},
+{start:'2026-11-29', ds:'29 Nov', d:'29', mo:'NOV', cat:'music', title:'The Lord of the Rings in Concert', venue:'The O2 Arena, London', note:'Full film screening with a live orchestra.', url:'https://www.theo2.co.uk/events/detail/the-lord-of-the-rings'},
+{start:'2026-12-11', ds:'11 – 12 Dec', d:'11', mo:'DEC', cat:'music', title:'Pete Tong: Ibiza Classics', venue:'The O2 Arena, London', note:'Dance classics with a full orchestra. A fun festive one.', url:'https://www.theo2.co.uk/events/detail/pete-tong-presents-ibiza-classics-2026'},
+{start:'2026-12-19', ds:'19 – 24 Dec', d:'19', mo:'DEC', cat:'music', title:'Carols at the Royal Albert Hall', venue:'Royal Albert Hall, London', note:'A proper seated, traditional Christmas outing.', url:'https://www.royalalberthall.com/tickets/events/2026/carols-at-the-royal-albert-hall'},
+{start:'2026-12-24', ds:'24 Dec – 3 Jan', d:'24', mo:'DEC', cat:'theatre', title:'Disney On Ice: Discover the Magic', venue:'The O2 Arena, London', note:'A family favourite, so good for a wider guest list.', url:'https://www.theo2.co.uk/events/detail/disney-on-ice-presents-discover-the-magic'},
 {start:'2026-12-30', ds:'30 Dec', d:'30', mo:'DEC', cat:'music', title:'Casino Royale in Concert', venue:'Royal Albert Hall, London', note:'Film with live orchestral score.', url:'https://www.royalalberthall.com/tickets/events/2026/casino-royale-in-concert'},
 {start:'2026-12-31', ds:'31 Dec', d:'31', mo:'DEC', cat:'music', title:'La La Land in Concert', venue:'Royal Albert Hall, London', note:'New Year\'s Eve orchestral screening.', url:'https://www.royalalberthall.com/tickets/events/2026/la-la-land-in-concert'},
-{start:'2027-01-13', ds:'13 Jan – 28 Feb', d:'13', mo:'JAN', cat:'theatre', title:'Cirque du Soleil: KURIOS', venue:'Royal Albert Hall, London', note:'Steampunk-themed acrobatic spectacle, reliably impressive for client groups.', url:'https://www.royalalberthall.com/about-the-hall/building-and-history/our-history/cirque-du-soleil-at-the-royal-albert-hall/'},
+{start:'2027-01-13', ds:'13 Jan – 28 Feb', d:'13', mo:'JAN', cat:'theatre', title:'Cirque du Soleil: KURIOS', venue:'Royal Albert Hall, London', note:'Steampunk-style acrobatics that always goes down well.', url:'https://www.royalalberthall.com/about-the-hall/building-and-history/our-history/cirque-du-soleil-at-the-royal-albert-hall/'},
 {start:'2027-01-16', ds:'16 Jan', d:'16', mo:'JAN', cat:'music', title:'aespa', venue:'The O2 Arena, London', note:'K-pop arena show.', url:'https://www.theo2.co.uk/events/detail/aespa-2027'},
 {start:'2027-01-28', ds:'28 Jan', d:'28', mo:'JAN', cat:'music', title:'Two Door Cinema Club: 15th Anniversary Tour', venue:'The O2 Arena, London', note:'Indie-rock anniversary show.', url:'https://www.theo2.co.uk/events/detail/two-door-cinema-club-2027'},
-{start:'2027-01-30', ds:'30 Jan', d:'30', mo:'JAN', cat:'comedy', title:'Jack Whitehall: Bad Influence', venue:'The O2 Arena, London', note:'Big-arena stand-up, broadly likeable for mixed groups.', url:'https://www.theo2.co.uk/events/detail/jack-whitehall-bad-influence'},
-{start:'2027-02-05', ds:'5 Feb', d:'05', mo:'FEB', cat:'music', title:'Nothing But Thieves: The Stray Dogs Tour', venue:'The O2 Arena, London', note:'UK rock band, strong arena show.', url:'https://www.theo2.co.uk/events/detail/nothing-but-thieves-2027'},
-{start:'2027-02-27', ds:'27 Feb', d:'27', mo:'FEB', cat:'music', title:'Brit Awards', venue:'Co-Op Live, Manchester', note:'If tickets or hospitality can be sourced, a genuine standout night.', url:'https://www.cooplive.com/events/the-brit-awards-2027-hmvz'},
-{start:'2027-03-12', ds:'12 – 14 Mar', d:'12', mo:'MAR', cat:'music', title:'Country to Country', venue:'The O2 Arena, London', note:'UK\'s biggest country music festival weekend.', url:'https://www.theo2.co.uk/events/detail/c2c-country-to-country-2027'},
+{start:'2027-01-30', ds:'30 Jan', d:'30', mo:'JAN', cat:'comedy', title:'Jack Whitehall: Bad Influence', venue:'The O2 Arena, London', note:'Big arena stand-up that suits most groups.', url:'https://www.theo2.co.uk/events/detail/jack-whitehall-bad-influence'},
+{start:'2027-02-05', ds:'5 Feb', d:'05', mo:'FEB', cat:'music', title:'Nothing But Thieves: The Stray Dogs Tour', venue:'The O2 Arena, London', note:'UK rock band.', url:'https://www.theo2.co.uk/events/detail/nothing-but-thieves-2027'},
+{start:'2027-03-12', ds:'12 – 14 Mar', d:'12', mo:'MAR', cat:'music', title:'Country to Country', venue:'The O2 Arena, London', note:'The UK\'s biggest country music weekend, over three days.', url:'https://www.theo2.co.uk/events/detail/c2c-country-to-country-2027'},
 {start:'2027-03-16', ds:'16 – 21 Mar', d:'16', mo:'MAR', cat:'music', title:'RUSH', venue:'The O2 Arena, London', note:'Multi-night residency.', url:'https://www.theo2.co.uk/events/detail/rush'},
-{start:'2027-04-16', ds:'16 – 17 Apr', d:'16', mo:'APR', cat:'comedy', title:'Romesh Ranganathan: Will Change Your Life', venue:'The O2 Arena, London', note:'Popular UK comedian, safe crowd-pleaser.', url:'https://www.theo2.co.uk/events/detail/romesh-ranganathan-will-change-your-life'},
-{start:'2027-04-30', ds:'30 Apr – 4 May', d:'30', mo:'APR', cat:'music', title:'Gracie Abrams: The Look at My Life Tour', venue:'The O2 Arena, London', note:'In-demand young artist, expect quick sell-through.', url:'https://www.theo2.co.uk/events/detail/gracie-abrams-2027'},
-{start:'2027-04-05', ds:'5 Apr – 10 May', d:'05', mo:'APR', cat:'music', title:'Olivia Rodrigo: The Unraveled Tour', venue:'The O2 Arena, London', note:'Extended residency, one of the year\'s hottest arena tickets.', url:'https://www.theo2.co.uk/events/detail/olivia-rodrigo-2027'},
-{start:'2026-11-07', ds:'7 – 8 Nov', d:'07', mo:'NOV', cat:'theatre', title:'Gladiators Live Tour 2026', venue:'OVO Arena Wembley, London', note:'Arena stunt spectacular based on the TV show, family-friendly and high energy.', url:'https://www.ovoarena.co.uk/events/detail/gladiators-live-tour-2026'},
-{start:'2026-12-04', ds:'4 Dec', d:'04', mo:'DEC', cat:'music', title:'Razorlight: \'America\' 20th Anniversary Tour', venue:'OVO Arena Wembley, London', note:'Homecoming show marking 20 years of the band\'s breakthrough album.', url:'https://www.ovoarena.co.uk/events/detail/razorlight'},
-{start:'2026-12-05', ds:'5 Dec', d:'05', mo:'DEC', cat:'music', title:'Placebo: 30th Anniversary Tour', venue:'OVO Arena Wembley, London', note:'Alternative rock icons revisiting their first two albums in full.', url:'https://www.ovoarena.co.uk/events/detail/placebo'},
-{start:'2027-02-13', ds:'13 Feb', d:'13', mo:'FEB', cat:'music', title:'Scouting For Girls', venue:'OVO Arena Wembley, London', note:'20th-anniversary homecoming show, with The Hoosiers supporting.', url:'https://www.ovoarena.co.uk/events/detail/scouting-for-girls'},
-{start:'2027-06-21', ds:'21 – 25 Jun', d:'21', mo:'JUN', cat:'music', title:'sombr: You Are The Reason', venue:'The O2 Arena, London', note:'Four-night run for the rising singer-songwriter.', url:'https://www.officialcharts.com/chart-news/sombr-you-are-the-reason-european-uk-tour-dates-2027-tickets/'},
-{start:'2027-07-03', ds:'3 Jul', d:'03', mo:'JUL', cat:'music', title:'Slipknot: The (sic)est Stadium Tour', venue:'Wembley Stadium, London', note:'Stadium tour opener, with Marilyn Manson, Lorna Shore and Hatebreed.', url:'https://www.officialcharts.com/chart-news/slipknot-tour-2027-wembley-stadium-tickets-presale/'},
-{start:'2027-07-23', ds:'23 Jul', d:'23', mo:'JUL', cat:'music', title:'Noah Kahan', venue:'Wembley Stadium, London', note:'Stadium show.'},
-{start:'2027-08-25', ds:'25, 27 & 28 Aug', d:'25', mo:'AUG', cat:'music', title:'Harry Styles: Together, Together Tour', venue:'Wembley Stadium, London', note:'Three Wembley nights, with Tears For Fears as special guests.', url:'https://www.eventmasters.co.uk/news/harry-styles-announces-three-new-wembley-stadium-dates-for-2027.html'},
-{start:'2027-10-27', ds:'27 Oct – 6 Nov', d:'27', mo:'OCT', cat:'comedy', title:'Alan Carr: Have I Said Too Much?', venue:'London Palladium, London', note:'Multi-night run at the Palladium, broadly likeable for mixed client groups.', url:'https://alancarr.net/live/'},
-{start:'2027-05-12', ds:'12 May', d:'12', mo:'MAY', cat:'comedy', title:'John Bishop: Let\'s Go Round Again', venue:'Royal Albert Hall, London', note:'Warm, crowd-pleasing stand-up in a grander seated setting than a typical arena show.', url:'https://www.johnbishoponline.com/'},
+{start:'2027-04-16', ds:'16 – 17 Apr', d:'16', mo:'APR', cat:'comedy', title:'Romesh Ranganathan: Will Change Your Life', venue:'The O2 Arena, London', note:'A popular, safe bet for stand-up.', url:'https://www.theo2.co.uk/events/detail/romesh-ranganathan-will-change-your-life'},
+{start:'2027-04-30', ds:'30 Apr – 4 May', d:'30', mo:'APR', cat:'music', title:'Gracie Abrams: The Look at My Life Tour', venue:'The O2 Arena, London', note:'Sells fast, so don\'t wait.', url:'https://www.theo2.co.uk/events/detail/gracie-abrams-2027'},
+{start:'2027-04-05', ds:'5 Apr – 10 May', d:'05', mo:'APR', cat:'music', title:'Olivia Rodrigo: The Unraveled Tour', venue:'The O2 Arena, London', note:'Eleven nights, and one of the hottest tickets of the year.', url:'https://www.theo2.co.uk/events/detail/olivia-rodrigo-2027'},
+{start:'2026-11-07', ds:'7 – 8 Nov', d:'07', mo:'NOV', cat:'theatre', title:'Gladiators Live Tour 2026', venue:'OVO Arena Wembley, London', note:'Stunts and big energy, based on the TV show. Great for families.', url:'https://www.ovoarena.co.uk/events/detail/gladiators-live-tour-2026'},
+{start:'2026-12-04', ds:'4 Dec', d:'04', mo:'DEC', cat:'music', title:'Razorlight: \'America\' 20th Anniversary Tour', venue:'OVO Arena Wembley, London', note:'Marks 20 years of the band\'s second album.', url:'https://www.ovoarena.co.uk/events/detail/razorlight'},
+{start:'2026-12-05', ds:'5 Dec', d:'05', mo:'DEC', cat:'music', title:'Placebo: 30th Anniversary Tour', venue:'OVO Arena Wembley, London', note:'Sold out. They play their first two albums in full.', url:'https://www.ovoarena.co.uk/events/detail/placebo'},
+{start:'2027-02-13', ds:'13 Feb', d:'13', mo:'FEB', cat:'music', title:'Scouting For Girls', venue:'OVO Arena Wembley, London', note:'20th anniversary show, with The Hoosiers supporting.', url:'https://www.ovoarena.co.uk/events/detail/scouting-for-girls'},
+{start:'2027-06-21', ds:'21 – 25 Jun', d:'21', mo:'JUN', cat:'music', title:'sombr: You Are The Reason', venue:'The O2 Arena, London', note:'Four nights for the rising singer-songwriter.', url:'https://www.officialcharts.com/chart-news/sombr-you-are-the-reason-european-uk-tour-dates-2027-tickets/'},
+{start:'2027-07-03', ds:'3 Jul', d:'03', mo:'JUL', cat:'music', title:'Slipknot: The (sic)est Stadium Tour', venue:'Wembley Stadium, London', note:'Tour opener, with Marilyn Manson, Lorna Shore and Hatebreed.', url:'https://www.officialcharts.com/chart-news/slipknot-tour-2027-wembley-stadium-tickets-presale/'},
+{start:'2027-07-23', ds:'23 – 25 Jul', d:'23', mo:'JUL', cat:'music', title:'Noah Kahan', venue:'Wembley Stadium, London', note:'Three stadium nights.'},
+{start:'2027-08-25', ds:'25, 27 & 28 Aug', d:'25', mo:'AUG', cat:'music', title:'Harry Styles: Together, Together Tour', venue:'Wembley Stadium, London', note:'Three nights at Wembley, with Tears For Fears as special guests.', url:'https://discover.ticketmaster.co.uk/news/harry-styles-announces-2027-uk-tour-dates-80131/'},
+{start:'2027-01-28', ds:'28 – 31 Jan', d:'28', mo:'JAN', cat:'comedy', title:'Kevin Bridges: Here If You Need Me', venue:'London Palladium, London', note:'Four nights from one of the UK\'s best-loved comics.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-02-02', ds:'2 Feb', d:'02', mo:'FEB', cat:'comedy', title:'Clinton Baptiste: Spectral Intercourse', venue:'London Palladium, London', note:'Character comedy from Phoenix Nights.', url:'https://lwtheatres.co.uk/whats-on/clinton-baptiste'},
+{start:'2027-02-07', ds:'7 Feb', d:'07', mo:'FEB', cat:'comedy', title:'Emma Doran: Emmaculate', venue:'London Palladium, London', note:'Irish stand-up, one night at the Palladium.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-02-11', ds:'11 Feb', d:'11', mo:'FEB', cat:'comedy', title:'Omid Djalili: Namaste', venue:'London Palladium, London', note:'Warm, crowd-pleasing stand-up.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-03-13', ds:'13 Mar', d:'13', mo:'MAR', cat:'comedy', title:'John Kearns: Tilting at Windmills', venue:'London Palladium, London', note:'Award-winning stand-up.', url:'https://www.ents24.com/london-events/london-palladium/john-kearns/7544514'},
+{start:'2027-03-17', ds:'17 – 18 Mar', d:'17', mo:'MAR', cat:'comedy', title:'Ed Gamble: Fresh Hell', venue:'London Palladium, London', note:'Two nights of sharp, funny stand-up.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-04-07', ds:'7 Apr', d:'07', mo:'APR', cat:'comedy', title:'Red Richardson: Premium Economy', venue:'London Palladium, London', note:'Stand-up at the Palladium.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-04-09', ds:'9 Apr', d:'09', mo:'APR', cat:'comedy', title:'Al Murray: All You Need Is Guv', venue:'London Palladium, London', note:'The Pub Landlord returns to the Palladium.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-04-13', ds:'13 Apr', d:'13', mo:'APR', cat:'comedy', title:'Bianca Del Rio: It Gets Bitter', venue:'London Palladium, London', note:'Drag comedy.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-05-08', ds:'8 May', d:'08', mo:'MAY', cat:'comedy', title:'Jarlath Regan: Craic Pot', venue:'London Palladium, London', note:'Irish stand-up and podcaster.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-05-13', ds:'13 – 14 May', d:'13', mo:'MAY', cat:'comedy', title:'Julian Clary: Fully Dilated', venue:'London Palladium, London', note:'Two nights of properly flamboyant comedy.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-09-24', ds:'24 – 25 Sep', d:'24', mo:'SEP', cat:'comedy', title:'Russell Howard: Don\'t Tell The Algorithm', venue:'London Palladium, London', note:'Two nights of reliably good stand-up.', url:'https://lwtheatres.co.uk/whats-on/genres/comedy/'},
+{start:'2027-07-06', ds:'6 Jul', d:'06', mo:'JUL', cat:'music', title:'Karol G', venue:'Tottenham Hotspur Stadium, London', note:'Stadium show.', url:'https://www.tottenhamhotspurstadium.com/news/1022172/karol-g-to-perform-at-tottenham-hotspur-stadium-in-2027'},
+{start:'2027-02-26', ds:'26 Feb', d:'26', mo:'FEB', cat:'music', title:'Dominguinho', venue:'The Roundhouse, Camden', note:'Live music at the Roundhouse.', url:'https://www.roundhouse.org.uk/whats-on/'},
+{start:'2027-03-13', ds:'13 Mar', d:'13', mo:'MAR', cat:'comedy', title:'Tatty Macleod: Things My Mother Did', venue:'Royal Festival Hall, Southbank Centre', note:'Evening show in the Royal Festival Hall.', url:'https://www.chortle.co.uk/shows/tour/t/40572/_tatty_macleod%3A_things_my_mother_did'},
+{start:'2026-11-15', ds:'15 – 16 Nov', d:'15', mo:'NOV', cat:'music', title:'Muse: The Wow! Signal Tour', venue:'The O2 Arena, London', note:'Two nights.', url:'https://www.theo2.co.uk/events/detail/muse-2026'},
+{start:'2026-11-19', ds:'19 Nov', d:'19', mo:'NOV', cat:'music', title:'Good Charlotte', venue:'The O2 Arena, London', note:'Pop-punk favourites.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-11-21', ds:'21 Nov', d:'21', mo:'NOV', cat:'music', title:'The Script', venue:'The O2 Arena, London', note:'Big-chorus Irish pop-rock.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-11-23', ds:'23 Nov', d:'23', mo:'NOV', cat:'music', title:'Don Toliver', venue:'The O2 Arena, London', note:'US hip-hop and R&B.', url:'https://www.theo2.co.uk/events/detail/don-toliver-2026'},
+{start:'2026-11-26', ds:'26 Nov', d:'26', mo:'NOV', cat:'music', title:'Squeeze with Billy Bragg', venue:'The O2 Arena, London', note:'British pop classics for a relaxed night.', url:'https://www.theo2.co.uk/events/detail/squeeze-2026'},
+{start:'2026-11-27', ds:'27 Nov', d:'27', mo:'NOV', cat:'music', title:'Fontaines D.C.', venue:'The O2 Arena, London', note:'Post-punk; listed as sold out.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-11-28', ds:'28 Nov', d:'28', mo:'NOV', cat:'music', title:'Jessie Ware', venue:'The O2 Arena, London', note:'Glamorous disco-pop, good for a client night out.', url:'https://www.theo2.co.uk/events/detail/jessie-ware'},
+{start:'2026-11-30', ds:'30 Nov', d:'30', mo:'NOV', cat:'music', title:'Mariah Carey: Christmastime', venue:'The O2 Arena, London', note:'Her festive show, and a real treat for the season.', url:'https://www.livenation.co.uk/mariah-carey-tickets-adp41387'},
+{start:'2026-12-01', ds:'1 – 2 Dec', d:'01', mo:'DEC', cat:'music', title:'Phoebe Bridgers', venue:'The O2 Arena, London', note:'Indie-folk, two nights.', url:'https://www.theo2.co.uk/events/detail/phoebe-bridgers'},
+{start:'2026-12-03', ds:'3 Dec', d:'03', mo:'DEC', cat:'music', title:'UB40 ft. Ali Campbell', venue:'The O2 Arena, London', note:'Reggae-pop crowd-pleaser.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-12-04', ds:'4 – 5 Dec', d:'04', mo:'DEC', cat:'music', title:'Level 42', venue:'indigo at The O2, London', note:'Funk and pop-soul favourites.', url:'https://www.aegpresents.co.uk/event/level42'},
+{start:'2026-12-09', ds:'9 Dec', d:'09', mo:'DEC', cat:'music', title:'Ocean Colour Scene', venue:'The O2 Arena, London', note:'Britpop-era favourites.', url:'https://www.theo2.co.uk/events/detail/ocean-colour-scene'},
+{start:'2026-12-16', ds:'16 Dec', d:'16', mo:'DEC', cat:'music', title:'The Darkness', venue:'The O2 Arena, London', note:'Glam-rock showmen.', url:'https://www.theo2.co.uk/events/detail/the-darkness-2026'},
+{start:'2026-12-18', ds:'18 Dec', d:'18', mo:'DEC', cat:'music', title:'Kasabian', venue:'The O2 Arena, London', note:'Arena indie-rock anthems.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-12-19', ds:'19 Dec', d:'19', mo:'DEC', cat:'music', title:'Culture Club', venue:'The O2 Arena, London', note:'80s pop hits with Boy George.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-01-23', ds:'23 Jan', d:'23', mo:'JAN', cat:'music', title:'Five Finger Death Punch', venue:'The O2 Arena, London', note:'Heavy metal, with Lamb of God.', url:'https://www.theo2.co.uk/events/detail/five-finger-death-punch'},
+{start:'2027-02-24', ds:'24 Feb', d:'24', mo:'FEB', cat:'music', title:'Kenshi Yonezu', venue:'The O2 Arena, London', note:'Japanese pop star.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-02-25', ds:'25 Feb', d:'25', mo:'FEB', cat:'music', title:'Masego & Friends', venue:'The O2 Arena, London', note:'Jazz-infused R&B.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-02-26', ds:'26 Feb', d:'26', mo:'FEB', cat:'music', title:'Bullet For My Valentine + Pendulum Live', venue:'The O2 Arena, London', note:'Metal meets drum and bass.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-02-27', ds:'27 Feb', d:'27', mo:'FEB', cat:'music', title:'John Summit', venue:'The O2 Arena, London', note:'Dance and house headline show.', url:'https://www.theo2.co.uk/events/detail/john-summit'},
+{start:'2027-03-03', ds:'3 – 5 Mar', d:'03', mo:'MAR', cat:'music', title:'N-Dubz', venue:'The O2 Arena, London', note:'Three nights.', url:'https://www.officialcharts.com/chart-news/ndubz-legacy-tour-uk-2027-dates-tickets-presale-venues/'},
+{start:'2027-03-08', ds:'8 – 9 Mar', d:'08', mo:'MAR', cat:'music', title:'ENHYPEN: Blood Saga', venue:'The O2 Arena, London', note:'K-pop arena tour.', url:'https://aegeurope.com/press-centre/enhypen-world-tour-blood-saga-is-headed-to-the-o2/'},
+{start:'2027-03-26', ds:'26 Mar', d:'26', mo:'MAR', cat:'music', title:'Sub Focus', venue:'The O2 Arena, London', note:'Drum and bass headline show.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-03-28', ds:'28 Mar', d:'28', mo:'MAR', cat:'music', title:'Ice Nine Kills', venue:'The O2 Arena, London', note:'Horror-themed metalcore.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-04-02', ds:'2 – 3 Apr', d:'02', mo:'APR', cat:'music', title:'Chase & Status', venue:'The O2 Arena, London', note:'Drum and bass superstars, two nights.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-04-04', ds:'4 Apr', d:'04', mo:'APR', cat:'music', title:'James Blunt', venue:'The O2 Arena, London', note:'Singer-songwriter hits.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-04-10', ds:'10 Apr', d:'10', mo:'APR', cat:'music', title:'Kool & The Gang', venue:'The O2 Arena, London', note:'Funk and disco classics.', url:'https://www.theo2.co.uk/events/detail/soultown-festival-2027'},
+{start:'2027-04-21', ds:'21 – 25 Apr', d:'21', mo:'APR', cat:'music', title:'Teddy Swims: The UGLY Tour', venue:'The O2 Arena, London', note:'Four nights of soul-pop. Some dates are already sold out.', url:'https://www.theo2.co.uk/events/detail/teddy-swims'},
+{start:'2027-04-23', ds:'23 Apr', d:'23', mo:'APR', cat:'music', title:'Thomas Rhett', venue:'The O2 Arena, London', note:'US country star.', url:'https://www.stereoboard.com/thomas-rhett-tickets/london/2027-04-23'},
+{start:'2027-04-28', ds:'28 Apr', d:'28', mo:'APR', cat:'music', title:'Thirty Seconds to Mars', venue:'The O2 Arena, London', note:'Stadium-style alt-rock.', url:'https://www.theo2.co.uk/events/detail/thirty-seconds-to-mars-2027'},
+{start:'2027-05-06', ds:'6 May', d:'06', mo:'MAY', cat:'music', title:'Simple Minds with Gary Numan', venue:'The O2 Arena, London', note:'80s and 90s rock hits.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-05-11', ds:'11 & 14 May', d:'11', mo:'MAY', cat:'music', title:'Rod Stewart: The Final Encore', venue:'The O2 Arena, London', note:'Farewell shows. The 11th is sold out.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-05-12', ds:'12 May', d:'12', mo:'MAY', cat:'music', title:'Erasure', venue:'The O2 Arena, London', note:'Synth-pop favourites.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-05-25', ds:'25 May', d:'25', mo:'MAY', cat:'music', title:'Nickelback', venue:'The O2 Arena, London', note:'Arena rock, two nights.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-05-28', ds:'28 May', d:'28', mo:'MAY', cat:'music', title:'Greta Van Fleet', venue:'The O2 Arena, London', note:'Classic-style hard rock.', url:'https://www.ents24.com/london-events/the-o2/greta-van-fleet/7542584'},
+{start:'2027-06-01', ds:'1 – 3 Jun', d:'01', mo:'JUN', cat:'music', title:'Tame Impala', venue:'The O2 Arena, London', note:'Psychedelic pop, three nights.', url:'https://www.theo2.co.uk/events/detail/tame-impala-2027'},
+{start:'2027-06-05', ds:'5 Jun', d:'05', mo:'JUN', cat:'music', title:'David Guetta', venue:'The O2 Arena, London', note:'Dance headliner.', url:'https://www.officialcharts.com/chart-news/david-guetta-o2-london-monolith-show-2027-tickets-dates/'},
+{start:'2027-06-30', ds:'30 Jun', d:'30', mo:'JUN', cat:'music', title:'Santana', venue:'The O2 Arena, London', note:'Guitar legend.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-07-02', ds:'2 – 3 Jul', d:'02', mo:'JUL', cat:'music', title:'Kings of Leon', venue:'The O2 Arena, London', note:'Two nights of stadium-rock favourites.', url:'https://www.radiox.co.uk/artists/kings-of-leon/2027-the-o2-london-20th-birthday-series-tickets/'},
+{start:'2027-07-04', ds:'4 Jul', d:'04', mo:'JUL', cat:'music', title:'Jack Johnson', venue:'The O2 Arena, London', note:'A laid-back acoustic evening.', url:'https://www.eventworld.com/jack-johnson-london-tickets-04-07-2027/event/588976'},
+{start:'2027-07-17', ds:'17 Jul', d:'17', mo:'JUL', cat:'music', title:'Jorja Smith', venue:'The O2 Arena, London', note:'UK R&B and soul.', url:'https://www.theo2.co.uk/events/detail/jorja-smith'},
+{start:'2027-10-01', ds:'1 Oct', d:'01', mo:'OCT', cat:'music', title:'Andrea Bocelli', venue:'The O2 Arena, London', note:'Classical crossover, for a more formal night.', url:'https://www.ents24.com/london-events/the-o2/andrea-bocelli/7540082'},
+{start:'2027-10-19', ds:'19 Oct', d:'19', mo:'OCT', cat:'music', title:'Jean-Michel Jarre', venue:'The O2 Arena, London', note:'Electronic music with a big light show.', url:'https://www.ents24.com/london-events/the-o2/jean-michel-jarre/7551503'},
+{start:'2026-11-22', ds:'22 Nov', d:'22', mo:'NOV', cat:'comedy', title:'Bill Bailey: Vaudevillean', venue:'The O2 Arena, London', note:'Musical comedy.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-12-10', ds:'10 Dec', d:'10', mo:'DEC', cat:'comedy', title:'Mo Gilligan', venue:'The O2 Arena, London', note:'Big-arena stand-up.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-12-17', ds:'17 Dec', d:'17', mo:'DEC', cat:'comedy', title:'Greg Davies', venue:'The O2 Arena, London', note:'Stand-up from the Taskmaster star.', url:'https://www.theo2.co.uk/events/detail/greg-davies'},
+{start:'2027-09-01', ds:'1 Sep', d:'01', mo:'SEP', cat:'comedy', title:'Jimmy Carr: Killing Jokes', venue:'Indigo at The O2, London', note:'Sharp, dark stand-up.', url:'https://www.theo2.co.uk/events'},
+{start:'2026-12-14', ds:'14 Dec', d:'14', mo:'DEC', cat:'theatre', title:'McLaren Racing Live: In Conversation', venue:'The O2 Arena, London', note:'Behind the scenes of F1 team life.', url:'https://www.theo2.co.uk/events/detail/mclaren-racing-live-in-conversation'},
+{start:'2027-01-09', ds:'9 – 10 Jan', d:'09', mo:'JAN', cat:'theatre', title:'Hot Wheels Monster Trucks Live', venue:'The O2 Arena, London', note:'Family-friendly arena show.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-02-08', ds:'8 Feb', d:'08', mo:'FEB', cat:'theatre', title:'Russell Howard & Friends: Felix Foundation Charity Gala', venue:'The O2 Arena, London', note:'Charity stand-up gala.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-02-12', ds:'12 – 14 Feb', d:'12', mo:'FEB', cat:'theatre', title:'Strictly Come Dancing: The Live Tour', venue:'The O2 Arena, London', note:'All the glitz of the show, so great for a wider guest list.', url:'https://www.theo2.co.uk/events'},
+{start:'2027-02-15', ds:'15 – 16 Feb', d:'15', mo:'FEB', cat:'theatre', title:'Disney Descendants, ZOMBIES & Camp Rock: Worlds Collide Concert Tour', venue:'The O2 Arena, London', note:'Family concert.', url:'https://www.theo2.co.uk/events/detail/disney-worlds-collide-concert-tour-2027'},
+{start:'2026-11-19', ds:'19 Nov', d:'19', mo:'NOV', cat:'music', title:'Shinedown', venue:'OVO Arena Wembley, London', note:'US hard rock.', url:'https://www.ovoarena.co.uk/'},
+{start:'2026-11-21', ds:'21 Nov', d:'21', mo:'NOV', cat:'music', title:'Duke Dumont', venue:'OVO Arena Wembley, London', note:'House and dance.', url:'https://www.ovoarena.co.uk/'},
+{start:'2026-11-22', ds:'22 Nov', d:'22', mo:'NOV', cat:'music', title:'Taemin', venue:'OVO Arena Wembley, London', note:'K-pop solo star.', url:'https://www.ovoarena.co.uk/'},
+{start:'2026-11-28', ds:'28 Nov', d:'28', mo:'NOV', cat:'comedy', title:'Daniel Sloss: Bitter', venue:'OVO Arena Wembley, London', note:'Stand-up.', url:'https://www.ovoarena.co.uk/'},
+{start:'2026-12-03', ds:'3 Dec', d:'03', mo:'DEC', cat:'music', title:'EsDeeKid', venue:'OVO Arena Wembley, London', note:'UK rap.', url:'https://www.ovoarena.co.uk/'},
+{start:'2026-12-11', ds:'11 – 12 Dec', d:'11', mo:'DEC', cat:'music', title:'Jamie T', venue:'OVO Arena Wembley, London', note:'Two nights of London indie favourites.', url:'https://www.ovoarena.co.uk/'},
+{start:'2026-12-16', ds:'16 Dec', d:'16', mo:'DEC', cat:'music', title:'Giggs', venue:'OVO Arena Wembley, London', note:'UK rap legend.', url:'https://www.ovoarena.co.uk/'},
+{start:'2027-02-24', ds:'24 Feb', d:'24', mo:'FEB', cat:'music', title:'Role Model', venue:'OVO Arena Wembley, London', note:'Pop-rock.', url:'https://www.ovoarena.co.uk/'},
+{start:'2027-02-26', ds:'26 Feb', d:'26', mo:'FEB', cat:'music', title:'Kacey Musgraves', venue:'OVO Arena Wembley, London', note:'Country-pop.', url:'https://www.ovoarena.co.uk/events/detail/kacey-musgraves-1'},
+{start:'2027-03-11', ds:'11 Mar', d:'11', mo:'MAR', cat:'music', title:'Megadeth', venue:'OVO Arena Wembley, London', note:'Thrash metal.', url:'https://www.ovoarena.co.uk/events/detail/megadeth'},
+{start:'2027-03-13', ds:'13 Mar', d:'13', mo:'MAR', cat:'music', title:'Tash Sultana', venue:'OVO Arena Wembley, London', note:'A whole band, played by one person.', url:'https://www.ents24.com/london-events/ovo-arena-wembley/tash-sultana/7444948'},
+{start:'2027-03-25', ds:'25 Mar', d:'25', mo:'MAR', cat:'music', title:'The Jacksons', venue:'OVO Arena Wembley, London', note:'Motown classics.', url:'https://www.ovoarena.co.uk/'},
+{start:'2027-05-02', ds:'2 May', d:'02', mo:'MAY', cat:'music', title:'Omah Lay', venue:'OVO Arena Wembley, London', note:'Afrobeats.', url:'https://www.ovoarena.co.uk/'},
+{start:'2027-06-25', ds:'25 Jun', d:'25', mo:'JUN', cat:'music', title:'Toto', venue:'OVO Arena Wembley, London', note:'Soft-rock classics, with Todd Rundgren.', url:'https://www.ovoarena.co.uk/events/detail/toto'},
+{start:'2027-09-17', ds:'17 Sep', d:'17', mo:'SEP', cat:'music', title:'André Rieu', venue:'OVO Arena Wembley, London', note:'Waltzes and a full orchestra.', url:'https://www.ovoarena.co.uk/'},
+{start:'2027-11-04', ds:'4 – 7 Nov', d:'04', mo:'NOV', cat:'music', title:'Frank Turner: Lost Evenings X', venue:'OVO Arena Wembley, London', note:'A four-night mini festival.', url:'https://www.ovoarena.co.uk/'},
+{start:'2026-11-23', ds:'23 Nov', d:'23', mo:'NOV', cat:'music', title:'Joe Hisaishi', venue:'Royal Albert Hall, London', note:'Studio Ghibli composer in concert.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2026-11-25', ds:'25 Nov', d:'25', mo:'NOV', cat:'music', title:'Deep Purple', venue:'Royal Albert Hall, London', note:'Hard-rock legends.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2026-11-27', ds:'27 – 28 Nov', d:'27', mo:'NOV', cat:'music', title:'Jools Holland', venue:'Royal Albert Hall, London', note:'Two nights.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2026-12-04', ds:'4 Dec', d:'04', mo:'DEC', cat:'music', title:'Sir John Rutter\'s Christmas Celebration', venue:'Royal Albert Hall, London', note:'Choral Christmas concert.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2026-12-09', ds:'9 Dec', d:'09', mo:'DEC', cat:'music', title:'Rick Astley\'s Swinging Christmas', venue:'Royal Albert Hall, London', note:'80s pop favourite.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2026-12-10', ds:'10 – 11 Dec', d:'10', mo:'DEC', cat:'music', title:'Jamie Cullum', venue:'Royal Albert Hall, London', note:'Jazz and pop, two nights.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2026-12-14', ds:'14 Dec', d:'14', mo:'DEC', cat:'music', title:'Heart Christmas Live (Take That headlining)', venue:'Royal Albert Hall, London', note:'One-night Christmas pop spectacular at the Royal Albert Hall, with Take That topping the bill.', url:'https://www.heart.co.uk/radio/christmas-live-date-tickets-lineup/'},
+{start:'2027-05-20', ds:'20 – 24 May', d:'20', mo:'MAY', cat:'music', title:'Eric Clapton', venue:'Royal Albert Hall, London', note:'Five nights from a guitar legend. One to get in early on.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2027-05-22', ds:'22 May', d:'22', mo:'MAY', cat:'music', title:'Don McLean', venue:'Royal Albert Hall, London', note:'American Pie in concert.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2027-06-07', ds:'7 Jun', d:'07', mo:'JUN', cat:'music', title:'Mike + The Mechanics', venue:'Royal Albert Hall, London', note:'Pop-rock hits.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2027-06-30', ds:'30 Jun, 1 & 4 Jul', d:'30', mo:'JUN', cat:'music', title:'Gregory Porter', venue:'Royal Albert Hall, London', note:'Jazz and soul, four nights.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2027-07-02', ds:'2 Jul', d:'02', mo:'JUL', cat:'music', title:'Pink Martini', venue:'Royal Albert Hall, London', note:'Stylish lounge pop.', url:'https://www.ents24.com/london-events/royal-albert-hall/pink-martini/7544031'},
+{start:'2027-10-28', ds:'28 Oct', d:'28', mo:'OCT', cat:'music', title:'Laura Pausini', venue:'Royal Albert Hall, London', note:'Italian pop star.', url:'https://www.royalalberthall.com/tickets/'},
+{start:'2026-11-20', ds:'20 – 21 Nov', d:'20', mo:'NOV', cat:'music', title:'Enter Shikari', venue:'Alexandra Palace (Great Hall), London', note:'Electronic rock.', url:'https://www.alexandrapalace.com/whats-on/enter-shikari/'},
+{start:'2026-11-26', ds:'26 Nov', d:'26', mo:'NOV', cat:'music', title:'Nia Archives', venue:'Alexandra Palace, London', note:'Jungle and drum and bass.', url:'https://www.alexandrapalace.com/whats-on/nia-archives/'},
+{start:'2026-12-03', ds:'3 – 6 Dec', d:'03', mo:'DEC', cat:'theatre', title:'Cinderella On Ice', venue:'Alexandra Palace, London', note:'Family show.', url:'https://www.alexandrapalace.com/whats-on/cinderella-on-ice/'},
+{start:'2027-02-26', ds:'26 – 27 Feb', d:'26', mo:'FEB', cat:'music', title:'Bonobo', venue:'Alexandra Palace, London', note:'Downtempo electronica.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2027-03-01', ds:'1 Mar', d:'01', mo:'MAR', cat:'music', title:'Cage The Elephant', venue:'Alexandra Palace, London', note:'Alt-rock.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2027-03-03', ds:'3 Mar', d:'03', mo:'MAR', cat:'music', title:'Dominic Fike', venue:'Alexandra Palace, London', note:'Pop and indie.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2027-04-03', ds:'3 Apr', d:'03', mo:'APR', cat:'music', title:'Trivium', venue:'Alexandra Palace, London', note:'Metal.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2027-05-22', ds:'22 May', d:'22', mo:'MAY', cat:'music', title:'Weezer', venue:'Alexandra Palace, London', note:'Alt-rock favourites.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2027-05-28', ds:'28 – 29 May', d:'28', mo:'MAY', cat:'comedy', title:'Dylan Moran: Looking For Trouble', venue:'Alexandra Palace, London', note:'Stand-up.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2027-07-02', ds:'2 – 3 Jul', d:'02', mo:'JUL', cat:'music', title:'Hayley Williams', venue:'Alexandra Palace, London', note:'Paramore frontwoman solo.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2027-07-03', ds:'3 Jul', d:'03', mo:'JUL', cat:'comedy', title:'Ed Byrne: No Dramas', venue:'Alexandra Palace, London', note:'Stand-up.', url:'https://www.alexandrapalace.com/whats-on/'},
+{start:'2026-11-24', ds:'24 Nov', d:'24', mo:'NOV', cat:'music', title:'Deep Purple', venue:'Eventim Apollo, Hammersmith', note:'Sold out.', url:'https://www.eventimapollo.com/events/deep-purple'},
+{start:'2026-12-02', ds:'2 Dec', d:'02', mo:'DEC', cat:'theatre', title:'Love Actually Live in Concert', venue:'Eventim Apollo, Hammersmith', note:'The film with a live orchestra. Very festive.', url:'https://www.eventimapollo.com/events/love-actually-2026'},
+{start:'2026-12-03', ds:'3 Dec', d:'03', mo:'DEC', cat:'music', title:'Bleachers', venue:'Eventim Apollo, Hammersmith', note:'Indie-pop.', url:'https://www.stereoboard.com/bleachers-tickets/london/2026-12-03'},
+{start:'2026-12-12', ds:'12 Dec', d:'12', mo:'DEC', cat:'music', title:'Joss Stone', venue:'Eventim Apollo, Hammersmith', note:'Soul.', url:'https://www.eventimapollo.com/events/'},
+{start:'2026-12-20', ds:'20 Dec', d:'20', mo:'DEC', cat:'music', title:'Sex Pistols ft. Frank Carter', venue:'Eventim Apollo, Hammersmith', note:'Punk.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-02-05', ds:'5 – 6 Feb', d:'05', mo:'FEB', cat:'music', title:'Donny Osmond', venue:'Eventim Apollo, Hammersmith', note:'Pop and show tunes.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-02-20', ds:'20 – 22 Feb', d:'20', mo:'FEB', cat:'comedy', title:'Dan and Phil', venue:'Eventim Apollo, Hammersmith', note:'Live comedy from the YouTube favourites.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-02-25', ds:'25 Feb', d:'25', mo:'FEB', cat:'comedy', title:'Phil Wang', venue:'Eventim Apollo, Hammersmith', note:'Stand-up.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-03-12', ds:'12 Mar', d:'12', mo:'MAR', cat:'music', title:'Will Young', venue:'Eventim Apollo, Hammersmith', note:'Pop.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-04-09', ds:'9 Apr', d:'09', mo:'APR', cat:'music', title:'Gabrielle', venue:'Eventim Apollo, Hammersmith', note:'Soul-pop.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-04-13', ds:'13 – 14 Apr', d:'13', mo:'APR', cat:'music', title:'Brandi Carlile', venue:'Eventim Apollo, Hammersmith', note:'Americana.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-06-20', ds:'20 Jun', d:'20', mo:'JUN', cat:'music', title:'King Gizzard & The Lizard Wizard', venue:'Eventim Apollo, Hammersmith', note:'Psychedelic rock.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-06-27', ds:'27 Jun', d:'27', mo:'JUN', cat:'music', title:'Roger Waters Presents Legacy', venue:'Eventim Apollo, Hammersmith', note:'A Pink Floyd show presented by Roger Waters, with the Harry Waters Band.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-06-30', ds:'30 Jun – 3 Jul', d:'30', mo:'JUN', cat:'comedy', title:'Joe Lycett', venue:'Eventim Apollo, Hammersmith', note:'Four nights of stand-up.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-07-07', ds:'7 Jul', d:'07', mo:'JUL', cat:'music', title:'Slash ft. Myles Kennedy & The Conspirators', venue:'Eventim Apollo, Hammersmith', note:'Rock guitar hero.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-09-17', ds:'17 Sep', d:'17', mo:'SEP', cat:'music', title:'Passenger', venue:'Eventim Apollo, Hammersmith', note:'Acoustic folk.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-10-24', ds:'24 – 25 Oct', d:'24', mo:'OCT', cat:'music', title:'Deacon Blue', venue:'Eventim Apollo, Hammersmith', note:'Scottish pop-rock, two nights.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-10-30', ds:'30 – 31 Oct', d:'30', mo:'OCT', cat:'theatre', title:'Hannah Fry', venue:'Eventim Apollo, Hammersmith', note:'Maths and science talk.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-12-03', ds:'3 Dec', d:'03', mo:'DEC', cat:'music', title:'Bruce Dickinson', venue:'Eventim Apollo, Hammersmith', note:'Iron Maiden frontman.', url:'https://www.eventimapollo.com/events/'},
+{start:'2027-06-18', ds:'18 & 20 Jun', d:'18', mo:'JUN', cat:'music', title:'Sam Fender: The Proper Massive Stadium Tour', venue:'Wembley Stadium, London', note:'Two big nights at Wembley, with Wunderhorse.'},
+{start:'2027-06-24', ds:'24 Jun', d:'24', mo:'JUN', cat:'music', title:'Bon Jovi: BST Hyde Park', venue:'Hyde Park, London', note:'The first act announced for BST Hyde Park 2027, with more to come.'},
+{start:'2027-10-27', ds:'27 – 31 Oct', d:'27', mo:'OCT', cat:'comedy', title:'Alan Carr: Have I Said Too Much?', venue:'London Palladium, London', note:'Five nights at the Palladium, and a hit with mixed groups.', url:'https://www.stereoboard.com/alan-carr-tickets/london/2027-10-27'},
+{start:'2027-05-12', ds:'12 May', d:'12', mo:'MAY', cat:'comedy', title:'John Bishop: Let\'s Go Round Again', venue:'Royal Albert Hall, London', note:'Warm, funny stand-up in a more grand, seated setting.', url:'https://www.johnbishoponline.com/'},
 ];
 
 /* ============ STATIC DATA: SPORTS (participatory) ============ */
 const SPORTS_GROUPS = [
   { key:'shooting', label:'Shooting', icon:'shooting', items:[
-    { title:'Clay Pigeon Shooting Day', venue:'Squerryes Farm Shoot Lodge, Westerham, Kent', note:'Guided clay shooting with instructors for all abilities, followed by lunch in the on-site lodge. A relaxed but active alternative to a hospitality box, and works well for smaller groups of 8–20.' }
+    { title:'Clay Pigeon Shooting Day', venue:'Squerryes Farm Shoot Lodge, Westerham, Kent', note:'Guided clay shooting with instructors for all abilities, followed by lunch in the on-site lodge. A more active alternative to a hospitality box. Works for groups of 8 to 20.' }
   ]},
   { key:'cycling', label:'Cycle Days', icon:'cycling', items:[
-    { title:'Surrey Hills Ride & Wine Tasting', venue:'Surrey Hills, finishing at Denbies Wine Estate, Dorking', note:'A scenic road or gravel route through the Surrey Hills AONB, ending with a guided tasting at England\'s largest vineyard. Bikes can be hired locally; route length adjustable for mixed abilities.' }
+    { title:'Surrey Hills Ride & Wine Tasting', venue:'Surrey Hills, finishing at Denbies Wine Estate, Dorking', note:'A road or gravel route through the Surrey Hills, finishing with a guided tasting at England\'s largest vineyard. Bikes can be hired locally and the distance can be adjusted.' }
+  ]},
+  { key:'padel', label:'Padel', icon:'tennis', items:[
+    { title:'Padium Canary Wharf', venue:'Bank Street, Canary Wharf', note:'Nine courts (seven indoor, two outdoor) for groups of 8 to 200, with a bar, mezzanine lounge and match recording. DJ, photography and goodie bags available.', url:'https://www.padium.com/events' },
+    { title:'Rocket Padel Battersea', venue:'Battersea Power Station', note:'Four indoor panoramic courts with a bar, bistro and lounge. Exclusive court hire with custom branding is possible.', url:'https://www.rocketpadel.com/club/Battersea-power-station' },
+    { title:'Rocket Padel Beckton', venue:'Beckton, East London', note:'Five indoor courts with a restaurant and bar, gym, saunas, jacuzzi and cold plunge, plus free parking. Enquire about hosting private events.', url:'https://www.rocketpadel.com/club/beckton' },
+    { title:'Rocket Padel Ilford', venue:'Ilford, East London', note:'Twelve courts, a bistro and bar, a conference room and spectator areas. Suits larger groups.', url:'https://www.rocketpadel.com/host-your-event-at-rocket-padel' },
+    { title:'Racketeer', venue:'North Acton (Park Royal), West London', note:'Thirteen indoor padel courts (plus pickleball) with a restaurant, snack bar and wellness area. Coaching and tournament play are available for groups.' },
+    { title:'Stratford Padel Club', venue:'Stratford, East London', note:'Nine courts with a kitchen and beer garden, plus event coordinators to plan the day.', url:'https://stratfordpadelclub.org/private-event/' },
+    { title:'Padel Social Club', venue:'Earl\'s Court, West London', note:'Six courts (two indoor, four outdoor), with a restaurant, bar and roof terrace, and a sauna and cold plunge for afterwards.' },
+    { title:'House of Racquet', venue:'King\'s Cross, North London', note:'Four covered courts with a clubhouse for food and drinks, and space for private suppers and social events.' },
+    { title:'The Royal Parks', venue:'Hyde Park and Regent\'s Park', note:'Padel with LTA-qualified coaches for up to 150 people, with BBQ catering. Can be combined with tennis, lawn bowls or boating.', url:'https://sportsandleisure.royalparks.org.uk/corporate-events'}
   ]},
   { key:'pgolf', label:'Golf', icon:'pgolf', items:[
-    { title:'Corporate Golf Day', venue:'Suggested: Wentworth Club, The Belfry, or St George\'s Hill, Surrey', note:'A structured Am-Am or Texas Scramble format works well for mixed-ability groups. Book well ahead for weekend slots at marquee clubs, or consider a weekday for easier availability.' }
+    { title:'Corporate Golf Day', venue:'Suggested: Wentworth Club, The Belfry, or St George\'s Hill, Surrey', note:'An Am-Am or Texas Scramble format keeps mixed abilities happy. Book weekend slots at the top clubs well ahead, or go midweek for easier availability.' }
   ]},
   { key:'dragonboat', label:'Dragon Boat', icon:'dragonboat', items:[
-    { title:'Dragon Boat Racing', venue:'Suggested: Royal Docks, London, or Henley-on-Thames', note:'Team-based paddling races, usually run as a round-robin between company teams. High energy, minimal skill barrier, and a strong photo opportunity.' }
+    { title:'Dragon Boat Racing', venue:'Suggested: Royal Docks, London, or Henley-on-Thames', note:'Team-based paddling races, usually run as a round-robin between company teams. Plenty of energy, no skill needed, and great photos.' }
   ]},
   { key:'challenge', label:'Challenge Days', icon:'challenge', items:[
-    { title:'Yorkshire Three Peaks Challenge', venue:'Pen-y-ghent, Whernside & Ingleborough, Yorkshire Dales', note:'A single-day, 24-mile circular walk taking in all three peaks, usually completed within 12 hours. More accessible than the National Three Peaks since it\'s one region with no overnight driving between mountains. Good for team-building and charity tie-ins.' }
+    { title:'Yorkshire Three Peaks Challenge', venue:'Pen-y-ghent, Whernside & Ingleborough, Yorkshire Dales', note:'A single-day, 24-mile circular walk taking in all three peaks, usually completed within 12 hours. Easier to organise than the National Three Peaks, as it is all in one region with no overnight driving. Works for charity events.' }
   ]},
   { key:'sailing', label:'Sailing', icon:'sailing', items:[
-    { title:'Sailing Day on the Solent', venue:'The Solent, between Hampshire and the Isle of Wight', note:'A day of yacht racing or guided cruising on one of the UK\'s best-known sailing waters, with a skipper and crew provided. No experience needed, and races can be run head-to-head between company teams for a competitive edge.', url:'https://solent-events.co.uk/corporate-sailing-days/' }
+    { title:'Sailing Day on the Solent', venue:'The Solent, between Hampshire and the Isle of Wight', note:'A day of yacht racing or guided cruising on one of the UK\'s best-known sailing waters, with a skipper and crew provided. No experience needed, and teams can race each other for bragging rights.', url:'https://solent-events.co.uk/corporate-sailing-days/' }
   ]},
   { key:'rafting', label:'White Water Rafting', icon:'rafting', items:[
     { title:'White Water Rafting', venue:'Lee Valley White Water Centre, Waltham Cross, Hertfordshire', note:'The London 2012 Olympic rapids, about 30 minutes from central London. Nine-person rafts, roughly two hours including safety briefing, with on-site meeting rooms and catering if you want to combine it with a working session.', url:'https://www.gowhitewater.co.uk/' }
@@ -599,237 +818,241 @@ const SPORTS_GROUPS = [
 
 /* ============ STATIC DATA: EATING OUT ============ */
 const EATING_ITEMS = [
-{title:'City Social', venue:'Tower 42, City of London', area:'city', types:['lunchdinner','chefstable'], note:'Jason Atherton\'s Michelin-starred restaurant on the 24th floor, with an intimate chef\'s table for up to 10 and sweeping views over the City skyline.', url:'https://www.citysocial-london.com/'},
-{title:'Ibai', venue:'City of London, near St Paul\'s', area:'city', types:['lunchdinner'], note:'Basque-style grill and steakhouse in a soaring former factory space, built around a well-stocked wine cellar and open kitchen.', url:'https://ibai.london/'},
-{title:'Restaurant Gordon Ramsay High', venue:'22 Bishopsgate', area:'city', types:['lunchdinner','chefstable'], note:'Michelin-starred, 12-seat chef\'s table on the 60th floor, billed as the tallest restaurant in Europe. Exclusive hire available for the full space.', url:'https://www.gordonramsayrestaurants.com/high/bishopsgate/about'},
+{title:'City Social', venue:'Tower 42, City of London', area:'city', types:['lunchdinner','chefstable'], note:'Jason Atherton\'s restaurant on the 24th floor of Tower 42, with an intimate chef\'s table for up to 10 and views over the City.', url:'https://www.citysocial-london.com/'},
+{title:'Ibai', venue:'Bartholomew Close, near St Paul\'s', area:'city', types:['lunchdinner'], note:'Basque-style grill and steakhouse in a brutalist former factory space near Smithfield and St Paul\'s, with an open kitchen and big wine list. Open weekdays only.', url:'https://ibai.london/'},
+{title:'Restaurant Gordon Ramsay High', venue:'22 Bishopsgate', area:'city', types:['lunchdinner','chefstable'], note:'One Michelin star (2026 guide) 12-seat counter on the 60th floor of 22 Bishopsgate, dinner Tuesday to Saturday. Check with the restaurant about full-space hire.', url:'https://www.gordonramsayrestaurants.com/high/bishopsgate/about'},
 {title:'Kitchen Table', venue:'Fitzrovia', area:'westend', types:['chefstable'], note:'A nineteen-seat horseshoe counter, two Michelin stars, tasting menu built around the day\'s best produce. Books up months in advance.', url:'https://kitchentablelondon.co.uk/'},
-{title:'Hélène Darroze at The Connaught', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Chef\'s table overlooking the kitchen, built for a bit of theatre and well suited to a milestone client dinner.', url:'https://www.the-connaught.co.uk/restaurants-bars/helene-darroze-at-the-connaught/'},
-{title:'The Devonshire', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Old-school pub and grill from Oisín Rogers and Ashley Palmer-Watts, with an upstairs dining room and private rooms. One of the hardest bookings in London.', url:'https://www.devonshiresoho.co.uk/'},
+{title:'Hélène Darroze at The Connaught', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Three-Michelin-star French dining at The Connaught, with a chef\'s table at the pass, ideal for a special client dinner.', url:'https://www.the-connaught.co.uk/restaurants-bars/helene-darroze-at-the-connaught/'},
+{title:'The Devonshire', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Old-school pub and grill from Oisín Rogers and Ashley Palmer-Watts, with an upstairs dining room and private rooms. Very hard to book.', url:'https://www.devonshiresoho.co.uk/'},
 {title:'The Lore of the Land', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Guy Ritchie\'s three-floor pub and dining room, known for its Sunday roasts and a private dining room for smaller groups.', url:'https://loreoftheland.com/'},
 {title:'Ikoyi', venue:'The Strand', area:'midtown', types:['lunchdinner','chefstable'], note:'Two-Michelin-starred West African-inspired tasting menu from Jeremy Chan, with a private dining room and full restaurant buyout available.', url:'https://ikoyilondon.com/'},
-{title:'Kioku by Endo', venue:'The OWO, Whitehall', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Michelin-starred Japanese dining on the 6th floor, with a chef\'s table for 8 and a turreted private dining room for up to 12, plus panoramic views over Whitehall.', url:'https://kiokubyendo.com/'},
-{title:'German Gymnasium', venue:'King\'s Cross', area:'east', types:['breakfast','lunchdinner','chefstable'], note:'Grade II-listed former Olympic gymnasium turned grand café and restaurant, with a private room for business lunches and receptions.', url:'https://germangymnasium.com/'},
-{title:'Decimo at The Standard', venue:'King\'s Cross', area:'east', types:['lunchdinner','chefstable'], note:'Peter Sanchez-Iglesias\' Mexican-Spanish restaurant on the 10th floor of The Standard, with a semi-private dining room and skyline views.', url:'https://www.decimo.london/'},
-{title:'Counter 71', venue:'Shoreditch', area:'east', types:['chefstable'], note:'A sixteen-seat counter in a converted pub, with a set tasting menu prepared and plated in front of guests. Cocktail bar downstairs for a pre-dinner drink.', url:'https://www.counter71.co.uk/'},
+{title:'Kioku by Endo', venue:'The OWO, Whitehall', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Japanese omakase restaurant at the top of The OWO, with an eight-seat chef\'s table and a twelve-seat turret private dining room overlooking Whitehall.', url:'https://kiokubyendo.com/'},
+{title:'German Gymnasium', venue:'King\'s Cross', area:'kings_cross', types:['breakfast','lunchdinner','chefstable'], note:'Grand cafe and restaurant in a Grade II-listed former gymnasium at King\'s Cross, with semi-private dining for up to 32, mezzanine hire for 150 and full venue hire for 248.', url:'https://germangymnasium.com/'},
+{title:'Decimo at The Standard', venue:'King\'s Cross', area:'kings_cross', types:['lunchdinner','chefstable'], note:'Mexican-Spanish restaurant at The Standard, King\'s Cross, with skyline views. Private options include a semi-private room for up to 38 and Townhouse 8 for up to 20.', url:'https://www.decimo.london/'},
 {title:'Llama Inn', venue:'Shoreditch', area:'east', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Peruvian rooftop restaurant on top of The Hoxton, with private dining for up to 65 and a sunlit terrace looking out over East London.', url:'https://www.llamainnlondon.com/'},
-{title:'Marlowe', venue:'Shoreditch', area:'east', types:['breakfast','lunchdinner','chefstable'], note:'Bar and restaurant at Montcalm East with flexible private function rooms, well suited to a client lunch or small conference dinner.', url:'https://montcalmcollection.com/montcalm-east/restaurant/marlowe/'},
+{title:'Marlowe', venue:'Montcalm East, City Road (Old Street)', area:'east', types:['breakfast','lunchdinner','chefstable'], note:'Bar and restaurant at Montcalm East with flexible private function rooms, well suited to a client lunch or small conference dinner.', url:'https://montcalmcollection.com/montcalm-east/restaurant/marlowe/'},
 {title:'Trinity', venue:'Clapham Old Town', area:'southbank', types:['lunchdinner','chefstable'], note:'Michelin-starred, with a dining room that looks straight into the open kitchen. A more relaxed, neighbourhood take on fine dining.', url:'https://trinityrestaurant.co.uk/'},
-{title:'Wagtail', venue:'London Bridge', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'Ninth-floor rooftop restaurant with two private terraces and The Nest, a ten-seat private dining room suspended above the City skyline.', url:'https://etmcollection.co.uk/venue/wagtail-rooftop-bar-restaurant/'},
+{title:'Wagtail', venue:'68 King William Street, City (near London Bridge)', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'Ninth-floor rooftop restaurant with two private terraces and The Nest, a ten-seat private dining room suspended above the City skyline.', url:'https://etmcollection.co.uk/venue/wagtail-rooftop-bar-restaurant/'},
 {title:'Seabird', venue:'Southwark', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'Fourteenth-floor rooftop seafood restaurant atop The Hoxton, Southwark, with London\'s longest oyster list and space for larger group and private hire.', url:'https://seabirdlondon.com/'},
 {title:'Restaurant Story', venue:'Bermondsey, near London Bridge', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'Tom Sellers\' two-Michelin-starred tasting menu, with a top-floor private dining room and terrace added in a recent refurbishment.', url:'https://restaurantstory.co.uk/'},
-{title:'Restaurant Gordon Ramsay: Inspiration Table', venue:'Chelsea', area:'south_ken', types:['chefstable'], note:'Three-star tasting menu created specifically for the table, for up to four guests: the top end of what\'s available in London.', url:'https://www.gordonramsayrestaurants.com/restaurant-gordon-ramsay/'},
-{title:'The Ledbury', venue:'Notting Hill', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Brett Graham\'s three-Michelin-starred restaurant. Book well in advance for a genuine occasion.', url:'https://www.theledbury.com/'},
-{title:'Scott\'s', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Storied Mayfair seafood institution with two private rooms, including the Renoir Room, for business lunches and client entertaining.', url:'https://scotts-mayfair.com/'},
-{title:'MA/NA', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'New luxury Japanese dining and cocktail destination on Upper Grosvenor Street, moving from refined tasting menu into a late-night bar.', url:'https://www.mana-mayfair.com/'},
+{title:'Restaurant Gordon Ramsay: Inspiration Table', venue:'Chelsea', area:'south_ken', types:['chefstable'], note:'Three-star tasting menu created specifically for the table, for up to four guests: about as high-end as London gets.', url:'https://www.gordonramsayrestaurants.com/experiences/experience-tables'},
+{title:'The Ledbury', venue:'Notting Hill', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Brett Graham\'s three-Michelin-starred restaurant. Book well in advance.', url:'https://www.theledbury.com/'},
+{title:'Scott\'s', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Long-established Mayfair seafood restaurant with two private rooms, including the Renoir Room, for business lunches and client entertaining.', url:'https://scotts-mayfair.com/'},
+{title:'MA/NA', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'New luxury Japanese dining and cocktail destination on Upper Grosvenor Street, moving from refined tasting menu into a late-night bar.', url:'https://www.manarestaurants.com/'},
 {title:'Lucky Cat', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Gordon Ramsay\'s Asian-inspired grill and raw bar on Grosvenor Square, with a chef\'s table experience available for lunch and dinner.', url:'https://www.gordonramsayrestaurants.com/lucky-cat/'},
-{title:'Bonheur by Matt Abé', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Two Michelin stars within months of opening, in the former Le Gavroche space on Upper Brook Street. A genuine occasion booking.', url:'https://www.bonheurbymattabe.com/'},
-{title:'Dinner by Heston Blumenthal', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner','chefstable'], note:'Two-Michelin-starred historic-British tasting menu at the Mandarin Oriental, with a Tudor-inspired private dining room for up to 12. Heston has announced the restaurant will close in early 2027, so worth booking soon.', url:'https://www.mandarinoriental.com/en/london/hyde-park/dine/dinner-by-heston-blumenthal'},
+{title:'Bonheur by Matt Abé', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Two Michelin stars within months of opening, in the former Le Gavroche space on Upper Brook Street. Book well in advance.', url:'https://www.bonheurbymattabe.com/'},
+{title:'Dinner by Heston Blumenthal', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner','chefstable'], note:'Two-Michelin-starred historic-British tasting menu at the Mandarin Oriental. Heston has announced it will close permanently at the end of January 2027, so book soon.', url:'https://www.mandarinoriental.com/en/london/hyde-park/dine/dinner-by-heston-blumenthal'},
 {title:'L\'Epicerie', venue:'Claridge\'s, Mayfair', area:'mayfair_westminster', types:['chefstable'], note:'A fourteen-seat chef\'s table set inside Claridge\'s working kitchens, used for private dining, wine dinners and interactive masterclasses.', url:'https://www.claridges.co.uk/restaurants-bars/lepicerie/'},
-{title:'Los Mochis', venue:'Broadgate Circle', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'Mexican and Japanese fusion, open all day with private dining spaces, a bar and a rooftop terrace above Broadgate Circle.', url:'https://www.losmochis.co.uk/lc/london-city'},
-{title:'KöD', venue:'Soho (also Devonshire Square)', area:'city', types:['lunchdinner','chefstable'], note:'Danish steakhouse open for lunch and dinner, with private dining spaces. A second branch trades in Devonshire Square, in the City.', url:'https://restaurantkod.co.uk/'},
+{title:'Los Mochis', venue:'100 Liverpool Street (Broadgate)', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'Mexican and Japanese fusion, open all day with private dining spaces, a bar and a rooftop terrace above Broadgate Circle.', url:'https://www.losmochis.co.uk/lc/london-city'},
 {title:'Kolamba', venue:'Shoreditch (also Soho)', area:'east', types:['lunchdinner','chefstable'], note:'Sri Lankan restaurant open for lunch and dinner, with a central bar and private dining spaces. A sister branch trades in Soho.', url:'https://www.kolamba.co.uk/kolamba-east'},
 {title:'Ambassadors Clubhouse', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'Michelin-starred Punjabi restaurant and bar from the team behind Gymkhana, with three private dining rooms and a heated outdoor Verandah for semi-exclusive gatherings.', url:'https://ambassadorsclubhouse.com/london/'},
-{title:'Fogo de Chão (formerly Fazenda)', venue:'Liverpool Street', area:'city', types:['lunchdinner','chefstable'], note:'Brazilian churrasco steakhouse near Liverpool Street, rebranded from Fazenda to Fogo de Chão. Three private dining spaces and a standalone bar, Bar Fogo.', url:'https://fogodechao.uk/location/london-bishopsgate/'},
+{title:'Fogo de Chão Bishopsgate', venue:'100 Bishopsgate, Liverpool Street', area:'city', types:['lunchdinner','chefstable'], note:'Brazilian churrasco steakhouse at the foot of 100 Bishopsgate, rebranded from Fazenda to Fogo de Chão, with private rooms for 10, 12 and 28.', url:'https://fogodechao.uk/location/london-bishopsgate/'},
 {title:'AngloThai', venue:'Marylebone', area:'notting_hill', types:['lunchdinner'], note:'Modern restaurant fusing Thai and British flavours with seasonal British ingredients, paired with a biodynamic European wine list.', url:'https://anglothai.co.uk/'},
-{title:'Lima', venue:'Shoreditch, Sun Street Hotel', area:'east', types:['lunchdinner'], note:'Lima\'s second London site, offering Peruvian cuisine with a twist inside the Sun Street Hotel.', url:'https://sunstreethotel.com/lima-shoreditch-restaurant'},
-{title:'Claro', venue:'St James\'s', area:'westend', types:['lunchdinner','chefstable'], note:'Chef Ran Shmueli\'s Eastern Mediterranean restaurant, with private dining spaces for both intimate and larger groups.', url:'https://www.claro-london.com/'},
-{title:'Hoppers', venue:'Shoreditch, The Tea Building', area:'east', types:['lunchdinner','chefstable','alfresco'], note:'A new branch of the well-loved Sri Lankan restaurant, inside the iconic Tea Building with plenty of new dishes to explore.', url:'https://www.hopperslondon.com/shoreditch/'},
+{title:'Lima', venue:'Shoreditch, Sun Street Hotel', area:'east', types:['lunchdinner'], note:'Peruvian restaurant with a modern twist, tucked behind the lobby of Sun Street Hotel, on the Shoreditch and City border. Open Monday to Saturday.', url:'https://sunstreethotel.com/lima-shoreditch-restaurant'},
+{title:'Claro', venue:'12 Waterloo Place, St James\'s', area:'westend', types:['lunchdinner','chefstable'], note:'Chef Ran Shmueli\'s Eastern Mediterranean restaurant, with private dining spaces for both intimate and larger groups.', url:'https://www.claro-london.com/'},
+{title:'Hoppers', venue:'Shoreditch, The Tea Building', area:'east', types:['lunchdinner','chefstable','alfresco'], note:'Hoppers\' fourth London site, in the Tea Building, where Sri Lankan cooking meets South Indian dishes such as dosas and biryani, with Shoreditch-only cocktails.', url:'https://www.hopperslondon.com/shoreditch/'},
 {title:'Donia', venue:'Kingly Court, Carnaby', area:'westend', types:['lunchdinner','chefstable'], note:'Intimate Filipino restaurant atop Kingly Court, awarded a Michelin Bib Gourmand in 2025.', url:'https://www.doniarestaurant.com/'},
-{title:'Legado', venue:'Shoreditch', area:'east', types:['lunchdinner'], note:'Contemporary Spanish restaurant, the second opening from Michelin-starred chef Nieves Barragán Mohacho.', url:'https://www.legadorestaurants.com/'},
+{title:'Legado', venue:'Shoreditch', area:'east', types:['lunchdinner'], note:'Contemporary Spanish restaurant in Shoreditch from Michelin-starred chef Nieves Barragán Mohacho, with a new private dining room, Txoko, for up to 16 guests (due to launch October 2026).', url:'https://www.legadorestaurants.com/'},
 {title:'Gallio', venue:'Charlotte Street', area:'westend', types:['lunchdinner'], note:'Sister restaurant to Norma, serving a Mediterranean menu on Charlotte Street.', url:'https://www.gallio.uk/restaurants/charlotte-street/'},
-{title:'Poon\'s', venue:'Somerset House', area:'midtown', types:['lunchdinner','chefstable'], note:'Home-cooked style Chinese food set within Somerset House, with the feel of dining with family.', url:'https://www.poonslondon.com/'},
-{title:'Roe', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner','breakfast','alfresco'], note:'Hyper-sustainable British restaurant at Wood Wharf, open for breakfast, brunch, lunch and dinner.', url:'https://roerestaurant.co.uk/'},
+{title:'Poon\'s', venue:'Somerset House', area:'midtown', types:['lunchdinner','chefstable'], note:'Home-cooked style Chinese food set within Somerset House, in a family style.', url:'https://www.poonslondon.com/'},
+{title:'Roe', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner','breakfast','alfresco'], note:'Modern British restaurant at Wood Wharf serving breakfast through to dinner, with a private dining room for up to 26 guests and full-venue hire available.', url:'https://roerestaurant.co.uk/'},
 {title:'Dishoom', venue:'Canary Wharf', area:'canary_wharf', types:['breakfast','lunchdinner'], note:'Bombay café classics from breakfast through to dinner.', url:'https://www.dishoom.com/canary-wharf/'},
-{title:'Barbarella', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner','chefstable'], note:'Big Mamma\'s flamboyant Italian restaurant and bar, with private hire available.', url:'https://www.bigmammagroup.com/privatize/barbarella'},
-{title:'Hawksmoor', venue:'Wood Wharf, Canary Wharf', area:'canary_wharf', types:['lunchdinner','chefstable'], note:'Steak and seafood at Wood Wharf, with group bookings and private hire.', url:'https://thehawksmoor.com/locations/wood-wharf/'},
-{title:'Bamboo Mat', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner'], note:'Contemporary Japanese-Peruvian Nikkei dining, following the success of the original Stratford restaurant.', url:'https://bamboo-mat.co.uk/'},
-{title:'Beefbar', venue:'Broadwick Soho', area:'westend', types:['lunchdinner'], note:'Born in Monte Carlo, a glamorous take on the traditional steakhouse, taking over the former Dear Jackie site.', url:'https://beefbar.com/dear-jackie-london/'},
+{title:'Barbarella', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner','chefstable'], note:'Big Mamma\'s Italian restaurant and bar, with private hire available.', url:'https://www.bigmammagroup.com/privatize/barbarella'},
+{title:'Hawksmoor', venue:'Wood Wharf, Canary Wharf', area:'canary_wharf', types:['lunchdinner','chefstable'], note:'Steak and seafood on a floating waterside pavilion at Wood Wharf, with the Queenie Watts private dining room for 20 and a heated terrace for larger parties.', url:'https://thehawksmoor.com/locations/wood-wharf/'},
+{title:'Bamboo Mat', venue:'Canary Wharf', area:'canary_wharf', types:['lunchdinner'], note:'Contemporary Japanese-Peruvian Nikkei dining, newly opened in Canary Wharf as a second site after the popular Stratford restaurant.', url:'https://bamboo-mat.co.uk/'},
+{title:'Beefbar at Dear Jackie', venue:'Broadwick Soho', area:'westend', types:['lunchdinner'], note:'Born in Monte Carlo, a steakhouse, taking over the former Dear Jackie site.', url:'https://beefbar.com/dear-jackie-london/'},
 {title:'Cassette', venue:'Covent Garden', area:'westend', types:['lunchdinner','alfresco'], note:'Modern French bistro across two floors, with an open kitchen and a terrace upstairs.', url:'https://www.cassettelondon.co.uk/'},
-{title:'Pearl', venue:'Brown Hart Gardens, Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner'], note:'Mayfair\'s latest Mediterranean restaurant, set within the terrace of Brown Hart Gardens with a relaxed, all-day European vibe.', url:'https://www.pearlmayfair.com/'},
+{title:'Pearl', venue:'Brown Hart Gardens, Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner'], note:'Mayfair\'s newest Mediterranean restaurant, from The Beaumont, overlooking Brown Hart Gardens, with a terrace. All-day dining with a focus on fish and shellfish.', url:'https://www.pearlmayfair.com/'},
 {title:'1947', venue:'Charlotte St', area:'westend', types:['lunchdinner','chefstable'], note:'Indian in Charlotte St. Has a private dining room.', url:'http://1947london.com/'},
 {title:'1 Lombard Street', venue:'Bank', area:'city', types:['breakfast','lunchdinner','chefstable'], note:'British in Bank. Offers private dining room and breakfast service.', url:'https://www.1lombardstreet.com/'},
-{title:'10-11 Carlton House', venue:'Charing Cross', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British in Charing Cross. Offers private dining room, breakfast service and outdoor seating.', url:'https://10-11cht.com/'},
+{title:'10-11 Carlton House', venue:'St James\'s (Carlton House Terrace)', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Searcys-catered events venue on Carlton House Terrace with private dining, breakfasts, lunches and receptions. Check directly for outdoor space.', url:'https://10-11cht.com/'},
 {title:'14 Stories', venue:'Aldgate', area:'city', types:['lunchdinner','chefstable'], note:'British/French in Aldgate. Has a private dining room.', url:'https://14stories.co.uk/'},
 {title:'26 Grains', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner'], note:'Healthy Cafe in Covent Garden. Offers breakfast service.', url:'https://www.26grains.com/'},
 {title:'34 Mayfair', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'British in Mayfair. Has a private dining room.', url:'https://34-restaurant.co.uk/'},
 {title:'41 Portland Place', venue:'Marylebone', area:'notting_hill', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British in Marylebone. Offers private dining room, breakfast service and outdoor seating.', url:'https://www.41portlandplace.co.uk/'},
-{title:'abc kitchens', venue:'Belgravia', area:'south_ken', types:['breakfast','lunchdinner'], note:'Global/Contemporary in Belgravia. Offers breakfast service.', url:'https://www.maybourne.com/en/hotels/the-emory/restaurants-bars/abc-kitchens'},
+{title:'abc kitchens', venue:'Belgravia', area:'south_ken', types:['breakfast','lunchdinner'], note:'Global/Contemporary in Belgravia. Offers breakfast service.', url:'https://www.the-emory.co.uk/abc-kitchens'},
 {title:'Abuelo', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner'], note:'Australian/South American in Covent Garden. Offers breakfast service.', url:'https://www.abuelocafe.co.uk/'},
 {title:'Amalfi', venue:'Oxford Circus', area:'westend', types:['lunchdinner','chefstable'], note:'Italian in Oxford Circus. Has a private dining room.', url:'https://www.amalfi.co.uk/oxford-circus'},
 {title:'Amano', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Rooftop Bar in Covent Garden. Offers private dining room and outdoor seating.', url:'https://www.amanogroup.com/en/london'},
 {title:'Amazonico', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Latin American in Mayfair. Has a private dining room.', url:'https://www.amazonicorestaurant.com/london/'},
 {title:'Apricity', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'British in Mayfair. Has a private dining room.', url:'https://www.apricityrestaurant.com/'},
 {title:'Aqua Nueva', venue:'Regent Street', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Spanish in Regent Street. Offers private dining room and outdoor seating.', url:'https://aquanueva.co.uk/'},
-{title:'Arros', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Spanish in Fitzrovia. Has a private dining room.', url:'https://www.arrosqd.com/'},
+{title:'Arros', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Spanish rice-focused restaurant on Eastcastle Street in Fitzrovia. Events can be arranged by enquiry; private dining room not confirmed.', url:'https://www.arrosqd.com/'},
 {title:'Arthur Hoopers', venue:'Borough Market', area:'southbank', types:['lunchdinner','chefstable'], note:'Seafood in Borough Market. Has a private dining room.', url:'https://www.arthurhoopers.co.uk/'},
-{title:'Aulis', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'British Tasting Menu in Marylebone. Has a private dining room.', url:'https://www.aulis.co.uk/'},
+{title:'Aulis', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Simon Rogan\'s chef\'s-table tasting menu experience in Soho, off Dean Street. Private dining and Michelin status not confirmed.', url:'https://www.aulis.co.uk/'},
 {title:'Aviary', venue:'Finsbury Circus', area:'city', types:['lunchdinner','alfresco'], note:'British in Finsbury Circus. Offers outdoor seating.', url:'https://etmcollection.co.uk/venue/aviary-rooftop-restaurant-terrace-bar/'},
 {title:'Avobar', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Healthy Brunch in Covent Garden. Offers private dining room and breakfast service.', url:'https://www.avobar.co.uk/'},
-{title:'Bacchanalia', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Mediterranean in Mayfair. Has a private dining room.', url:'https://bacchanalia.co.uk/'},
-{title:'Bagatelle', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'French in Mayfair.', url:'https://bagatelle.com/venues/london/'},
+{title:'Bacchanalia', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Opulent Greco-Roman restaurant on Mount Street serving Greek and Mediterranean dishes, with private dining and events available.', url:'https://bacchanalia.co.uk/'},
+{title:'Bagatelle', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'French Mediterranean restaurant on Dover Street, open evenings and closed Mondays, with a private events team for group bookings.', url:'https://bagatelle.com/venues/london/'},
 {title:'Balthazar', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'French in Covent Garden. Has a private dining room.', url:'https://balthazarlondon.com/'},
 {title:'Beast', venue:'Oxford Circus', area:'westend', types:['lunchdinner'], note:'Steak & Seafood in Oxford Circus.', url:'https://www.beastrestaurant.com/location/oxford-circus'},
 {title:'Bentley\'s', venue:'Piccadilly', area:'westend', types:['lunchdinner','chefstable'], note:'Seafood in Piccadilly. Has a private dining room.', url:'https://www.bentleys.org/'},
-{title:'Berenjak', venue:'Borough / Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Persian in Borough / Soho. Has a private dining room.', url:'https://berenjak.com/locations/soho/'},
+{title:'Berenjak', venue:'27 Romilly Street, Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Persian in Borough / Soho. Has a private dining room.', url:'https://berenjak.com/locations/soho/'},
 {title:'Berners Tavern', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'British in Fitzrovia. Offers private dining room and breakfast service.', url:'https://www.bernerstavern.com/'},
-{title:'Bob Bob Ricard', venue:'Soho / City', area:'westend', types:['lunchdinner','chefstable'], note:'British/French in Soho / City. Has a private dining room.', url:'https://www.bobbobricard.com/soho/'},
-{title:'Bocconcino', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Italian in Mayfair.', url:'https://bocconcinorestaurant.co.uk/mayfair'},
-{title:'Bouchon Racine', venue:'Farringdon', area:'midtown', types:['lunchdinner'], note:'French in Farringdon.', url:'https://www.bouchonracine.com/'},
-{title:'Brutto', venue:'Clerkenwell', area:'midtown', types:['lunchdinner'], note:'Italian in Clerkenwell.', url:'https://msha.ke/brutto/'},
+{title:'Bob Bob Ricard', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'British/French in Soho / City. Has a private dining room.', url:'https://www.bobbobricard.com/soho/'},
+{title:'Bocconcino', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Italian restaurant on Berkeley Street known for seafood, hand-rolled pasta and open-fire pizza, with lower-ground private dining rooms and full venue hire.', url:'https://bocconcinorestaurant.co.uk/mayfair'},
+{title:'Bouchon Racine', venue:'Cowcross Street, Farringdon/Smithfield', area:'farringdon', types:['lunchdinner'], note:'French in Farringdon.', url:'https://www.bouchonracine.com/'},
+{title:'Brutto', venue:'Clerkenwell', area:'farringdon', types:['lunchdinner'], note:'Italian in Clerkenwell.', url:'https://msha.ke/brutto/'},
 {title:'Cache Cache', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'French in Covent Garden. Has a private dining room.', url:'https://cachecacheclub.com/'},
-{title:'Campanelle', venue:'Fenchurch St', area:'city', types:['breakfast','lunchdinner'], note:'Italian in Fenchurch St. Offers breakfast service.', url:'https://www.campanelle.co.uk/'},
-{title:'Carousel', venue:'Charlotte St.', area:'westend', types:['lunchdinner','chefstable'], note:'Contemporary in Charlotte St.. Has a private dining room.', url:'https://carousel-london.com/'},
-{title:'Cavita', venue:'Bond St', area:'westend', types:['lunchdinner'], note:'Mexican in Bond St.', url:'https://www.cavitarestaurant.com/'},
+{title:'Campanelle', venue:'Billiter Street, next to Fenchurch Street', area:'city', types:['breakfast','lunchdinner'], note:'Italian restaurant in a Grade II listed former shipping exchange next to Fenchurch Street station, serving breakfast and with a second-floor private dining room.', url:'https://www.campanelle.co.uk/'},
+{title:'Carousel', venue:'Charlotte St, Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Charlotte Street townhouse venue home to Cometa (Mexican seafood), rotating guest-chef residencies and an agave bar; hosts events for 20 to 200 guests.', url:'https://carousel-london.com/'},
+{title:'Cavita', venue:'Wigmore St, Marylebone', area:'westend', types:['lunchdinner'], note:'Heritage Mexican restaurant on Wigmore Street in Marylebone, with a late-night mezcal bar, Maya. Closed Mondays.', url:'https://www.cavitarestaurant.com/'},
 {title:'Cigalon', venue:'Chancery Lane', area:'midtown', types:['lunchdinner','chefstable'], note:'French in Chancery Lane. Has a private dining room.', url:'https://www.cigalon.co.uk/'},
-{title:'Clap', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner'], note:'Japanese in Knightsbridge.', url:'https://claprestaurant.com/london/'},
-{title:'Claridge’s', venue:'Brook St, Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'Modern British in Brook St, Mayfair. Offers private dining room and breakfast service.', url:'https://www.claridges.co.uk/restaurants-bars/'},
+{title:'Clap', venue:'Knightsbridge (Basil Street rooftop)', area:'south_ken', types:['lunchdinner'], note:'Japanese in Knightsbridge.', url:'https://claprestaurant.com/london/'},
+{title:'Dante Mayfair', venue:'Brook St, Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'New York-influenced restaurant inside Claridge\'s, from the team behind Dante, replacing the old Claridge\'s Restaurant.', url:'https://www.claridges.co.uk/restaurants-bars/'},
 {title:'Clos Maggiore', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'French in Covent Garden. Has a private dining room.', url:'https://www.closmaggiore.com/'},
 {title:'Como Garden', venue:'Kensington', area:'south_ken', types:['lunchdinner','chefstable'], note:'Italian in Kensington. Has a private dining room.', url:'https://comogarden.co.uk/'},
-{title:'Compton', venue:'Clerkenwell', area:'midtown', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'European in Clerkenwell. Offers private dining room, breakfast service and outdoor seating.'},
-{title:'CORD', venue:'Fleet St', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'French in Fleet St. Offers private dining room and breakfast service.', url:'https://www.cordrestaurant.co.uk/'},
-{title:'CORE by Clare Smyth', venue:'Notting Hill Gate', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Modern British in Notting Hill Gate. Has a private dining room.', url:'https://corebyclaresmyth.com/'},
-{title:'Delfino', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Italian in Mayfair.', url:'https://www.delfinomayfair.com/'},
-{title:'Dim Sum Library', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'Chinese in Covent Garden. Has a private dining room.', url:'https://dimsumlibrary.co.uk/'},
-{title:'Dovetale', venue:'Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner'], note:'European in Mayfair. Offers breakfast service.', url:'https://www.dovetalelondon.com/'},
+{title:'Compton', venue:'Clerkenwell', area:'farringdon', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'European in Clerkenwell. Offers private dining room, breakfast service and outdoor seating.'},
+{title:'CORD', venue:'Fleet St', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'French restaurant and cafe on Fleet Street by Le Cordon Bleu, open weekdays, with private rooms for 14, 30 and 50 guests.', url:'https://www.cordrestaurant.co.uk/'},
+{title:'CORE by Clare Smyth', venue:'Notting Hill Gate', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Clare Smyth\'s three-Michelin-star restaurant in Notting Hill, with a private dining room.', url:'https://corebyclaresmyth.com/'},
+{title:'Delfino', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Family-run Italian pizzeria and pasta restaurant on Mount Street, Mayfair. Open Monday to Saturday; closed Sundays.', url:'https://www.delfinomayfair.com/'},
+{title:'Dim Sum Library', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'Hong Kong-style dim sum and Cantonese dishes on Long Acre, with tea cocktails. Group bookings and exclusive hire available.', url:'https://dimsumlibrary.co.uk/'},
+{title:'Dovetale', venue:'3 Berkeley Street, Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner'], note:'European in Mayfair. Offers breakfast service.', url:'https://www.dovetalelondon.com/'},
 {title:'El Norte', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Spanish in Mayfair.', url:'https://el-norte.co.uk/'},
-{title:'El Ta\'koy', venue:'Covent Garden', area:'westend', types:['lunchdinner','alfresco'], note:'Hawaiin in Covent Garden. Offers outdoor seating.', url:'https://el-takoy.com/london/'},
-{title:'Elliot\'s', venue:'Borough Market', area:'southbank', types:['lunchdinner'], note:'British in Borough Market.', url:'https://www.elliots.london/'},
-{title:'Fallow', venue:'Piccadilly', area:'westend', types:['breakfast','lunchdinner'], note:'Modern British in Piccadilly. Offers breakfast service.', url:'https://fallowrestaurant.com/'},
-{title:'Fidelio', venue:'Clerkenwell', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'Mediterranean in Clerkenwell. Offers private dining room and breakfast service.', url:'https://fidelio.cafe/'},
+{title:'El Ta\'koy', venue:'Covent Garden (3 Henrietta St)', area:'westend', types:['lunchdinner','alfresco'], note:'Hawaiian-inspired street food and tiki cocktails in a Covent Garden cellar, off Henrietta Street. Private hire available for groups.', url:'https://el-takoy.com/london/'},
+{title:'Elliot\'s', venue:'Stoney Street, Borough Market', area:'southbank', types:['lunchdinner'], note:'Contemporary European and Italian-leaning cooking by Borough Market.', url:'https://www.elliots.london/'},
+{title:'Fallow', venue:'Haymarket / St James\'s', area:'westend', types:['breakfast','lunchdinner'], note:'Sustainability-led modern British cooking on the Haymarket, in St James\'s. Open from early on weekdays; check with the venue about breakfast and private hire.', url:'https://fallowrestaurant.com/'},
+{title:'Fidelio', venue:'Clerkenwell', area:'farringdon', types:['breakfast','lunchdinner','chefstable'], note:'Mediterranean in Clerkenwell. Offers private dining room and breakfast service.', url:'https://fidelio.cafe/'},
 {title:'Fischers', venue:'Marylebone', area:'notting_hill', types:['breakfast','lunchdinner'], note:'Viennese in Marylebone. Offers breakfast service.', url:'https://www.fischers.co.uk/'},
-{title:'Flute', venue:'Soho', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Bar in Soho. Offers private dining room and outdoor seating.', url:'https://www.broadwicksoho.com/flute'},
-{title:'Fonda', venue:'Regent Street', area:'westend', types:['lunchdinner','chefstable'], note:'Mexican in Regent Street. Has a private dining room.', url:'https://fondalondon.com/'},
-{title:'Franco\'s', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Italian in Green Park. Offers private dining room, breakfast service and outdoor seating.', url:'https://francoslondon.com/'},
+{title:'Flute', venue:'Soho', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Rooftop bar and shared plates at the Broadwick Soho hotel, with a landscaped terrace and skyline views. No private dining; tables of up to six.', url:'https://www.broadwicksoho.com/flute'},
+{title:'Fonda', venue:'Heddon Street (off Regent Street)', area:'westend', types:['lunchdinner','chefstable'], note:'Mexican in Regent Street. Has a private dining room.', url:'https://fondalondon.com/'},
+{title:'Franco\'s', venue:'Jermyn Street, St James\'s', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Italian on Jermyn Street, St James\'s, open since 1945, with a new all-day bar at the entrance. Private dining, breakfast and outdoor seating not verified.', url:'https://francoslondon.com/'},
 {title:'Frog by Adam Handling', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'British in Covent Garden. Has a private dining room.', url:'https://www.frogbyadamhandling.com/'},
 {title:'FyOME', venue:'Marylebone', area:'notting_hill', types:['breakfast','lunchdinner'], note:'Greek in Marylebone. Offers breakfast service.'},
 {title:'Gold', venue:'Notting Hill', area:'notting_hill', types:['lunchdinner','chefstable','alfresco'], note:'Modern European in Notting Hill. Offers private dining room and outdoor seating.', url:'https://goldnottinghill.com/'},
-{title:'Gura Gura', venue:'Covent Garden', area:'westend', types:['lunchdinner'], note:'Asian in Covent Garden.', url:'https://guragura.co.uk/'},
+{title:'Gura Gura', venue:'Covent Garden', area:'westend', types:['lunchdinner'], note:'Pan-Asian sharing plates (sushi, dim sum, curries) in Covent Garden, with an upstairs sushi bar and downstairs cocktail lounge.', url:'https://guragura.co.uk/'},
 {title:'HIDE', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'Modern European in Green Park. Offers private dining room and breakfast service.', url:'https://hide.co.uk/'},
 {title:'Holborn Dining Room', venue:'Holborn', area:'midtown', types:['breakfast','lunchdinner'], note:'British in Holborn. Offers breakfast service.', url:'https://holborndiningroom.com/'},
-{title:'IGNI', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Wood-fired cooking in Mayfair, relaunched from the former HUMO site.'},
+{title:'IGNI', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Open-fire, seafood-led tasting menus from chef Theo Clench in Mayfair, relaunched in spring 2026 on the former Humo site.'},
 {title:'Il Gattopardo', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'Italian in Mayfair. Offers private dining room and outdoor seating.', url:'https://gattopardo.restaurant/'},
-{title:'Il Pampero', venue:'Knightsbridge', area:'south_ken', types:['breakfast','lunchdinner'], note:'Italian in Knightsbridge. Offers breakfast service.', url:'https://ilpampero.com/'},
+{title:'Il Pampero', venue:'Belgravia (The Hari hotel)', area:'south_ken', types:['breakfast','lunchdinner'], note:'Italian restaurant at The Hari hotel in Belgravia, serving breakfast as well as lunch and dinner.', url:'https://ilpampero.com/'},
 {title:'Isabel', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Latin American/Mediterranean in Mayfair. Has a private dining room.', url:'https://www.isabelw1.london/'},
-{title:'Isola by San Carlo', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','alfresco'], note:'Italian in Marylebone. Offers outdoor seating.', url:'https://sancarloisola.co.uk/'},
+{title:'Isola by San Carlo', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','alfresco'], note:'Italian in Marylebone. Offers outdoor seating.', url:'https://sancarlo.co.uk/brands/isola/'},
 {title:'Ixchel', venue:'King\'s Road', area:'south_ken', types:['lunchdinner','chefstable'], note:'Mexican in King\'s Road. Has a private dining room.', url:'https://www.ixchellondon.com/'},
-{title:'J Sheekey', venue:'Leicester Square', area:'westend', types:['lunchdinner'], note:'Seafood in Leicester Square.', url:'https://j-sheekey.co.uk/'},
+{title:'J Sheekey', venue:'Leicester Square', area:'westend', types:['lunchdinner'], note:'Classic seafood and oysters on St Martin\'s Court, near Leicester Square. Group dining and events available.', url:'https://j-sheekey.co.uk/'},
 {title:'Jacuzzi', venue:'High St. Kensington', area:'south_ken', types:['lunchdinner'], note:'Italian in High St. Kensington.', url:'https://www.bigmammagroup.com/italian-restaurants/jacuzzi'},
-{title:'Jamie Oliver Catherine St', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'British in Covent Garden. Offers private dining room and outdoor seating.', url:'https://www.jamieolivercatherinest.com/'},
-{title:'Joia', venue:'Battersea', area:'southbank', types:['lunchdinner','alfresco'], note:'Portuguese in Battersea. Offers outdoor seating.', url:'https://www.joiabattersea.co.uk/'},
+{title:'Jamie Oliver Catherine St', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'British comfort food (roasts, fish and chips) from Jamie Oliver on Catherine Street, Covent Garden. Private dining and group bookings available.', url:'https://www.jamieolivercatherinest.com/'},
+{title:'Joia', venue:'Battersea Power Station (Artotel hotel)', area:'southbank', types:['lunchdinner','alfresco'], note:'Portuguese in Battersea. Offers outdoor seating.', url:'https://www.joiabattersea.co.uk/'},
 {title:'Kanishka', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'Indian in Mayfair. Offers private dining room and outdoor seating.', url:'https://kanishkarestaurant.co.uk/'},
-{title:'Kapara', venue:'Tottenham Court Rd', area:'westend', types:['lunchdinner','chefstable'], note:'Tel Avivian in Tottenham Court Rd. Has a private dining room.', url:'https://kapara.co.uk/'},
-{title:'Kave', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Speakeasy in Fitzrovia. Has a private dining room.'},
-{title:'Khao', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Thai in Soho. Has a private dining room.', url:'https://www.khaobird.com/'},
+{title:'Kapara', venue:'Manette Street, Soho (by Tottenham Court Road)', area:'westend', types:['lunchdinner','chefstable'], note:'Tel Avivian in Tottenham Court Rd. Has a private dining room.', url:'https://kapara.co.uk/'},
+{title:'Kave', venue:'71 Great Titchfield Street (entrance through Drunch)', area:'westend', types:['lunchdinner','chefstable'], note:'A hidden Fitzrovia speakeasy in a brick cave, with DJ nights and private rooms for groups.'},
+{title:'Khao', venue:'Soho', area:'westend', types:['lunchdinner','chefstable'], note:'Northern Thai barbecue, curries and noodles on Brewer Street, Soho. Larger groups and private hire by arrangement.', url:'https://www.khaobird.com/'},
 {title:'KOL', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Mexican in Marylebone. Has a private dining room.', url:'https://kolrestaurant.com/'},
 {title:'KOLAE', venue:'Borough Market', area:'southbank', types:['lunchdinner'], note:'Thai in Borough Market.', url:'https://kolae.com/'},
 {title:'L’Oscar', venue:'Holborn', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'European in Holborn. Offers private dining room and breakfast service.', url:'https://www.loscarlondon.com/'},
 {title:'La Petite Maison', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','alfresco'], note:'French in Mayfair. Offers outdoor seating.', url:'https://lpmrestaurants.com/'},
-{title:'Lavo', venue:'Bond St', area:'westend', types:['lunchdinner','chefstable'], note:'Italian in Bond St. Has a private dining room.', url:'https://www.thebotree.com/lavo/'},
-{title:'Lemonia', venue:'Camden', area:'east', types:['lunchdinner','chefstable'], note:'Greek in Camden. Has a private dining room.'},
-{title:'Light Bar & Dining', venue:'Shoreditch', area:'east', types:['lunchdinner','chefstable'], note:'British in Shoreditch. Has a private dining room.', url:'https://www.lightbarlondon.com/'},
-{title:'Lilienblum', venue:'Barbican', area:'city', types:['lunchdinner'], note:'Israeli/Mediterranean in Barbican.', url:'https://www.lilienblum.co.uk/'},
+{title:'Lavo', venue:'Marylebone Lane (near Bond St)', area:'westend', types:['lunchdinner','chefstable'], note:'Italian in Bond St. Has a private dining room.', url:'https://www.thebotree.com/lavo/'},
+{title:'Lemonia', venue:'Primrose Hill (89 Regent\'s Park Road)', area:'east', types:['lunchdinner','chefstable'], note:'Greek restaurant in Primrose Hill with a private dining room.'},
+{title:'Light Bar & Dining', venue:'Shoreditch', area:'east', types:['lunchdinner','chefstable'], note:'British pub classics in Shoreditch, relaunched in February 2026 under new ownership, with a new third-floor club space.', url:'https://www.lightbarlondon.com/'},
 {title:'Luso (formerly Lisboeta)', venue:'Fitzrovia', area:'westend', types:['lunchdinner','chefstable'], note:'Contemporary Portuguese in Fitzrovia, rebranded from Lisboeta to Luso under a new chef. Private dining room seating 12, plus a terrace.', url:'https://luso.restaurant/'},
-{title:'Louie', venue:'Covent Garden', area:'westend', types:['lunchdinner'], note:'French in Covent Garden.', url:'https://thehouseoflouie.com/restaurants-bar/louie-restaurant/'},
-{title:'Luca', venue:'Clerkenwell', area:'midtown', types:['lunchdinner','chefstable'], note:'Italian in Clerkenwell. Has a private dining room.', url:'https://luca.restaurant/'},
-{title:'Maison Francois', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'French in Green Park. Offers private dining room and breakfast service.', url:'https://www.maisonfrancois.london/'},
+{title:'Louie', venue:'Covent Garden', area:'westend', types:['lunchdinner'], note:'French brasserie with live jazz upstairs at House of Louie, West Street, between Soho and Covent Garden. Private hire available.', url:'https://thehouseoflouie.com/restaurants-bar/louie-restaurant/'},
+{title:'Luca', venue:'Clerkenwell', area:'farringdon', types:['lunchdinner','chefstable'], note:'Upmarket Italian restaurant using British seasonal produce, on St John Street. Three private spaces seat 8, 10 and 20, and the whole venue can be hired.', url:'https://luca.restaurant/'},
+{title:'Maison Francois', venue:'Duke Street, St James\'s', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'French in Green Park. Offers private dining room and breakfast service.', url:'https://www.maisonfrancois.london/'},
 {title:'Manteca', venue:'Shoreditch', area:'east', types:['lunchdinner'], note:'Italian in Shoreditch.'},
 {title:'Meraki', venue:'Fitzrovia', area:'westend', types:['lunchdinner'], note:'Greek in Fitzrovia.', url:'https://meraki-restaurant.com/london/'},
-{title:'Mielo', venue:'Baker Street', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Mediterranean in Baker Street. Has a private dining room.', url:'https://mielorestaurant.com/'},
+{title:'Mielo', venue:'Marylebone (Paddington Street)', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Mediterranean-inspired tapas, cocktails and wine in Marylebone, on Paddington Street.', url:'https://mielorestaurant.com/'},
 {title:'Milk Beach', venue:'Soho', area:'notting_hill', types:['breakfast','lunchdinner'], note:'Modern Australian dining in Soho (Ilona Rose House). Now the flagship after the original Queen\'s Park site closed in March 2026 to relaunch as a wine bar.', url:'https://milkbeach.com/'},
 {title:'Mint Leaf', venue:'Bank', area:'city', types:['lunchdinner','chefstable'], note:'Indian in Bank. Has a private dining room.', url:'https://www.mintleaflondon.com/'},
-{title:'Mortimer House', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British/Mediterranean in Fitzrovia. Offers private dining room, breakfast service and outdoor seating.', url:'https://www.mortimerhousekitchen.com/'},
+{title:'Mortimer House', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Italian, Amalfi-inspired restaurant, bar and terrace on Mortimer Street. Conservatory private dining for 9 to 20, plus weekday breakfast.', url:'https://www.mortimerhousekitchen.com/'},
 {title:'Mount St. Restaurant', venue:'Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'British in Mayfair. Offers private dining room and breakfast service.', url:'https://mountstrestaurant.com/'},
-{title:'NaNa Café', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Mediterranean in Covent Garden. Offers private dining room, breakfast service and outdoor seating.', url:'https://nana-cafe.com/'},
+{title:'NaNa Café', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Mediterranean in Covent Garden. Offers private dining room, breakfast service and outdoor seating.'},
 {title:'Nessa', venue:'Soho', area:'westend', types:['breakfast','lunchdinner'], note:'British in Soho. Offers breakfast service.', url:'https://www.nessasoho.com/'},
-{title:'Nine', venue:'Greenwich', area:'southbank', types:['lunchdinner'], note:'Japanese in Greenwich.', url:'https://nine.ee/'},
 {title:'NipoTina', venue:'Mayfair', area:'mayfair_westminster', types:['breakfast','lunchdinner','alfresco'], note:'Italian in Mayfair. Offers breakfast service and outdoor seating.', url:'https://www.nipotinaristorante.com/'},
-{title:'NoMad', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Hotel in Covent Garden. Offers private dining room and breakfast service.', url:'https://www.thenomadhotel.com/london/restaurant/'},
-{title:'Norma', venue:'Charlotte St', area:'westend', types:['lunchdinner','chefstable'], note:'Italian in Charlotte St. Has a private dining room.', url:'https://normalondon.com/'},
-{title:'Ochre', venue:'Trafalgar Sq', area:'westend', types:['lunchdinner','chefstable'], note:'Modern British in Trafalgar Sq. Has a private dining room.', url:'https://www.ochre.london/'},
-{title:'Pachamama', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Peruvian in Marylebone. Has a private dining room.', url:'https://www.pachamamalondon.com/'},
+{title:'Twenty8 NoMad', venue:'Covent Garden', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Twenty8 NoMad, the New York-style bistro and bar at NoMad London hotel in Covent Garden. Offers breakfast service and private dining.', url:'https://www.thenomadhotel.com/london/restaurant/'},
+{title:'Norma', venue:'Charlotte St', area:'westend', types:['lunchdinner','chefstable'], note:'Contemporary Sicilian Italian in a Charlotte Street townhouse, with a private dining space on the top floor.', url:'https://normalondon.com/'},
+{title:'Ochre', venue:'Trafalgar Sq', area:'westend', types:['lunchdinner','chefstable'], note:'All-day brasserie and cocktail bar inside the National Gallery, with pre-theatre menus and afternoon tea. Private dining room available.', url:'https://www.ochre.london/'},
 {title:'Pantechnicon', venue:'Knightsbridge', area:'south_ken', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Nordic/Japanese in Knightsbridge. Offers private dining room, breakfast service and outdoor seating.', url:'https://www.pantechnicon.com/'},
-{title:'Piazza Italiana', venue:'Threadneedle St', area:'city', types:['lunchdinner','chefstable'], note:'Italian in Threadneedle St. Has a private dining room.', url:'https://piazzaitaliana.co.uk/'},
+{title:'Piazza Italiana', venue:'Threadneedle St', area:'city', types:['lunchdinner','chefstable'], note:'Classic Italian in a grand Grade II listed former bank on Threadneedle Street, with several private dining rooms.', url:'https://piazzaitaliana.co.uk/'},
 {title:'Pinna', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner'], note:'Italian in Mayfair.', url:'https://www.pinnamayfair.com/'},
 {title:'Pirana', venue:'Green Park', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Japanese/Peruvian in Green Park. Has a private dining room.', url:'https://www.piranalondon.com/'},
-{title:'Quaglino\'s', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'European in Mayfair. Has a private dining room. Closed for refurbishment, reopening 7 October 2026.', url:'https://quaglinos-restaurant.co.uk/'},
+{title:'Quaglino\'s', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Relaunched in autumn 2026 after a refurbishment, with a new central bar, upstairs cocktail bar, seafood counter and a new European menu with a lunch offer.', url:'https://quaglinos-restaurant.co.uk/'},
 {title:'Radio Rooftop', venue:'The Strand', area:'midtown', types:['lunchdinner','alfresco'], note:'Asian/Japanese in The Strand. Offers outdoor seating.', url:'https://radiorooftop.com/'},
-{title:'Rai', venue:'Fitzrovia', area:'westend', types:['lunchdinner'], note:'Japanese in Fitzrovia.', url:'https://rairestaurant.com/'},
+{title:'Rai', venue:'Bayley Street, Fitzrovia', area:'westend', types:['lunchdinner'], note:'Modern Japanese in Fitzrovia, with sushi and omakase. No private dining mentioned on its website.', url:'https://rairestaurant.com/'},
 {title:'Restaurant Ours', venue:'South Kensington', area:'south_ken', types:['lunchdinner','chefstable'], note:'Mediterranean in South Kensington. Has a private dining room.', url:'https://restaurant-ours.com/'},
-{title:'Sabor', venue:'Regent Street', area:'westend', types:['lunchdinner','chefstable'], note:'Spanish in Regent Street. Has a private dining room.', url:'https://www.saborrestaurants.co.uk/'},
+{title:'Sabor', venue:'Heddon Street (off Regent Street)', area:'westend', types:['lunchdinner','chefstable'], note:'Spanish tapas, counter and grill-room dining just off Regent Street. Groups of 10+ can enquire about private hire; there is also a terrace.', url:'https://www.saborrestaurants.co.uk/'},
 {title:'Savage Garden', venue:'Tower Hill', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'Bar in Tower Hill. Offers private dining room and outdoor seating.', url:'https://www.savagegarden.co.uk/'},
-{title:'Gordon Ramsay at Sea Containers', venue:'South Bank', area:'southbank', types:['breakfast','lunchdinner','alfresco'], note:'American/British in South Bank. Riverside dining room and terrace within Sea Containers London, now run by Gordon Ramsay. Offers private dining room.', url:'https://www.seacontainerslondon.com/eat-drink/gordon-ramsay-restaurant/'},
-{title:'Sexy Fish', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Asian in Mayfair. Has a private dining room.', url:'https://sexyfish.com/'},
-{title:'Shiro', venue:'Broadgate Circle', area:'city', types:['lunchdinner'], note:'Japanese in Broadgate Circle.', url:'https://shirosushi.co.uk/'},
-{title:'Signor Sassi', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner'], note:'Italian in Knightsbridge.', url:'https://sancarlo.co.uk/restaurants/london/signor-sassi-london/'},
-{title:'Smith & Wollensky', venue:'Charing Cross', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Steakhouse in Charing Cross. Offers private dining room and breakfast service.', url:'https://www.smithandwollensky.co.uk/'},
+{title:'Gordon Ramsay at Sea Containers', venue:'South Bank', area:'southbank', types:['breakfast','lunchdinner','alfresco'], note:'American/British in South Bank. Riverside dining room and terrace within Sea Containers London, now run by Gordon Ramsay. Offers private dining room.', url:'https://www.seacontainerslondon.com/gordon-ramsay-restaurant/'},
+{title:'Sexy Fish', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable'], note:'Glamorous Japanese-inspired restaurant in Mayfair with sushi, robata grill and a Coral Room private dining space among giant reef tanks.', url:'https://sexyfish.com/'},
+{title:'Shiro', venue:'Broadgate Circle', area:'city', types:['lunchdinner'], note:'Contemporary Japanese restaurant at Broadgate Circle, known for sushi and maki with a robata grill section on the dinner menu.', url:'https://shirosushi.co.uk/'},
+{title:'Signor Sassi', venue:'Knightsbridge', area:'south_ken', types:['lunchdinner'], note:'Italian in Knightsbridge.', url:'https://sancarlo.co.uk/restaurants/signor-sassi-london/'},
+{title:'Smith & Wollensky', venue:'John Adam Street, Charing Cross', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Steakhouse in the Adelphi Building by Covent Garden Riverside, near Charing Cross. Private dining for 12 or more; breakfast not confirmed.', url:'https://www.smithandwollensky.co.uk/'},
 {title:'Spring Restaurant', venue:'Somerset House', area:'midtown', types:['lunchdinner','chefstable'], note:'British/Italian in Somerset House. Has a private dining room.', url:'https://springrestaurant.co.uk/'},
-{title:'Sucre', venue:'Soho', area:'westend', types:['lunchdinner'], note:'South American in Soho.', url:'https://sucrerestaurant.com/'},
-{title:'SushiSamba', venue:'Covent Garden/City', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Japanese/Peruvian/Brazilian in Covent Garden/City. Offers private dining room and outdoor seating.', url:'https://www.sushisamba.com/locations/london-covent-garden'},
+{title:'Sucre', venue:'Great Marlborough Street, Soho', area:'westend', types:['lunchdinner'], note:'Modern Argentinian and Latin American cooking over open fire, with a downstairs bar. Private events available.', url:'https://sucrerestaurant.com/'},
+{title:'SushiSamba', venue:'Covent Garden Market', area:'westend', types:['lunchdinner','chefstable','alfresco'], note:'Japanese, Brazilian and Peruvian food in Covent Garden Market, with a private dining room, speakeasy and Piazza-facing terrace.', url:'https://www.sushisamba.com/locations/london-covent-garden'},
 {title:'Swan', venue:'South Bank', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'British in South Bank. Offers private dining room and outdoor seating.', url:'https://swanlondon.co.uk/'},
 {title:'Taka', venue:'Marylebone', area:'notting_hill', types:['lunchdinner'], note:'Japanese in Marylebone.', url:'https://www.takalondon.com/'},
 {title:'Tamarind of Mayfair', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','alfresco'], note:'Indian in Mayfair. Offers outdoor seating.', url:'https://www.tamarindrestaurant.com/'},
-{title:'Tattu', venue:'Tottenham Court Rd', area:'westend', types:['lunchdinner','chefstable'], note:'Chinese in Tottenham Court Rd. Has a private dining room.', url:'https://tattu.co.uk/'},
-{title:'Tavolino', venue:'London Bridge', area:'southbank', types:['lunchdinner','alfresco'], note:'Italian in London Bridge. Offers outdoor seating.', url:'https://www.tavolino.co.uk/'},
+{title:'Tattu', venue:'Denmark Street, near Tottenham Court Road', area:'westend', types:['lunchdinner','chefstable'], note:'Modern Asian restaurant and cocktail bar on a Denmark Street rooftop, with private dining rooms and full-venue hire.', url:'https://tattu.co.uk/'},
+{title:'Tavolino', venue:'2 More London Riverside, SE1 2DB', area:'southbank', types:['lunchdinner','alfresco'], note:'Italian in London Bridge. Offers outdoor seating.', url:'https://www.tavolino.co.uk/'},
 {title:'The Botanist', venue:'Broadgate Circle', area:'city', types:['lunchdinner','alfresco'], note:'Gastropub in Broadgate Circle. Offers outdoor seating.', url:'https://etmcollection.co.uk/venue/botanist-broadgate-circle/'},
 {title:'The Delaunay', venue:'Aldwych', area:'midtown', types:['breakfast','lunchdinner','chefstable'], note:'European in Aldwych. Offers private dining room and breakfast service.', url:'https://www.thedelaunay.com/'},
-{title:'The Libertine', venue:'Bank', area:'city', types:['lunchdinner','chefstable'], note:'British in Bank. Has a private dining room.', url:'https://www.libertinelondon.co.uk/'},
-{title:'The Maine', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'British in Mayfair. Offers private dining room and outdoor seating.', url:'https://themainemayfair.com/'},
-{title:'The Mandrake', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Hotel in Fitzrovia. Offers private dining room, breakfast service and outdoor seating.', url:'https://themandrake.com/'},
+{title:'The Libertine', venue:'Bank', area:'city', types:['lunchdinner','chefstable'], note:'Seasonal British dining in the vaults beneath the Royal Exchange, with two private dining rooms and a bar.', url:'https://www.theroyalexchange.co.uk/the-libertine/'},
+{title:'The Maine', venue:'Mayfair', area:'mayfair_westminster', types:['lunchdinner','chefstable','alfresco'], note:'New England-style brasserie in Mayfair serving shellfish, steaks and pasta, with a private Palm Room and a garden terrace.', url:'https://themainemayfair.com/'},
+{title:'The Mandrake', venue:'Fitzrovia', area:'westend', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'Boutique Fitzrovia hotel with the YOPO restaurant, bars and an open-air Jurema terrace. Available for private hire; breakfast served on the terrace.', url:'https://themandrake.com/'},
 {title:'The MCR Restaurant', venue:'Chancery Lane', area:'midtown', types:['breakfast','lunchdinner','chefstable','alfresco'], note:'British in Chancery Lane. Offers private dining room, breakfast service and outdoor seating.', url:'https://themcr.lincolnsinn.org.uk/'},
-{title:'The Mercer', venue:'Threadneedle St', area:'city', types:['lunchdinner','chefstable'], note:'Modern British in Threadneedle St. Has a private dining room.', url:'https://www.themercer.co.uk/'},
-{title:'The Nest', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable','alfresco'], note:'Mixed in Marylebone. Offers private dining room and outdoor seating.', url:'https://www.treehousehotels.com/london/eat-drink/nest'},
-{title:'The Orangery TCR (gsk building)', venue:'Tottenham Court Rd', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Cafe/European in Tottenham Court Rd. Offers private dining room and breakfast service.', url:'https://www.orangerytcr.com/'},
+{title:'The Nest', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable','alfresco'], note:'Rooftop bar and restaurant at Treehouse London, with 360-degree skyline views and outdoor seating. Groups of six or more should contact the team; private dining not confirmed.', url:'https://www.treehousehotels.com/london/eat-drink/nest'},
+{title:'The Orangery TCR (gsk building)', venue:'New Oxford Street, Tottenham Court Road', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Cafe and restaurant at 81 New Oxford Street serving breakfast, with private dining and a chef\'s table. Closed Saturdays.', url:'https://www.orangerytcr.com/'},
 {title:'The Palm House', venue:'Victoria', area:'south_ken', types:['lunchdinner'], note:'North/South American in Victoria.', url:'https://www.palmhouselondon.co.uk/'},
-{title:'The Refinery', venue:'Citypoint', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'British in Citypoint. Offers private dining room and outdoor seating.', url:'https://www.drakeandmorgan.co.uk/the-refinery-citypoint/'},
-{title:'The Ritz', venue:'St James’s', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Modern British/French in St James’s. Offers private dining room and breakfast service.', url:'https://www.theritzlondon.com/dine-with-us/the-ritz-restaurant/'},
+{title:'The Refinery', venue:'Citypoint', area:'city', types:['lunchdinner','chefstable','alfresco'], note:'British bar and restaurant at Citypoint with a private dining room for up to 25 seated or 40 standing. Check the venue for outdoor seating.', url:'https://www.drakeandmorgan.co.uk/the-refinery-citypoint/'},
+{title:'The Ritz', venue:'St James’s', area:'westend', types:['breakfast','lunchdinner','chefstable'], note:'Contemporary British cooking with two Michelin stars at The Ritz, with breakfast served daily. Private dining not confirmed on this page.', url:'https://www.theritzlondon.com/dine-with-us/the-ritz-restaurant/'},
 {title:'The Table Café', venue:'Southwark', area:'southbank', types:['breakfast','lunchdinner'], note:'Cafe in Southwark. Offers breakfast service.', url:'https://thetablecafe.com/southwark/'},
 {title:'Waterhouse', venue:'Ezra Street, Columbia Road', area:'east', types:['lunchdinner'], note:'Gabriel Waterhouse\'s new 24-cover restaurant, opened September 2026 after The Water House Project closed. Classical French cooking, tasting menu.', url:'https://www.restaurantwaterhouse.com/'},
 {title:'The Wolseley', venue:'Green Park', area:'mayfair_westminster', types:['breakfast','lunchdinner','chefstable'], note:'British in Green Park. Offers private dining room and breakfast service.', url:'https://www.thewolseleypiccadilly.com/'},
-{title:'Thirteen', venue:'Tottenham Court Rd', area:'westend', types:['lunchdinner','alfresco'], note:'Bar in Tottenham Court Rd. Offers outdoor seating.', url:'https://thirteenldn.com/'},
+{title:'Thirteen', venue:'Denmark Street, Soho (near Tottenham Court Rd)', area:'westend', types:['lunchdinner','alfresco'], note:'Bar in Tottenham Court Rd. Offers outdoor seating.', url:'https://thirteenldn.com/'},
 {title:'Trishna', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Indian in Marylebone. Has a private dining room.', url:'https://www.trishnalondon.com/'},
 {title:'Trivet', venue:'London Bridge', area:'southbank', types:['lunchdinner','chefstable','alfresco'], note:'European in London Bridge. Offers private dining room and outdoor seating.', url:'https://trivetrestaurant.co.uk/'},
-{title:'Whitcombs (The Londoner)', venue:'Leicester Square', area:'westend', types:['breakfast','lunchdinner'], note:'French Mediterranean in Leicester Square. Offers breakfast service.', url:'https://www.thelondoner.com/restaurants-bars/whitcombs'},
-{title:'Wild by Tart', venue:'Belgravia', area:'south_ken', types:['lunchdinner','chefstable','alfresco'], note:'Mediterranean in Belgravia. Offers private dining room and outdoor seating.', url:'https://www.wildbytart.com/'},
-{title:'Wild Honey', venue:'St. James', area:'westend', types:['lunchdinner','chefstable'], note:'Modern European in St. James. Has a private dining room.', url:'https://wildhoneystjames.com/'},
-{title:'Wildflower', venue:'Pimlico', area:'south_ken', types:['lunchdinner','chefstable'], note:'Mediterranean in Pimlico. Has a private dining room.', url:'https://www.wildflowersrestaurant.co.uk/'},
-{title:'Yasmin', venue:'Soho', area:'westend', types:['lunchdinner','alfresco'], note:'Mediterranean in Soho. Offers outdoor seating.', url:'https://www.yasminsoho.com/'},
+{title:'Whitcombs (The Londoner)', venue:'Leicester Square', area:'westend', types:['breakfast','lunchdinner'], note:'Contemporary Mediterranean dining inside The Londoner hotel on Leicester Square, with a private dining space for special occasions.', url:'https://www.thelondoner.com/restaurants-bars/whitcombs'},
+{title:'Wild by Tart', venue:'Belgravia (Eccleston Yards)', area:'south_ken', types:['lunchdinner','chefstable','alfresco'], note:'Mediterranean in Belgravia. Offers private dining room and outdoor seating.', url:'https://www.wildbytart.com/'},
+{title:'Wild Honey', venue:'St James\'s', area:'westend', types:['lunchdinner','chefstable'], note:'Modern European in St. James. Has a private dining room.', url:'https://wildhoneystjames.com/'},
+{title:'Wildflowers', venue:'Pimlico', area:'south_ken', types:['lunchdinner','chefstable'], note:'Mediterranean in Pimlico. Has a private dining room.', url:'https://www.wildflowersrestaurant.co.uk/'},
+{title:'Yasmin', venue:'Soho', area:'westend', types:['lunchdinner','alfresco'], note:'Middle Eastern sharing plates with Istanbul-inspired dishes, on a Soho rooftop with a wraparound terrace. Closed Sunday and Monday.', url:'https://www.yasminsoho.com/'},
 {title:'Zahter', venue:'Carnaby', area:'westend', types:['lunchdinner','chefstable'], note:'Istanbulite in Carnaby. Has a private dining room.', url:'https://zahter.co.uk/'},
 {title:'Zuaya', venue:'High St. Kensington', area:'south_ken', types:['lunchdinner','alfresco'], note:'Latin American in High St. Kensington. Offers outdoor seating.', url:'https://zuaya.co.uk/'},
+{title:'Roast Shoreditch', venue:'Virgin Hotels, Curtain Road', area:'east', types:['breakfast','lunchdinner','chefstable'], note:'Roast\'s new second site, serving seasonal British food from breakfast to dinner, with afternoon tea and a private dining room.', url:'https://roast-restaurant.com/locations/shoreditch/'},
+{title:'UBA', venue:'Great Eastern Street, Shoreditch', area:'east', types:['breakfast','lunchdinner','chefstable'], note:'Pan-Asian restaurant in Shoreditch with space for private groups; room capacities unverified.', url:'https://ubarestaurant.com/'},
+{title:'Mitsu', venue:'Willow Street, Shoreditch', area:'east', types:['lunchdinner'], note:'Big, bold Japanese restaurant and bar, with a private karaoke room for after dinner.', url:'https://mitsurestaurant.com/'},
+{title:'Delamina East', venue:'Commercial Street, Shoreditch', area:'east', types:['lunchdinner','chefstable'], note:'Eastern Mediterranean cooking, with private rooms for 8 to 30 and exclusive hire of the whole restaurant.', url:'https://www.delaminakitchen.co.uk/delamina-east/'},
+{title:'PAM (People Around Me)', venue:'Charterhouse Street, Farringdon', area:'farringdon', types:['lunchdinner'], note:'Live-fire Thai cooking from a former Kiln head chef. Newly opened this autumn.', url:'https://www.pamrestaurant.com/'},
+{title:'Delamina Marylebone', venue:'Marylebone', area:'notting_hill', types:['lunchdinner','chefstable'], note:'Eastern Mediterranean cooking, with a private room for 25 to 35 and space for up to 75 seated across both floors.', url:'https://www.delaminakitchen.co.uk/delamina-in-marylebone/'},
+{title:'Delamina Townhouse', venue:'Covent Garden', area:'westend', types:['lunchdinner','chefstable'], note:'Eastern Mediterranean food in a restored Georgian townhouse, with private rooms for 20 to 50.', url:'https://www.delaminakitchen.co.uk/private-dining/'},
+{title:'Bread Street Kitchen & Bar', venue:'22 Bishopsgate', area:'city', types:['breakfast','lunchdinner','chefstable'], note:'Gordon Ramsay\'s all-day restaurant on floor 59 of 22 Bishopsgate, with floor-to-ceiling windows and panoramic views across the London skyline.', url:'https://www.gordonramsayrestaurants.com/bread-street-kitchen/bishopsgate/'},
 ];
 
 /* ============ STATIC DATA: PROJECT SOCIALS ============ */
 const SOCIALS_GROUPS = [
   { key:'bars', label:'Bars & Late Nights', icon:'flightclub', items:[
-    { title:'Alberts Schloss', venue:'Shaftesbury Avenue', note:'German bar and bierkeller with multiple bookable areas across two floors and live entertainment seven nights a week.', url:'https://albertsschloss.com/london/' },
-    { title:'Oriole', venue:'Covent Garden', note:'Speakeasy in its new permanent home: the Bamboo Bar on the ground floor for cocktails and small plates, or head downstairs to the restaurant. Live music on offer.', url:'https://www.oriolebar.com/' },
-    { title:'HiJingo', venue:'Various London locations', note:'Bingo like never before, with live entertainment, vibrant lights and high-energy music, plus street food and the Lucky Cat Bar. Private bookings available.' },
-    { title:'The Lucky Goat', venue:'The City', note:'Brand new high-energy social gaming destination offering karaoke, darts, shuffleboard and more, with semi-private and private areas available to book.' }
+    { title:'Alberts Schloss', venue:'Shaftesbury Avenue', note:'German bier hall with several bookable areas across two floors, including a mezzanine, schnapps booths and a bierkeller-style vault. Live shows run Tuesday to Saturday.', url:'https://albertsschloss.com/london/' },
+    { title:'Oriole', venue:'Covent Garden', note:'Speakeasy in its new permanent home, with the Bamboo Bar on the ground floor for cocktails and small plates and the restaurant downstairs. Live music.', url:'https://www.oriolebar.com/' },
+    { title:'HiJingo', venue:'Worship Street, Shoreditch (near Liverpool Street)', note:'Bingo with live entertainment, big music and lights, plus street food and bars. Private bookings available at its Shoreditch venue.' },
+    { title:'Mitsu Karaoke', venue:'Shoreditch', note:'Private karaoke room for up to 30 guests, 1.5-hour slots at £15 per person, with sushi and robata ordered from a kiosk. Easy to pair with dinner at Mitsu.', url:'https://mitsurestaurant.com/karaoke' },
+    { title:'The Lucky Goat', venue:'The City', note:'Brand new games venue with karaoke, darts, shuffleboard and more. Semi-private and private areas can be booked.' }
   ]},
   { key:'games', label:'Games & Competitive', icon:'trophy', items:[
-    { title:'Flight Club', venue:'Multiple London locations (Shoreditch, Islington, Bloomsbury, Angel)', note:'Interactive electronic darts with food and cocktails. Low skill barrier, high fun factor, and a reliable easy booking for a project team social.', url:'https://flightclubdarts.com/uk/locations/' },
+    { title:'Flight Club', venue:'Multiple London locations (Shoreditch, Islington, Bloomsbury, Angel)', note:'Interactive electronic darts with food and cocktails. Easy to book, no skill needed and lots of fun, so a safe choice for a team social.', url:'https://flightclubdarts.com/uk/locations/' },
     { title:'Oche', venue:'The Strand', note:'A classic game of darts at this renewed Strand venue, with cocktails and street food.', url:'https://oche.com/uk/london' },
-    { title:'Bowling Night', venue:'Suggested: All Star Lanes or Lane7, various London sites', note:'Retro-styled lanes with food and bars attached, and works for groups of any size with minimal planning. Lane7 also offers crazy golf, shuffleboard, darts and beer pong across its Victoria and Camden sites.' },
+    { title:'Bowling Night', venue:'Suggested: All Star Lanes or Lane7, various London sites', note:'Retro lanes with food and bars. Works for any group size and needs little planning. Lane7 also offers crazy golf, shuffleboard, darts and beer pong across its Victoria and Camden sites.' },
     { title:'Clays', venue:'City of London (Moorgate) and Canary Wharf', note:'Indoor simulated clay shooting bays with a cocktail bar: a lower-commitment, city-centre alternative to a real shoot day.' },
-    { title:'The Cube', venue:'Canary Wharf', note:'The hit TV show inspired game, with 21 cubes, two bars and a selection of food on offer. Race against the clock in teams.', url:'https://bookthecube.com/venue/london/' },
+    { title:'The Cube', venue:'Canary Wharf', note:'Game based on the TV show, with 21 cubes, two bars and food. Teams race the clock.', url:'https://bookthecube.com/venue/london/' },
     { title:'F1 Arcade', venue:'St Paul\'s', note:'State-of-the-art racing simulators, racing in teams or head to head, with an electric Octane Bar attached.', url:'https://f1arcade.com/uk/london' },
-    { title:'F1 Drive', venue:'Tottenham Hotspur Stadium', note:'The official F1 karting experience, featuring DRS technology, engine sounds and an 18cm LED steering wheel display.', url:'https://www.tottenhamhotspurstadium.com/f1-drive-london' },
+    { title:'Chaos Karts', venue:'Arcade Arena, Lambeth', note:'Real electric karts racing around a track projected on the floor, with virtual power-ups and weapons. Up to 10 players per session.', url:'https://arcadearena.co.uk/london/' },
+    { title:'F1 Drive', venue:'Tottenham Hotspur Stadium', note:'The official F1 karting experience, with simulated DRS and ERS boosts, F1-style details and a screen on the steering wheel showing lap times.', url:'https://www.tottenhamhotspurstadium.com/f1-drive-london' },
     { title:'Boulebar', venue:'Spitalfields', note:'Indoor Pétanque with authentic French food and a Parisian cocktail bar. Christmas bookings available in season.' },
-    { title:'Enigma Quests', venue:'Various London locations', note:'A variety of escape rooms and arcades, testing all abilities. A great way to build team bonds and boost friendly competition.' },
-    { title:'Pool House', venue:'100 Liverpool Street', note:'Games venue with private rooms hosting 10 to 80 people, alongside a spacious and stylish bar.' }
+    { title:'Enigma Quests', venue:'Fetter Lane, Holborn', note:'Escape rooms and an escape arcade, testing all abilities. Great for building team spirit.' },
+    { title:'Poolhouse', venue:'100 Liverpool Street', note:'Games venue with private rooms for 10 to 80 people, and a bar.' }
   ]},
   { key:'craft', label:'Workshops & Classes', icon:'art', items:[
     { title:'Glasswork & Jewellery Making', venue:'SONG Art & Craft, Shoreditch', note:'Hands-on glasswork (lampworking, kiln-formed or stained glass) and metalwork jewellery workshops. Exclusive studio hire available, or book an individual workshop for up to 16 people.', url:'https://www.songartcraft.com/' },
-    { title:'Life Drawing or Paint & Sip', venue:'Suggested: a local studio or private art tutor, booked to your office or a nearby venue', note:'A calmer social format, good for a relaxed evening or a team that\'s done the usual bowling/darts circuit already.' },
+    { title:'Life Drawing or Paint & Sip', venue:'Suggested: a local studio or private art tutor, booked to your office or a nearby venue', note:'A calmer option for teams who\'ve done the usual bowling and darts.' },
     { title:'Neon Brush Experience', venue:'Various London locations', note:'A 90-minute painting workshop guided by an artist, learning different techniques while enjoying a drink and music. Private bookings available.' },
     { title:'Adam Bridgland Screen Printing', venue:'Travels to a venue of your choice', note:'Private workshops creating bespoke screen-printing art pieces, run by an independent artist who will bring the kit to your office.' },
     { title:'Sarah Bryan Design', venue:'Travels to a venue of your choice', note:'Private ceramics workshops built entirely around your brief, and can even incorporate materials from your own site into the pieces made.' },
-    { title:'Comptoir Bakery', venue:'Near London Bridge', note:'Baking classes ranging from eclairs to sourdough to macarons, with something for every skill level.' }
+    { title:'Comptoir Bakery', venue:'Bermondsey Street, near London Bridge', note:'Baking classes, from eclairs to sourdough to macarons, for all levels.' }
   ]},
   { key:'food_experiences', label:'Food & Drink Experiences', icon:'eating', items:[
-    { title:'School of Wok', venue:'Covent Garden', note:'Cooking classes ranging from sushi making to a full Thai menu. Also offers a \'Cook for the Homeless\' experience, giving back to the local community as part of the session.', url:'https://schoolofwok.co.uk/' },
-    { title:'Migrateful Cooking Class', venue:'Clerkenwell', note:'A 2.5-hour cooking class and meal run by refugee and migrant chefs, celebrating their journeys by supporting them to teach their own cuisines.', url:'https://www.migrateful.org/group-classes/' },
-    { title:'Skuna Igloo Boat', venue:'Near Canary Wharf', note:'London\'s first Floating Igloo Boat & Fondue Experience. Each boat holds 9 people for a 90-minute tour.' },
-    { title:'Bermondsey Beer Mile Brewery Tour', venue:'Bermondsey', note:'A guide takes you to four breweries along the famous Beer Mile, with a pizza stop included. Budget-friendly at around £49 per person.' }
+    { title:'School of Wok', venue:'Covent Garden', note:'Cooking classes ranging from sushi making to a full Thai menu. Also offers a \'Cook for the Homeless\' experience, with food made for local people in need.', url:'https://schoolofwok.co.uk/' },
+    { title:'Migrateful Cooking Class', venue:'Clerkenwell', note:'A 2.5-hour cooking class and meal run by refugee and migrant chefs, teaching their own cuisines.', url:'https://www.migrateful.org/group-classes/' },
+    { title:'Skuna Igloo Boat', venue:'Near Canary Wharf', note:'A floating igloo boat and fondue experience on the water at Canary Wharf. Each boat holds up to nine people for about 90 minutes.' },
+    { title:'Bermondsey Beer Mile Brewery Tour', venue:'Bermondsey', note:'A guide takes you to four breweries along the famous Beer Mile, with a pizza stop included. Good value at around £49 per person.' }
   ]},
 ];
 
@@ -881,13 +1104,15 @@ const EATING_TYPES = [
   { key:'chefstable', label:"Chef's Table & Private Dining" },
   { key:'alfresco', label:'Al Fresco' }
 ];
-const EATING_AREA_ORDER = ['westend','city','midtown','canary_wharf','east','mayfair_westminster','notting_hill','south_ken','southbank'];
+const EATING_AREA_ORDER = ['westend','city','midtown','canary_wharf','east','farringdon','kings_cross','mayfair_westminster','notting_hill','south_ken','southbank'];
 const EATING_AREA_LABELS = {
   westend: 'West End',
   city: 'The City',
   midtown: 'Midtown',
   canary_wharf: 'Canary Wharf',
   east: 'East',
+  farringdon: 'Farringdon & Clerkenwell',
+  kings_cross: 'King\'s Cross & Bloomsbury',
   mayfair_westminster: 'Mayfair & Westminster',
   notting_hill: 'Notting Hill, Bayswater & Marylebone',
   south_ken: 'South Kensington, Belgravia & Victoria',
